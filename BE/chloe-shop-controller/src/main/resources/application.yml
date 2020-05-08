@@ -38,3 +38,13 @@ spring:
 mybatis:
   type-aliases-package: com.chloe.model     # 所有POJO类所在包路径
   mapper-locations: classpath:mapper/*.xml      # mapper映射文件
+############################################################
+#
+# mybatis mapper 配置
+#
+############################################################
+# 通用 Mapper 配置
+mapper:
+  mappers: my.mapper.MyMapper
+  not-empty: false
+  identity: MYSQL
