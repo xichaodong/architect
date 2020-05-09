@@ -1,0 +1,26 @@
+2020-05-08 16:11:09 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:11:09 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 16:11:09 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:11:09 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 16:11:09 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:11:09 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:6 毫秒=====
+2020-05-08 16:11:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:11:11 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 16:11:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:11:11 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-08 16:11:44 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CarouselServiceImpl queryAll =====
+2020-05-08 16:11:44 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl queryAllRootCategory =====
+2020-05-08 16:11:44 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 16:11:44 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 16:11:44 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:11:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:11:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:11:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:11:55 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-08 16:11:55 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
+2020-05-08 16:11:55 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
+2020-05-08 16:11:59 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-05-08 16:11:59 INFO  Application:50 - Starting Application on localhost with PID 7640 (/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes started by tristeza in /Users/tristeza/BE/architect/BE)
+2020-05-08 16:11:59 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-05-08 16:11:59 INFO  DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-08 16:11:59 INFO  DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'

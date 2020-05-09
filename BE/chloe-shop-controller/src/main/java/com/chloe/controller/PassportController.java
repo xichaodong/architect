@@ -88,6 +88,14 @@ public class PassportController {
         return JsonResult.ok(doMask(maskUser));
     }
 
+    @ApiOperation(value = "用户退出登录", notes = "用户退出登录", httpMethod = "POST")
+    @PostMapping("logout")
+    public JsonResult logout(HttpServletRequest request, HttpServletResponse response) {
+        CookieUtils.deleteCookie(request, response, "user");
+
+        return JsonResult.ok();
+    }
+
     private Users doMask(Users origin) {
         origin.setPassword(null);
         origin.setMobile(null);

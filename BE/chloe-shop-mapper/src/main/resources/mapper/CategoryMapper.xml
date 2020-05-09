@@ -1,17 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.chloe.mapper.CategoryMapper" >
-  <resultMap id="BaseResultMap" type="com.chloe.model.pojo.Category" >
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="father_id" property="fatherId" jdbcType="INTEGER" />
-    <result column="logo" property="logo" jdbcType="VARCHAR" />
-    <result column="slogan" property="slogan" jdbcType="VARCHAR" />
-    <result column="cat_image" property="catImage" jdbcType="VARCHAR" />
-    <result column="bg_color" property="bgColor" jdbcType="VARCHAR" />
-  </resultMap>
+<mapper namespace="com.chloe.mapper.CategoryMapper">
+    <resultMap id="BaseResultMap" type="com.chloe.model.pojo.Category">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="INTEGER"/>
+        <result column="father_id" property="fatherId" jdbcType="INTEGER"/>
+        <result column="logo" property="logo" jdbcType="VARCHAR"/>
+        <result column="slogan" property="slogan" jdbcType="VARCHAR"/>
+        <result column="cat_image" property="catImage" jdbcType="VARCHAR"/>
+        <result column="bg_color" property="bgColor" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="SubCategoryResultMap" type="com.chloe.model.vo.SubCategoryVO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="INTEGER"/>
+        <result column="fatherId" property="fatherId" jdbcType="INTEGER"/>
+        <collection property="thirdLevelCats" ofType="com.chloe.model.vo.ThirdLevelCategoryVO">
+            <id column="subId" property="subId" jdbcType="INTEGER"/>
+            <result column="subName" property="subName" jdbcType="VARCHAR"/>
+            <result column="subType" property="subType" jdbcType="INTEGER"/>
+            <result column="subFatherId" property="subFatherId" jdbcType="INTEGER"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="SuggestItemResultMap" type="com.chloe.model.vo.SuggestItemVO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="rootCatId" property="rootCatId" jdbcType="INTEGER"/>
+        <result column="rootCatName" property="rootCatName" jdbcType="VARCHAR"/>
+        <result column="slogan" property="slogan" jdbcType="VARCHAR"/>
+        <result column="catImage" property="catImage" jdbcType="VARCHAR"/>
+        <result column="bgColor" property="bgColor" jdbcType="VARCHAR"/>
+        <collection property="simpleItemList" ofType="com.chloe.model.vo.SimpleItemInfoVO">
+            <id column="itemId" property="itemId" jdbcType="VARCHAR"/>
+            <result column="itemName" property="itemName" jdbcType="VARCHAR"/>
+            <result column="itemUrl" property="itemUrl" jdbcType="VARCHAR"/>
+        </collection>
+    </resultMap>
+
+    <select id="getSubCategoryList" resultMap="SubCategoryResultMap" parameterType="int">
+        SELECT f.id        AS id,
+               f.name      AS name,
+               f.type      AS type,
+               f.father_id AS fatherId,
+               c.id        AS subId,
+               c.name      AS subName,
+               c.type      AS subType,
+               c.father_id AS subFatherId
+        FROM category f
+                 LEFT JOIN category c
+                           ON f.id = c.father_id
+        WHERE f.father_id = #{rootCatId}
+    </select>
+
+    <select id="getSuggestItemInfo" resultMap="SuggestItemResultMap">
+        SELECT c.id           AS rootCatId,
+               c.name         AS rootCatName,
+               c.slogan       AS slogan,
+               c.cat_image    AS catImage,
+               c.bg_color     AS bgColor,
+               i.id           AS itemId,
+               i.item_name    AS itemName,
+               ii.url         AS itemUrl,
+               i.created_time AS createdTime
+        FROM category c
+                 LEFT JOIN items i
+                           ON c.id = i.root_cat_id
+                 LEFT JOIN items_img ii
+                           ON i.id = ii.item_id
+        WHERE c.type = 1
+          AND i.root_cat_id = #{params.rootCatId}
+          AND ii.is_main = 1
+        ORDER BY i.created_time DESC
+    </select>
 </mapper>

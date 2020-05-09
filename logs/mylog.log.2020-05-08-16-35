@@ -1,0 +1,27 @@
+2020-05-08 16:35:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:12 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CarouselServiceImpl queryAll =====
+2020-05-08 16:35:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl queryAllRootCategory =====
+2020-05-08 16:35:14 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:6 毫秒=====
+2020-05-08 16:35:14 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
+2020-05-08 16:35:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:19 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:35:19 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-08 16:35:19 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:35:19 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 16:35:19 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:35:19 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:6 毫秒=====
+2020-05-08 16:35:20 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:20 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:21 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:23 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:35:23 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-08 16:35:23 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:23 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:23 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:24 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-08 16:35:59 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 16:35:59 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====

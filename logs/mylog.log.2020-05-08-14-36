@@ -1,0 +1,26 @@
+2020-05-08 14:36:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl queryAllRootCategory =====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CarouselServiceImpl queryAll =====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:5 毫秒=====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:08 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 14:36:09 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:09 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 14:36:10 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:10 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-08 14:36:10 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:10 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-08 14:36:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:11 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:5 毫秒=====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-08 14:36:17 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
