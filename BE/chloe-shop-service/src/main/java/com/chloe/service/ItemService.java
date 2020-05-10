@@ -1,10 +1,12 @@
 package com.chloe.service;
 
+import com.chloe.common.utils.PagedGridResult;
 import com.chloe.model.pojo.Items;
 import com.chloe.model.pojo.ItemsImg;
 import com.chloe.model.pojo.ItemsParam;
 import com.chloe.model.pojo.ItemsSpec;
 import com.chloe.model.vo.CommentCountsVO;
+import com.chloe.model.vo.ItemCommentVO;
 
 import java.util.List;
 
@@ -48,4 +50,13 @@ public interface ItemService {
      * @return {@link CommentCountsVO}
      */
     CommentCountsVO queryCommentCounts(String itemId);
+
+    /**
+     * 根据评价等级分页查询商品评价
+     *
+     * @param itemId       商品id
+     * @param commentLevel 评价级别
+     * @return {@link PagedGridResult}
+     */
+    PagedGridResult queryPagedItemComment(String itemId, String commentLevel, Integer page, Integer pageSize);
 }

@@ -1,15 +1,14 @@
 package com.chloe.service.impl;
 
-import com.chloe.mapper.ItemsImgMapper;
-import com.chloe.mapper.ItemsMapper;
-import com.chloe.mapper.ItemsParamMapper;
-import com.chloe.mapper.ItemsSpecMapper;
-import com.chloe.model.pojo.Items;
-import com.chloe.model.pojo.ItemsImg;
-import com.chloe.model.pojo.ItemsParam;
-import com.chloe.model.pojo.ItemsSpec;
+import com.chloe.common.enums.CommentLevelEnum;
+import com.chloe.common.utils.PagedGridResult;
+import com.chloe.mapper.*;
+import com.chloe.model.pojo.*;
 import com.chloe.model.vo.CommentCountsVO;
+import com.chloe.model.vo.ItemCommentVO;
 import com.chloe.service.ItemService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +27,8 @@ public class ItemServiceImpl implements ItemService {
     private ItemsSpecMapper itemsSpecMapper;
     @Resource
     private ItemsParamMapper itemsParamMapper;
+    @Resource
+    private ItemsCommentsMapper itemsCommentsMapper;
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
@@ -71,7 +72,43 @@ public class ItemServiceImpl implements ItemService {
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public CommentCountsVO queryCommentCounts(String itemId) {
+        Integer goodCounts = getCommentCountsByLevel(itemId, CommentLevelEnum.GOOD.type);
+        Integer normalCounts = getCommentCountsByLevel(itemId, CommentLevelEnum.NORMAL.type);
+        Integer badCounts = getCommentCountsByLevel(itemId, CommentLevelEnum.BAD.type);
 
-        return null;
+        CommentCountsVO commentCountsVO = new CommentCountsVO();
+
+        commentCountsVO.setGoodCounts(goodCounts);
+        commentCountsVO.setNormalCounts(normalCounts);
+        commentCountsVO.setBadCounts(badCounts);
+        commentCountsVO.setTotalCounts(goodCounts + normalCounts + badCounts);
+
+        return commentCountsVO;
+    }
+
+    @Override
+    public PagedGridResult queryPagedItemComment(String itemId, String commentLevel, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+
+        List<ItemCommentVO> itemComments = itemsCommentsMapper.queryItemComments(itemId, commentLevel);
+
+        PageInfo<ItemCommentVO> pageInfo = new PageInfo<>(itemComments);
+
+        PagedGridResult pagedGridResult = new PagedGridResult();
+        pagedGridResult.setPage(page);
+        pagedGridResult.setRows(pageInfo.getList());
+        pagedGridResult.setTotal(pageInfo.getPages());
+        pagedGridResult.setRecords(pageInfo.getTotal());
+
+        return pagedGridResult;
+    }
+
+    Integer getCommentCountsByLevel(String itemId, Integer level) {
+        ItemsComments itemsComments = new ItemsComments();
+
+        itemsComments.setCommentLevel(level);
+        itemsComments.setItemId(itemId);
+
+        return itemsCommentsMapper.selectCount(itemsComments);
     }
 }

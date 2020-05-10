@@ -50,3 +50,7 @@ mapper:
   mappers: my.mapper.MyMapper
   not-empty: false
   identity: MYSQL
+#分页插件配置
+pagehelper:
+  helperDialect: mysql
+  supportMethodsArguments: true

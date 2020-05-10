@@ -12,5 +12,5 @@ import java.util.Map;
 public interface CategoryMapper extends MyMapper<Category> {
     List<SubCategoryVO> getSubCategoryList(Integer rootCatId);
 
-    List<SuggestItemVO> getSuggestItemInfo(@Param("params") Map<String, Object> params);
+    List<SuggestItemVO> getSuggestItemInfo(Integer rootCatId);
 }

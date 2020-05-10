@@ -41,9 +41,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public List<SuggestItemVO> querySuggestItemInfo(Integer rootCatId) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("rootCatId", rootCatId);
 
-        return categoryMapper.getSuggestItemInfo(params);
+        return categoryMapper.getSuggestItemInfo(rootCatId);
     }
 }
