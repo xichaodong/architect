@@ -1,6 +1,7 @@
 package com.chloe.service.impl;
 
 import com.chloe.common.enums.CommentLevelEnum;
+import com.chloe.common.utils.DesensitizationUtil;
 import com.chloe.common.utils.PagedGridResult;
 import com.chloe.mapper.*;
 import com.chloe.model.pojo.*;
@@ -87,16 +88,18 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public PagedGridResult queryPagedItemComment(String itemId, String commentLevel, Integer page, Integer pageSize) {
+    public PagedGridResult queryPagedItemComment(String itemId, Integer commentLevel, Integer page, Integer pageSize) {
         PageHelper.startPage(page, pageSize);
 
         List<ItemCommentVO> itemComments = itemsCommentsMapper.queryItemComments(itemId, commentLevel);
+
+        itemComments.forEach(comment -> comment.setNickname(DesensitizationUtil.commonDisplay(comment.getNickname())));
 
         PageInfo<ItemCommentVO> pageInfo = new PageInfo<>(itemComments);
 
         PagedGridResult pagedGridResult = new PagedGridResult();
         pagedGridResult.setPage(page);
-        pagedGridResult.setRows(pageInfo.getList());
+        pagedGridResult.setRows(itemComments);
         pagedGridResult.setTotal(pageInfo.getPages());
         pagedGridResult.setRecords(pageInfo.getTotal());
 

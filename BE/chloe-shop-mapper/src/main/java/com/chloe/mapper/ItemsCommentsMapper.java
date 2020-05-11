@@ -7,5 +7,5 @@ import com.chloe.model.pojo.ItemsComments;
 import java.util.List;
 
 public interface ItemsCommentsMapper extends MyMapper<ItemsComments> {
-    List<ItemCommentVO> queryItemComments(String itemId, String commentLevel);
+    List<ItemCommentVO> queryItemComments(String itemId, Integer commentLevel);
 }

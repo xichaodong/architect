@@ -58,5 +58,5 @@ public interface ItemService {
      * @param commentLevel 评价级别
      * @return {@link PagedGridResult}
      */
-    PagedGridResult queryPagedItemComment(String itemId, String commentLevel, Integer page, Integer pageSize);
+    PagedGridResult queryPagedItemComment(String itemId, Integer commentLevel, Integer page, Integer pageSize);
 }

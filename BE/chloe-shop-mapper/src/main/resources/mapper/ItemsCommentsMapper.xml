@@ -25,16 +25,23 @@
         <result column="content" property="content" jdbcType="VARCHAR"/>
         <result column="specName" property="specName" jdbcType="VARCHAR"/>
         <result column="userFace" property="userFace" jdbcType="VARCHAR"/>
-        <result column="nickName" property="nickName" jdbcType="VARCHAR"/>
-        <result column="createdTime" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="createdTime" property="createdTime"/>
     </resultMap>
 
     <select id="queryItemComments" resultMap="CommentsResultMap">
-        SELECT *
+        SELECT ic.comment_level AS commentLevel,
+        ic.content AS content,
+        ic.sepc_name AS specName,
+        u.face AS userFace,
+        u.nickname AS nickname,
+        ic.created_time AS createdTime
         FROM items_comments ic
-                 LEFT JOIN users u
-                           ON ic.user_id = u.id
+        LEFT JOIN users u
+        ON ic.user_id = u.id
         WHERE ic.item_id = #{itemId}
-          AND ic.comment_level = #{commentLevel}
+        <if test="commentLevel != null and commentLevel != ''">
+            AND ic.comment_level = #{commentLevel}
+        </if>
     </select>
 </mapper>
