@@ -50,6 +50,18 @@ public class ItemController extends BaseController {
         return JsonResult.ok(itemService.queryCommentCounts(itemId));
     }
 
+    @ApiOperation(value = "根据商品规格查询商品信息", notes = "根据商品规格查询商品信息", httpMethod = "GET")
+    @GetMapping("refresh")
+    public JsonResult queryItemInfoBySpec(
+            @ApiParam(name = "itemSpecIds", value = "拼接的规格id", required = true, example = "1001,1002,1005")
+            @RequestParam String itemSpecIds) {
+        if (StringUtils.isBlank(itemSpecIds)) {
+            return JsonResult.ok();
+        }
+
+        return JsonResult.ok(itemService.queryItemBySpecIds(itemSpecIds));
+    }
+
     @ApiOperation(value = "查询商品评价", notes = "查询商品评价", httpMethod = "GET")
     @GetMapping("comments")
     public JsonResult commentLevel(
@@ -75,6 +87,60 @@ public class ItemController extends BaseController {
         }
 
         PagedGridResult pagedGridResult = itemService.queryPagedItemComment(itemId, level, page, pageSize);
+
+        return JsonResult.ok(pagedGridResult);
+    }
+
+    @ApiOperation(value = "搜索商品", notes = "搜索商品", httpMethod = "GET")
+    @GetMapping("search")
+    public JsonResult commentLevel(
+            @ApiParam(name = "keywords", value = "关键字", required = true, example = "1001")
+            @RequestParam String keywords,
+            @ApiParam(name = "sort", value = "排序字段", required = true, example = "p")
+            @RequestParam String sort,
+            @ApiParam(name = "page", value = "页码", required = false, example = "1")
+            @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "每页的数量", required = false, example = "10")
+            @RequestParam Integer pageSize) {
+
+        if (Objects.isNull(page)) {
+            page = DEFAULT_PAGE;
+        }
+
+        if (Objects.isNull(pageSize)) {
+            pageSize = SEARCH_PAGE_SIZE;
+        }
+
+        PagedGridResult pagedGridResult = itemService.searchItems(keywords, sort, page, pageSize);
+
+        return JsonResult.ok(pagedGridResult);
+    }
+
+    @ApiOperation(value = "通过分类搜索商品", notes = "通过分类搜索商品", httpMethod = "GET")
+    @GetMapping("catItems")
+    public JsonResult searchItemsByThirdCat(
+            @ApiParam(name = "catId", value = "三级分类id", required = true, example = "1001")
+            @RequestParam Integer catId,
+            @ApiParam(name = "sort", value = "排序字段", required = true, example = "p")
+            @RequestParam String sort,
+            @ApiParam(name = "page", value = "页码", required = false, example = "1")
+            @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "每页的数量", required = false, example = "10")
+            @RequestParam Integer pageSize) {
+
+        if (Objects.isNull(catId)) {
+            return JsonResult.errorMsg("三级分类id不能为空");
+        }
+
+        if (Objects.isNull(page)) {
+            page = DEFAULT_PAGE;
+        }
+
+        if (Objects.isNull(pageSize)) {
+            pageSize = SEARCH_PAGE_SIZE;
+        }
+
+        PagedGridResult pagedGridResult = itemService.searchItems(catId, sort, page, pageSize);
 
         return JsonResult.ok(pagedGridResult);
     }

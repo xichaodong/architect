@@ -5,17 +5,21 @@ import com.chloe.common.utils.DesensitizationUtil;
 import com.chloe.common.utils.PagedGridResult;
 import com.chloe.mapper.*;
 import com.chloe.model.pojo.*;
+import com.chloe.model.vo.CartVO;
 import com.chloe.model.vo.CommentCountsVO;
 import com.chloe.model.vo.ItemCommentVO;
+import com.chloe.model.vo.SearchItemVO;
 import com.chloe.service.ItemService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -95,23 +99,55 @@ public class ItemServiceImpl implements ItemService {
 
         itemComments.forEach(comment -> comment.setNickname(DesensitizationUtil.commonDisplay(comment.getNickname())));
 
-        PageInfo<ItemCommentVO> pageInfo = new PageInfo<>(itemComments);
-
-        PagedGridResult pagedGridResult = new PagedGridResult();
-        pagedGridResult.setPage(page);
-        pagedGridResult.setRows(itemComments);
-        pagedGridResult.setTotal(pageInfo.getPages());
-        pagedGridResult.setRecords(pageInfo.getTotal());
-
-        return pagedGridResult;
+        return buildPagedResult(itemComments, page);
     }
 
-    Integer getCommentCountsByLevel(String itemId, Integer level) {
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+
+        List<SearchItemVO> searchItems = itemsMapper.searchItems(keywords, sort);
+
+        return buildPagedResult(searchItems, page);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public PagedGridResult searchItems(Integer categoryId, String sort, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+
+        List<SearchItemVO> searchItems = itemsMapper.searchItemsByThirdCatId(categoryId, sort);
+
+        return buildPagedResult(searchItems, page);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<CartVO> queryItemBySpecIds(String spedIdStr) {
+        List<String> specIds = Arrays.asList(spedIdStr.split(","));
+
+        return itemsMapper.queryItemsBySpecIds(specIds);
+    }
+
+    private Integer getCommentCountsByLevel(String itemId, Integer level) {
         ItemsComments itemsComments = new ItemsComments();
 
         itemsComments.setCommentLevel(level);
         itemsComments.setItemId(itemId);
 
         return itemsCommentsMapper.selectCount(itemsComments);
+    }
+
+    private PagedGridResult buildPagedResult(List<?> records, Integer page) {
+        PagedGridResult pagedGridResult = new PagedGridResult();
+        PageInfo<?> pageInfo = new PageInfo<>(records);
+
+        pagedGridResult.setPage(page);
+        pagedGridResult.setRows(pageInfo.getList());
+        pagedGridResult.setTotal(pageInfo.getPages());
+        pagedGridResult.setRecords(pageInfo.getTotal());
+
+        return pagedGridResult;
     }
 }

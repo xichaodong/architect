@@ -5,8 +5,8 @@ import com.chloe.model.pojo.Items;
 import com.chloe.model.pojo.ItemsImg;
 import com.chloe.model.pojo.ItemsParam;
 import com.chloe.model.pojo.ItemsSpec;
+import com.chloe.model.vo.CartVO;
 import com.chloe.model.vo.CommentCountsVO;
-import com.chloe.model.vo.ItemCommentVO;
 
 import java.util.List;
 
@@ -59,4 +59,10 @@ public interface ItemService {
      * @return {@link PagedGridResult}
      */
     PagedGridResult queryPagedItemComment(String itemId, Integer commentLevel, Integer page, Integer pageSize);
+
+    PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize);
+
+    PagedGridResult searchItems(Integer categoryId, String sort, Integer page, Integer pageSize);
+
+    List<CartVO> queryItemBySpecIds(String spedIdStr);
 }
