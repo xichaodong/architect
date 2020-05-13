@@ -2,10 +2,13 @@ package com.chloe.service;
 
 import com.chloe.model.bo.AddressBO;
 import com.chloe.model.pojo.UserAddress;
+
 import java.util.List;
 
 public interface AddressService {
     List<UserAddress> queryAll(String userId);
+
+    UserAddress queryAddressById(String userId, String addressId);
 
     void addAddress(AddressBO address);
 

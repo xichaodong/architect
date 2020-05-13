@@ -65,4 +65,10 @@ public interface ItemService {
     PagedGridResult searchItems(Integer categoryId, String sort, Integer page, Integer pageSize);
 
     List<CartVO> queryItemBySpecIds(String spedIdStr);
+
+    ItemsSpec queryItemSpecBySpecId(String specId);
+
+    String queryItemMainImgByItemId(String itemId);
+
+    void decreaseItemSpecStock(String specId, Integer buyCounts);
 }

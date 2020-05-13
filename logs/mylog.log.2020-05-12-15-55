@@ -1,0 +1,26 @@
+2020-05-12 15:55:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl createOrder =====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAddressById =====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemSpecBySpecId =====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemById =====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemMainImgByItemId =====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl decreaseItemSpecStock =====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-12 15:55:05 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:25 毫秒=====
+2020-05-12 15:55:23 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAll =====
+2020-05-12 15:55:23 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl createOrder =====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAddressById =====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemSpecBySpecId =====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemById =====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemMainImgByItemId =====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl decreaseItemSpecStock =====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-12 15:55:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:22 毫秒=====

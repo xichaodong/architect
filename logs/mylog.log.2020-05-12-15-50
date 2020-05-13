@@ -1,0 +1,2 @@
+2020-05-12 15:50:30 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAll =====
+2020-05-12 15:50:30 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====

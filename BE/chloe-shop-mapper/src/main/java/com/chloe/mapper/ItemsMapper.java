@@ -14,4 +14,6 @@ public interface ItemsMapper extends MyMapper<Items> {
     List<SearchItemVO> searchItemsByThirdCatId(Integer categoryId, String sort);
 
     List<CartVO> queryItemsBySpecIds(@Param("specIds") List<String> specIds);
+
+    Integer decreaseItemSpecStock(String specId, Integer pendingCounts);
 }

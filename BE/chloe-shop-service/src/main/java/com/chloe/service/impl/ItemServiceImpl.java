@@ -1,5 +1,6 @@
 package com.chloe.service.impl;
 
+import com.chloe.common.enums.BooleanEnum;
 import com.chloe.common.enums.CommentLevelEnum;
 import com.chloe.common.utils.DesensitizationUtil;
 import com.chloe.common.utils.PagedGridResult;
@@ -13,6 +14,7 @@ import com.chloe.service.ItemService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.models.auth.In;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +23,7 @@ import tk.mybatis.mapper.entity.Example;
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -128,6 +131,34 @@ public class ItemServiceImpl implements ItemService {
         List<String> specIds = Arrays.asList(spedIdStr.split(","));
 
         return itemsMapper.queryItemsBySpecIds(specIds);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public ItemsSpec queryItemSpecBySpecId(String specId) {
+        return itemsSpecMapper.selectByPrimaryKey(specId);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public String queryItemMainImgByItemId(String itemId) {
+        ItemsImg itemsImg = new ItemsImg();
+        itemsImg.setIsMain(BooleanEnum.TRUE.type);
+        itemsImg.setItemId(itemId);
+
+        ItemsImg mainImg = itemsImgMapper.selectOne(itemsImg);
+
+        return Objects.isNull(mainImg) ? "" : mainImg.getUrl();
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void decreaseItemSpecStock(String specId, Integer buyCounts) {
+        boolean isSuccess = itemsMapper.decreaseItemSpecStock(specId, buyCounts) > 0;
+
+        if (!isSuccess) {
+            throw new RuntimeException("订单创建失败,原因：库存不足!");
+        }
     }
 
     private Integer getCommentCountsByLevel(String itemId, Integer level) {

@@ -26,6 +26,12 @@
         <result column="imgUrl" property="imgUrl" jdbcType="VARCHAR"/>
         <result column="priceDiscount" property="price" jdbcType="INTEGER"/>
     </resultMap>
+    <update id="decreaseItemSpecStock">
+        UPDATE items_spec
+        SET stock = stock - #{pendingCounts}
+        WHERE id = #{specId}
+          AND stock >= #{pendingCounts}
+    </update>
 
     <select id="searchItems" resultMap="SearchItemResultMap">
         SELECT i.id AS itemId,
