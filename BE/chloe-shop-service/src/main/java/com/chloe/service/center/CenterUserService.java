@@ -2,6 +2,7 @@ package com.chloe.service.center;
 
 import com.chloe.model.bo.center.CenterUserBO;
 import com.chloe.model.pojo.Users;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface CenterUserService {
     /**
@@ -13,4 +14,6 @@ public interface CenterUserService {
     Users queryUserInfo(String userId);
 
     Users updateUserInfo(String userId, CenterUserBO centerUserBO);
+
+    void uploadUserFace(String userId, MultipartFile multipartFile, String fileSavePath, String imgServerUrl);
 }

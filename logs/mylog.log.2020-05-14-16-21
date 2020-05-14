@@ -1,0 +1,28 @@
+2020-05-14 16:21:10 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CarouselServiceImpl queryAll =====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl queryAllRootCategory =====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySubCategoryByRootId =====
+2020-05-14 16:21:10 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
+2020-05-14 16:21:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CarouselServiceImpl queryAll =====
+2020-05-14 16:21:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl queryAllRootCategory =====
+2020-05-14 16:21:14 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-14 16:21:14 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.CategoryServiceImpl querySuggestItemInfo =====
+2020-05-14 16:21:14 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:18 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterUserServiceImpl queryUserInfo =====
+2020-05-14 16:21:18 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:21 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterUserServiceImpl uploadUserFace =====
+2020-05-14 16:21:21 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:23 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterUserServiceImpl queryUserInfo =====
+2020-05-14 16:21:23 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterUserServiceImpl queryUserInfo =====
+2020-05-14 16:21:52 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.UserServiceImpl queryUserForLogin =====
+2020-05-14 16:21:52 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-14 16:21:52 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-05-14 16:21:54 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterUserServiceImpl queryUserInfo =====
+2020-05-14 16:21:54 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-14 16:21:58 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterUserServiceImpl uploadUserFace =====
+2020-05-14 16:21:58 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
