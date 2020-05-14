@@ -1,0 +1,33 @@
+2020-05-13 12:01:26 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl searchItems =====
+2020-05-13 12:01:27 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:36 毫秒=====
+2020-05-13 12:01:27 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl searchItems =====
+2020-05-13 12:01:27 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:17 毫秒=====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemById =====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryPagedItemComment =====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryCommentCounts =====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemImgById =====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:5 毫秒=====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemSpecById =====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:5 毫秒=====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemParam =====
+2020-05-13 12:01:28 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 12:01:33 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemBySpecIds =====
+2020-05-13 12:01:33 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:5 毫秒=====
+2020-05-13 12:01:37 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAll =====
+2020-05-13 12:01:37 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl createOrder =====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAddressById =====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemSpecBySpecId =====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemById =====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemMainImgByItemId =====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl decreaseItemSpecStock =====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 12:01:40 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:21 毫秒=====
+2020-05-13 12:01:40 INFO  CookieUtils:210 - ========== domainName: localhost ==========

@@ -1,0 +1,42 @@
+2020-05-13 13:27:00 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:00 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:03 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:03 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:06 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:06 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:09 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:09 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:12 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:12 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:15 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:15 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:18 WARN  DefaultHandlerExceptionResolver:198 - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'orderId' is not present]
+2020-05-13 13:27:18 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:18 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:21 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:21 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:27:24 WARN  DefaultHandlerExceptionResolver:198 - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'orderId' is not present]
+2020-05-13 13:27:24 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:27:24 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-13 13:27:26 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-13 13:27:26 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
+2020-05-13 13:27:26 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
+2020-05-13 13:27:56 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-05-13 13:27:56 INFO  Application:50 - Starting Application on bogon with PID 22718 (/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes started by tristeza in /Users/tristeza/BE/architect/BE)
+2020-05-13 13:27:56 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-05-13 13:27:56 INFO  DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-13 13:27:56 INFO  DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-13 13:27:57 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.chloe]' package. Please check your configuration.
+2020-05-13 13:27:57 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f146f80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-13 13:27:58 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-05-13 13:27:58 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 1509 ms
+2020-05-13 13:27:59 INFO  PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-05-13 13:27:59 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-13 13:27:59 INFO  OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-05-13 13:27:59 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-05-13 13:27:59 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-05-13 13:27:59 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-05-13 13:27:59 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-05-13 13:27:59 INFO  DocumentationPluginsBootstrapper:160 - Context refreshed
+2020-05-13 13:27:59 INFO  DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2020-05-13 13:27:59 INFO  ApiListingReferenceScanner:41 - Scanning for api listing references

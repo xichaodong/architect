@@ -3,15 +3,17 @@ package com.chloe.service.impl;
 import com.chloe.common.enums.BooleanEnum;
 import com.chloe.common.enums.OrderStatusEnum;
 import com.chloe.common.org.n3r.idworker.Sid;
+import com.chloe.common.utils.DateUtil;
 import com.chloe.mapper.OrderItemsMapper;
 import com.chloe.mapper.OrderStatusMapper;
 import com.chloe.mapper.OrdersMapper;
 import com.chloe.model.bo.SubmitOrderBO;
 import com.chloe.model.pojo.*;
+import com.chloe.model.vo.CreateOrderVO;
+import com.chloe.model.vo.MerchantOrdersVO;
 import com.chloe.service.AddressService;
 import com.chloe.service.ItemService;
 import com.chloe.service.OrderService;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +28,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class OrderServiceImpl implements OrderService {
     private static final Integer DEFAULT_POST_AMOUNT = 0;
     private static final Integer DEFAULT_BUY_COUNT = 1;
+    private static final String CALLBACK_URL = "http://5ysckk.natappfree.cc/orders/notifyMerchantOrderPaid";
+    private static final Integer TEST_AMOUNT = 1;
+
     @Resource
     private OrdersMapper ordersMapper;
     @Resource
@@ -41,7 +46,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public String createOrder(SubmitOrderBO submitOrderBO) {
+    public CreateOrderVO createOrder(SubmitOrderBO submitOrderBO) {
         Orders newOrder = buildNewOrder(submitOrderBO);
 
         List<String> specIds = Arrays.asList(submitOrderBO.getItemSpecIds().split(","));
@@ -69,7 +74,7 @@ public class OrderServiceImpl implements OrderService {
         OrderStatus waitPayOrderStatus = buildOrderStatus(newOrder.getId());
         orderStatusMapper.insert(waitPayOrderStatus);
 
-        return newOrder.getId();
+        return buildCreateOrderVO(newOrder);
     }
 
     @Override
@@ -83,6 +88,62 @@ public class OrderServiceImpl implements OrderService {
         orderStatusMapper.updateByPrimaryKeySelective(newStatus);
     }
 
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public OrderStatus queryOrderStatus(String orderId) {
+        return orderStatusMapper.selectByPrimaryKey(orderId);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void closeTimeoutOrder() {
+        OrderStatus orderStatus = new OrderStatus();
+        orderStatus.setOrderStatus(OrderStatusEnum.WAIT_PAY.type);
+
+        List<OrderStatus> orderStatuses = orderStatusMapper.select(orderStatus);
+
+        Date now = new Date();
+
+        orderStatuses.forEach(status -> {
+            int diff = DateUtil.daysBetween(status.getCreatedTime(), now);
+
+            if (diff >= 1) {
+                doClose(status.getOrderId());
+            }
+        });
+    }
+
+    private void doClose(String orderId) {
+        OrderStatus orderStatus = new OrderStatus();
+        orderStatus.setOrderStatus(OrderStatusEnum.CLOSE.type);
+        orderStatus.setCloseTime(new Date());
+        orderStatus.setOrderId(orderId);
+
+        orderStatusMapper.updateByPrimaryKeySelective(orderStatus);
+    }
+
+    private CreateOrderVO buildCreateOrderVO(Orders newOrder) {
+        MerchantOrdersVO merchantOrdersVO = buildMerchantOrdersVO(newOrder);
+
+        CreateOrderVO createOrderVO = new CreateOrderVO();
+        createOrderVO.setOrderId(newOrder.getId());
+        createOrderVO.setMerchantOrdersVO(merchantOrdersVO);
+
+        return createOrderVO;
+    }
+
+    private MerchantOrdersVO buildMerchantOrdersVO(Orders newOrder) {
+        MerchantOrdersVO merchantOrdersVO = new MerchantOrdersVO();
+
+        merchantOrdersVO.setMerchantOrderId(newOrder.getId());
+//        merchantOrdersVO.setAmount(newOrder.getPostAmount() + newOrder.getRealPayAmount());
+        merchantOrdersVO.setAmount(TEST_AMOUNT);
+        merchantOrdersVO.setPayMethod(newOrder.getPayMethod());
+        merchantOrdersVO.setMerchantUserId(newOrder.getUserId());
+        merchantOrdersVO.setReturnUrl(CALLBACK_URL);
+
+        return merchantOrdersVO;
+    }
 
     private OrderStatus buildOrderStatus(String orderId) {
         OrderStatus orderStatus = new OrderStatus();

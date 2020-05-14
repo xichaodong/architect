@@ -1,0 +1,44 @@
+2020-05-13 14:46:20 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-05-13 14:46:20 INFO  Application:50 - Starting Application on bogon with PID 77626 (/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes started by tristeza in /Users/tristeza/BE/architect/BE)
+2020-05-13 14:46:20 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-05-13 14:46:20 INFO  DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-13 14:46:20 INFO  DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-13 14:46:21 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.chloe]' package. Please check your configuration.
+2020-05-13 14:46:21 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$827f742a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-13 14:46:21 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-05-13 14:46:21 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 1275 ms
+2020-05-13 14:46:22 WARN  AnnotationConfigServletWebServerApplicationContext:557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderTimeoutTask' defined in file [/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes/com/chloe/task/OrderTimeoutTask.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'autoCloseOrder': Cron expression must consist of 6 fields (found 7 in "0/3 * * * * ? *")
+2020-05-13 14:46:22 ERROR SpringApplication:858 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderTimeoutTask' defined in file [/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes/com/chloe/task/OrderTimeoutTask.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Encountered invalid @Scheduled method 'autoCloseOrder': Cron expression must consist of 6 fields (found 7 in "0/3 * * * * ? *")
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.chloe.Application.main(Application.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Encountered invalid @Scheduled method 'autoCloseOrder': Cron expression must consist of 6 fields (found 7 in "0/3 * * * * ? *")
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.processScheduled(ScheduledAnnotationBeanPostProcessor.java:496)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$null$1(ScheduledAnnotationBeanPostProcessor.java:359)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.lambda$postProcessAfterInitialization$2(ScheduledAnnotationBeanPostProcessor.java:359)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor.postProcessAfterInitialization(ScheduledAnnotationBeanPostProcessor.java:358)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	... 20 more

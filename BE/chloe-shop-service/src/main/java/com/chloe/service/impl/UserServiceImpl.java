@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         criteria.andEqualTo("username", username);
         Users users = usersMapper.selectOneByExample(userExample);
 
-        return !Objects.isNull(users);
+        return Objects.nonNull(users);
     }
 
     @Override

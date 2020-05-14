@@ -1,0 +1,54 @@
+2020-05-13 13:36:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl createOrder =====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.AddressServiceImpl queryAddressById =====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemSpecBySpecId =====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemById =====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl queryItemMainImgByItemId =====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.ItemServiceImpl decreaseItemSpecStock =====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:1 毫秒=====
+2020-05-13 13:36:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:29 毫秒=====
+2020-05-13 13:36:02 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-05-13 13:36:05 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:06 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 13:36:08 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:08 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 13:36:11 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:12 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:36:29 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl updateOrderStatus =====
+2020-05-13 13:36:29 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl updateOrderStatus =====
+2020-05-13 13:36:47 ERROR ServiceLogAspect:29 - ===== 执行结束 耗时:18551 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 ERROR ServiceLogAspect:29 - ===== 执行结束 耗时:14415 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:5 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl updateOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:8 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl updateOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:13 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:10 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl updateOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:10 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:9 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:6 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:3 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl queryOrderStatus =====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-13 13:36:47 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:4 毫秒=====
+2020-05-13 13:36:47 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-13 13:36:47 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
+2020-05-13 13:36:47 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
