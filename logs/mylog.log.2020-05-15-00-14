@@ -1,4 +1,0 @@
-2020-05-15 00:14:45 INFO  HikariDataSource:110 - DateSourceHikariCP - Starting...
-2020-05-15 00:14:46 INFO  HikariDataSource:123 - DateSourceHikariCP - Start completed.
-2020-05-15 00:14:46 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.OrderServiceImpl closeTimeoutOrder =====
-2020-05-15 00:14:46 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:124 毫秒=====

@@ -1,5 +1,0 @@
-2020-05-15 00:48:04 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
-2020-05-15 00:48:04 INFO  DispatcherServlet:546 - Completed initialization in 8 ms
-2020-05-15 00:48:04 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
-2020-05-15 00:48:04 INFO  HikariDataSource:110 - DateSourceHikariCP - Starting...
-2020-05-15 00:48:05 INFO  HikariDataSource:123 - DateSourceHikariCP - Start completed.

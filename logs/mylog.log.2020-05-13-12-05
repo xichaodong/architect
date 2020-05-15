@@ -1,8 +1,0 @@
-2020-05-13 12:05:54 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-13 12:05:54 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
-2020-05-13 12:05:54 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
-2020-05-13 12:05:59 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
-2020-05-13 12:05:59 INFO  Application:50 - Starting Application on bogon with PID 22094 (/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes started by tristeza in /Users/tristeza/BE/architect/BE)
-2020-05-13 12:05:59 INFO  Application:675 - No active profile set, falling back to default profiles: default
-2020-05-13 12:05:59 INFO  DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-05-13 12:05:59 INFO  DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'

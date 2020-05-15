@@ -1,6 +1,0 @@
-2020-05-15 11:15:02 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
-2020-05-15 11:15:02 INFO  DispatcherServlet:546 - Completed initialization in 7 ms
-2020-05-15 11:15:02 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl updateDeliverOrderStatus =====
-2020-05-15 11:15:02 INFO  HikariDataSource:110 - DateSourceHikariCP - Starting...
-2020-05-15 11:15:02 INFO  HikariDataSource:123 - DateSourceHikariCP - Start completed.
-2020-05-15 11:15:02 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:271 毫秒=====

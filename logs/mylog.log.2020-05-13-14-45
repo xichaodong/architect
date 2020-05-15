@@ -1,3 +1,0 @@
-2020-05-13 14:45:55 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-13 14:45:55 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
-2020-05-13 14:45:55 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
