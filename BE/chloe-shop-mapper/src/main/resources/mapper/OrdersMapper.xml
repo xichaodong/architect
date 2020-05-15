@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.chloe.mapper.OrdersMapper" >
-  <resultMap id="BaseResultMap" type="com.chloe.model.pojo.Orders" >
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" property="id" jdbcType="VARCHAR" />
-    <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="receiver_name" property="receiverName" jdbcType="VARCHAR" />
-    <result column="receiver_mobile" property="receiverMobile" jdbcType="VARCHAR" />
-    <result column="receiver_address" property="receiverAddress" jdbcType="VARCHAR" />
-    <result column="total_amount" property="totalAmount" jdbcType="INTEGER" />
-    <result column="real_pay_amount" property="realPayAmount" jdbcType="INTEGER" />
-    <result column="post_amount" property="postAmount" jdbcType="INTEGER" />
-    <result column="pay_method" property="payMethod" jdbcType="INTEGER" />
-    <result column="left_msg" property="leftMsg" jdbcType="VARCHAR" />
-    <result column="extand" property="extand" jdbcType="VARCHAR" />
-    <result column="is_comment" property="isComment" jdbcType="INTEGER" />
-    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
-    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
-    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
-  </resultMap>
+<mapper namespace="com.chloe.mapper.OrdersMapper">
+    <resultMap id="BaseResultMap" type="com.chloe.model.pojo.Orders">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="receiver_name" property="receiverName" jdbcType="VARCHAR"/>
+        <result column="receiver_mobile" property="receiverMobile" jdbcType="VARCHAR"/>
+        <result column="receiver_address" property="receiverAddress" jdbcType="VARCHAR"/>
+        <result column="total_amount" property="totalAmount" jdbcType="INTEGER"/>
+        <result column="real_pay_amount" property="realPayAmount" jdbcType="INTEGER"/>
+        <result column="post_amount" property="postAmount" jdbcType="INTEGER"/>
+        <result column="pay_method" property="payMethod" jdbcType="INTEGER"/>
+        <result column="left_msg" property="leftMsg" jdbcType="VARCHAR"/>
+        <result column="extand" property="extand" jdbcType="VARCHAR"/>
+        <result column="is_comment" property="isComment" jdbcType="INTEGER"/>
+        <result column="is_delete" property="isDelete" jdbcType="INTEGER"/>
+        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="UserOrderResultMap" type="com.chloe.model.vo.center.CenterOrderVO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="orderId" property="orderId" jdbcType="VARCHAR"/>
+        <result column="orderStatus" property="orderStatus" jdbcType="INTEGER"/>
+        <result column="payMethod" property="payMethod" jdbcType="INTEGER"/>
+        <result column="realPayAmount" property="realPayAmount" jdbcType="INTEGER"/>
+        <result column="postAmount" property="postAmount" jdbcType="INTEGER"/>
+        <result column="createdTime" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="isComment" property="isComment" jdbcType="VARCHAR"/>
+        <collection property="subOrderItemList" select="loadOrderItems" column="orderId"
+                    ofType="com.chloe.model.vo.center.CenterOrderItemVO">
+            <id column="itemId" property="itemId" jdbcType="VARCHAR"/>
+            <result column="itemName" property="itemName" jdbcType="VARCHAR"/>
+            <result column="itemImg" property="itemImg" jdbcType="VARCHAR"/>
+            <result column="itemSpecId" property="itemSpecId" jdbcType="VARCHAR"/>
+            <result column="itemSpecName" property="itemSpecName" jdbcType="VARCHAR"/>
+            <result column="buyCounts" property="buyCounts" jdbcType="INTEGER"/>
+            <result column="price" property="price" jdbcType="INTEGER"/>
+        </collection>
+    </resultMap>
+
+    <select id="loadOrderItems" parameterType="string" resultType="com.chloe.model.vo.center.CenterOrderItemVO">
+        SELECT oi.item_id        AS itemId,
+               oi.item_name      AS itemName,
+               oi.item_img       AS itemImg,
+               oi.item_spec_id   AS itemSpecId,
+               oi.item_spec_name AS itemSpecName,
+               oi.buy_counts     AS buyCounts,
+               oi.price          AS price
+        FROM order_items oi
+        WHERE oi.order_id = #{orderId}
+    </select>
+
+    <select id="queryUserOrder" resultMap="UserOrderResultMap">
+        SELECT o.id AS orderId,
+        o.created_time AS createdTime,
+        o.pay_method AS payMethod,
+        o.real_pay_amount AS realPayAmount,
+        o.post_amount AS postAmount,
+        o.is_comment AS isComment,
+        os.order_status AS orderStatus
+        FROM orders o
+        LEFT JOIN order_status os ON o.id = os.order_id
+        WHERE o.user_id = #{userId}
+        AND o.is_delete = 0
+        <if test="orderStatus != null">
+            AND os.order_status = #{orderStatus}
+        </if>
+        ORDER BY o.updated_time
+    </select>
 </mapper>

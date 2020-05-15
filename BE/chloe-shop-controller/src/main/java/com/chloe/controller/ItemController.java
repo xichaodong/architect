@@ -16,7 +16,11 @@ import java.util.Objects;
 @Api(value = "商品", tags = {"商品详情的相关接口"})
 @RestController
 @RequestMapping("items")
-public class ItemController extends BaseController {
+public class ItemController {
+    public static final int SEARCH_PAGE_SIZE = 20;
+    public static final int DEFAULT_PAGE_SIZE = 10;
+    public static final int DEFAULT_PAGE = 1;
+
     @Resource
     private ItemService itemService;
 

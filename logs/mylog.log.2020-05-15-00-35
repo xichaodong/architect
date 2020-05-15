@@ -1,0 +1,12 @@
+2020-05-15 00:35:54 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-05-15 00:35:54 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-15 00:35:54 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
+2020-05-15 00:35:54 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
+2020-05-15 00:35:58 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-05-15 00:35:58 INFO  Application:50 - Starting Application on xichaodongdeMacBook-Pro.local with PID 86252 (/Users/tristeza/BE/architect/BE/chloe-shop-controller/target/classes started by tristeza in /Users/tristeza/BE/architect/BE)
+2020-05-15 00:35:58 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-05-15 00:35:58 INFO  DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-15 00:35:58 INFO  DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-15 00:35:59 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.chloe]' package. Please check your configuration.
+2020-05-15 00:35:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fe144fb7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 00:35:59 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)

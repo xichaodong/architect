@@ -1,0 +1,14 @@
+2020-05-15 00:39:00 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:00 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:6 毫秒=====
+2020-05-15 00:39:00 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:00 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:2 毫秒=====
+2020-05-15 00:39:01 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:01 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:10 毫秒=====
+2020-05-15 00:39:04 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:04 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
+2020-05-15 00:39:14 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:14 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
+2020-05-15 00:39:18 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:18 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
+2020-05-15 00:39:59 INFO  ServiceLogAspect:17 - ===== 开始执行 class com.chloe.service.impl.center.CenterOrderServiceImpl queryCenterUserOrder =====
+2020-05-15 00:39:59 INFO  ServiceLogAspect:33 - ===== 执行结束 耗时:7 毫秒=====
