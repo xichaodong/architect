@@ -77,7 +77,6 @@ public class ItemController {
             @RequestParam Integer page,
             @ApiParam(name = "pageSize", value = "每页的数量", required = false, example = "10")
             @RequestParam Integer pageSize) {
-
         if (StringUtils.isBlank(itemId)) {
             return JsonResult.errorMsg("商品id不能为空");
         }
