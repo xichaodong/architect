@@ -7,11 +7,12 @@ import com.chloe.mapper.OrderStatusMapper;
 import com.chloe.mapper.OrdersMapper;
 import com.chloe.model.pojo.OrderStatus;
 import com.chloe.model.pojo.Orders;
+import com.chloe.model.vo.center.CenterOrderStatusCountsVO;
+import com.chloe.model.vo.center.CenterOrderTrendVO;
 import com.chloe.model.vo.center.CenterOrderVO;
 import com.chloe.service.center.CenterOrderService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,13 +38,7 @@ public class CenterOrderServiceImpl implements CenterOrderService {
 
         PageInfo<CenterOrderVO> pageInfo = new PageInfo<>(centerOrderVOS);
 
-        PagedGridResult result = new PagedGridResult();
-        result.setRows(centerOrderVOS);
-        result.setPage(page);
-        result.setRecords(pageInfo.getTotal());
-        result.setTotal(pageInfo.getPages());
-
-        return result;
+        return buildPageResult(pageInfo, page);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
@@ -103,5 +98,40 @@ public class CenterOrderServiceImpl implements CenterOrderService {
         orders.setUserId(userId);
 
         return ordersMapper.selectOne(orders);
+    }
+
+    @Override
+    public CenterOrderStatusCountsVO getOrderStatusCounts(String userId) {
+        CenterOrderStatusCountsVO countsVO = new CenterOrderStatusCountsVO();
+
+        countsVO.setWaitPayCounts(ordersMapper.getOrderStatusCount(OrderStatusEnum.WAIT_PAY.type, userId, null));
+        countsVO.setWaitDeliverCounts(ordersMapper.getOrderStatusCount(OrderStatusEnum.WAIT_DELIVER.type, userId, null));
+        countsVO.setWaitReceiveCounts(ordersMapper.getOrderStatusCount(OrderStatusEnum.WAIT_RECEIVE.type, userId, null));
+        countsVO.setWaitCommentCounts(ordersMapper.getOrderStatusCount(OrderStatusEnum.SUCCESS.type, userId, BooleanEnum.FALSE.type));
+
+        return countsVO;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult getUserOrderTrend(String userId, Integer page, Integer pageSize) {
+        PageHelper.startPage(page, pageSize);
+
+        List<CenterOrderTrendVO> userOrderTrend = ordersMapper.getUserOrderTrend(userId);
+
+        PageInfo<CenterOrderTrendVO> pageInfo = new PageInfo<>(userOrderTrend);
+
+        return buildPageResult(pageInfo, page);
+    }
+
+    private PagedGridResult buildPageResult(PageInfo<?> pageInfo, Integer page) {
+        PagedGridResult result = new PagedGridResult();
+
+        result.setRows(pageInfo.getList());
+        result.setPage(page);
+        result.setRecords(pageInfo.getTotal());
+        result.setTotal(pageInfo.getPages());
+
+        return result;
     }
 }

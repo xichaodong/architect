@@ -56,7 +56,7 @@ public class CenterOrderController {
         return JsonResult.ok();
     }
 
-    @ApiOperation(value = "用户确认收货", notes = "用户确认收货", httpMethod = "GET")
+    @ApiOperation(value = "用户确认收货", notes = "用户确认收货", httpMethod = "POST")
     @PostMapping("confirmReceive")
     public JsonResult confirmReceive(@RequestParam String orderId, @RequestParam String userId) {
         if (Objects.isNull(orderId)) {
@@ -76,7 +76,7 @@ public class CenterOrderController {
         return JsonResult.ok();
     }
 
-    @ApiOperation(value = "用户删除订单", notes = "用户删除订单", httpMethod = "GET")
+    @ApiOperation(value = "用户删除订单", notes = "用户删除订单", httpMethod = "POST")
     @PostMapping("delete")
     public JsonResult delete(@RequestParam String orderId, @RequestParam String userId) {
         if (Objects.isNull(orderId)) {
@@ -91,6 +91,31 @@ public class CenterOrderController {
         }
 
         return JsonResult.ok();
+    }
+
+    @ApiOperation(value = "获取订单状态数概况", notes = "获取订单状态数概况", httpMethod = "GET")
+    @PostMapping("statusCounts")
+    public JsonResult orderStatusCount(@RequestParam String userId) {
+        if (Objects.isNull(userId)) {
+            return JsonResult.errorMsg("用户id不能为空");
+        }
+
+        return JsonResult.ok(centerOrderService.getOrderStatusCounts(userId));
+    }
+
+    @ApiOperation(value = "获取订单轨迹", notes = "获取订单轨迹", httpMethod = "POST")
+    @PostMapping("trend")
+    public JsonResult orderTrend(@ApiParam(name = "userId", value = "用户id", required = true)
+                                 @RequestParam String userId,
+                                 @ApiParam(name = "page", value = "页码", required = false, example = "1")
+                                 @RequestParam Integer page,
+                                 @ApiParam(name = "pageSize", value = "每页的数量", required = false, example = "10")
+                                 @RequestParam Integer pageSize) {
+        if (Objects.isNull(userId)) {
+            return JsonResult.errorMsg("用户id不能为空");
+        }
+
+        return JsonResult.ok(centerOrderService.getUserOrderTrend(userId, page, pageSize));
     }
 
     /**
