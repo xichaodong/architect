@@ -1,0 +1,63 @@
+1.nginx.org下载nginx
+2.下载ftp工具filezlia
+3.centeos安装vsftpd
+（1）yum -y install vsftpd 安装vsftpd
+（2）chkconfig vsftpd on 设置vsftpd开机自启
+（3）注释掉/etc/vsftpd/ftpusers文件中的root，因为这一行禁止root登录
+（4）systemctl start vsftpd
+4.用filezila连接主机，注意要使用主动模式，否则看不到文件夹
+5.将nginx压缩文件上传到centos
+6.开始编译
+1. 安装依赖环境
+(1)安装gcc环境
+  yum install gcc-c++
+(2)安装PCRE库，用于解析正则表达式
+ yum install -y pcre pcre-devel
+(3)zlib压缩和解压缩依赖，
+ yum install -y zlib zlib-devel
+(4)SSL 安全的加密的套接字协议层，用于HTTP安全传输，也就是https
+ yum install -y openssl openssl-devel
+2. 解压，需要注意，解压后得到的是源码，源码需要编译后才能安装
+tar -zxvf nginx-1.16.1.tar.gz
+3. 编译之前，先创建nginx临时目录，如果不创建，在启动nginx的过程中会报错
+mkdir /var/temp/nginx -p
+4. 在nginx目录，输入如下命令进行配置，目的是为了创建makefile文件
+./configure \n    --prefix=/usr/local/nginx \n    --pid-path=/var/run/nginx/nginx.pid \n    --lock-path=/var/lock/nginx.lock \n    --error-log-path=/var/log/nginx/error.log \n    --http-log-path=/var/log/nginx/access.log \n    --with-http_gzip_static_module \n    --http-client-body-temp-path=/var/temp/nginx/client \n    --http-proxy-temp-path=/var/temp/nginx/proxy \n    --http-fastcgi-temp-path=/var/temp/nginx/fastcgi \n    --http-uwsgi-temp-path=/var/temp/nginx/uwsgi \n    --http-scgi-temp-path=/var/temp/nginx/scgi
+    * 注： 代表在命令行中换行，用于提高可读性
+    * 配置命令：
+命令
+解释
+–prefix 
+指定nginx安装目录 
+–pid-path 
+指向nginx的pid 
+–lock-path 
+锁定安装文件，防止被恶意篡改或误操作 
+–error-log 
+错误日志 
+–http-log-path 
+http日志 
+–with-http_gzip_static_module 
+启用gzip模块，在线实时压缩输出数据流 
+–http-client-body-temp-path 
+设定客户端请求的临时目录 
+–http-proxy-temp-path 
+设定http代理临时目录 
+–http-fastcgi-temp-path 
+设定fastcgi临时目录 
+–http-uwsgi-temp-path 
+设定uwsgi临时目录 
+–http-scgi-temp-path 
+设定scgi临时目录 
+5. make编译
+make
+6. 安装
+make install
+7. 进入sbin目录启动nginx
+./nginx
+
+7.centos8之后防火墙和iptables解绑，所以只需要使用防火墙开放80端口就可以
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd —reload
+8.此时访问ip就可以看到nginx欢迎页
+
