@@ -1,0 +1,20 @@
+############################################################
+#
+# web访问端口号  约定：8088
+#
+############################################################
+server:
+  port: 8088
+  tomcat:
+    uri-encoding: UTF-8
+  max-http-header-size: 80KB
+############################################################
+#
+# 配置数据源信息
+#
+############################################################
+spring:
+  datasource:                                           # 数据源的相关配置
+    url: jdbc:mysql://localhost:3306/chloe?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: 123abcABC
