@@ -58,6 +58,6 @@ make install
 
 7.centos8之后防火墙和iptables解绑，所以只需要使用防火墙开放80端口就可以
 firewall-cmd --permanent --add-port=80/tcp
-firewall-cmd —reload
+firewall-cmd --reload
 8.此时访问ip就可以看到nginx欢迎页
 

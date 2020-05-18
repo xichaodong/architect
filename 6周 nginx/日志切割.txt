@@ -1,0 +1,25 @@
+1.创建脚本cut_nginx_log.sh
+#!/bin/bash 
+LOG_PATH="/var/log/nginx/“ 
+RECORD_TIME=$(date -d "yesterday" +%Y-%m-%d+%H:%M) 
+PID=/var/run/nginx/nginx.pid 
+mv ${LOG_PATH}/access.log ${LOG_PATH}/access.${RECORD_TIME}.log 
+mv ${LOG_PATH}/error.log ${LOG_PATH}/error.${RECORD_TIME}.log 
+#向Nginx主进程发送信号，用于重新打开日志文件 
+kill -USR1 `cat $PID`
+2.修改权限
+Chmod +x cut_nginx_log.sh
+3.安装cornhub
+yum install crontabs
+4.corntab -e编辑job
+*/1 * * * * /usr/local/nginx/sbin/cut_nginx_log.sh
+5.service crond restart 重启定时任务
+
+附：corntab常用命令
+1.tail -f /var/log/cron 查看cron
+2.service crond start 启动服务 
+3.service crond stop 关闭服务 
+4.service crond restart 重启服务 
+5.service crond reload 重新载入配置 
+6.crontab -e 编辑任务 
+7.crontab -l 查看任务列表

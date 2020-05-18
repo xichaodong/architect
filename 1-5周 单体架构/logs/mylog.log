@@ -1,4 +1,2 @@
-2020-05-17 20:08:28 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
-2020-05-17 20:08:28 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-17 20:08:28 INFO  HikariDataSource:350 - DateSourceHikariCP - Shutdown initiated...
-2020-05-17 20:08:28 INFO  HikariDataSource:352 - DateSourceHikariCP - Shutdown completed.
+2020-05-18 17:11:38 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-05-18 17:11:38 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
