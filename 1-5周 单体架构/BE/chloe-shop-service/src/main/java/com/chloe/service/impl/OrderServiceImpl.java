@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class OrderServiceImpl implements OrderService {
     private static final Integer DEFAULT_POST_AMOUNT = 0;
     private static final Integer DEFAULT_BUY_COUNT = 1;
-    private static final String CALLBACK_URL = "http://5ysckk.natappfree.cc/orders/notifyMerchantOrderPaid";
+    private static final String CALLBACK_URL = "http://www.chloebang.com/orders/notifyMerchantOrderPaid";
     private static final Integer TEST_AMOUNT = 1;
 
     @Resource

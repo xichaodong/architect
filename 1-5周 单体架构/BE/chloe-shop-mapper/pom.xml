@@ -11,7 +11,7 @@
 
     <artifactId>chloe-shop-mapper</artifactId>
 
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
 
     <dependencies>
         <dependency>

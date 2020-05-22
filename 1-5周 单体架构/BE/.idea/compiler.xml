@@ -6,16 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="chloe-shop-model" />
-        <module name="chloe-shop-service" />
         <module name="chloe-shop-common" />
+        <module name="chloe-shop-model" />
         <module name="chloe-shop-mapper" />
+        <module name="chloe-shop-service" />
         <module name="chloe-shop-controller" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BE" options="-parameters" />
       <module name="chloe-shop-common" options="-parameters" />
       <module name="chloe-shop-controller" options="-parameters" />
       <module name="chloe-shop-mapper" options="-parameters" />

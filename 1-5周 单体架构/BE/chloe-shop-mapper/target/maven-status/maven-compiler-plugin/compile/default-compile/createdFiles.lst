@@ -3,7 +3,7 @@ com/chloe/mapper/ItemsParamMapper.class
 com/chloe/mapper/ItemsMapper.class
 com/chloe/mapper/UserAddressMapper.class
 com/chloe/mapper/ItemsImgMapper.class
-com/chloe/mapper/my/MyMapper.class
+my/mapper/MyMapper.class
 com/chloe/mapper/ItemsSpecMapper.class
 com/chloe/mapper/ItemsCommentsMapper.class
 com/chloe/mapper/CategoryMapper.class

@@ -1,7 +1,5 @@
 package com.chloe.common.utils;
 
-import sun.applet.Main;
-
 /**
  * 通用脱敏工具类
  * 可用于：
@@ -15,17 +13,17 @@ public class DesensitizationUtil {
     private static final int SIZE = 6;
     private static final String SYMBOL = "*";
 
-    public static void main(String[] args) {
-        String name = commonDisplay("慕课网");
-        String mobile = commonDisplay("13900000000");
-        String mail = commonDisplay("admin@imooc.com");
-        String address = commonDisplay("北京大运河东路888号");
-
-        System.out.println(name);
-        System.out.println(mobile);
-        System.out.println(mail);
-        System.out.println(address);
-    }
+//    public static void main(String[] args) {
+//        String name = commonDisplay("慕课网");
+//        String mobile = commonDisplay("13900000000");
+//        String mail = commonDisplay("admin@imooc.com");
+//        String address = commonDisplay("北京大运河东路888号");
+//
+//        System.out.println(name);
+//        System.out.println(mobile);
+//        System.out.println(mail);
+//        System.out.println(address);
+//    }
 
     /**
      * 通用脱敏方法

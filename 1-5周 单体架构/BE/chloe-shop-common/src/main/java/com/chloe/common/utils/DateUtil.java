@@ -643,12 +643,12 @@ public class DateUtil {
 		}
 	}
     
-    public static void main(String[] args)
-	{
-//    	String timeDir=DateUtil.dateToString(new Date(),DateUtil.ISO_EXPANDED_DATE_FORMAT);
-//		System.out.println(timeDir);
-    	boolean flag = DateUtil.isValidDate("1990-10-32", DateUtil.ISO_EXPANDED_DATE_FORMAT);
-    	System.out.println(flag);
-	}
+//    public static void main(String[] args)
+//	{
+////    	String timeDir=DateUtil.dateToString(new Date(),DateUtil.ISO_EXPANDED_DATE_FORMAT);
+////		System.out.println(timeDir);
+//    	boolean flag = DateUtil.isValidDate("1990-10-32", DateUtil.ISO_EXPANDED_DATE_FORMAT);
+//    	System.out.println(flag);
+//	}
     
 }

@@ -58,11 +58,11 @@ public class Utils {
         return date.getTimeInMillis();
     }
 
-    public static void main(String[] args) {
-        // 2013-12-25 00:00:00.000
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Timestamp(midnightMillis())));
-        System.out.println(encode(281474976710655L));
-    }
+//    public static void main(String[] args) {
+//        // 2013-12-25 00:00:00.000
+//        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Timestamp(midnightMillis())));
+//        System.out.println(encode(281474976710655L));
+//    }
 
     public static long decode(String s, String symbols) {
         final int B = symbols.length();

@@ -11,7 +11,7 @@
 
     <artifactId>chloe-shop-common</artifactId>
 
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
 
 
 </project>
