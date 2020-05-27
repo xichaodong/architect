@@ -1,3 +1,3 @@
 1.firewall-cmd --list-all 查看防火墙激活的zone
-2.sudo firewall-cmd --zone=public --add-protocol=vrrp —permanent 增加vrrp协议
+2.sudo firewall-cmd --zone=public --add-protocol=vrrp --permanent 增加vrrp协议
 3.sudo firewall-cmd —reload 刷新防火墙
