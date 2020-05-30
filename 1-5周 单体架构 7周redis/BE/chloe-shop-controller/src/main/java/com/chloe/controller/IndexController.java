@@ -29,6 +29,8 @@ import java.util.Objects;
 @RequestMapping("index")
 public class IndexController {
     private static final String CAROUSEL_CACHE = "CAROUSEL";
+    private static final String SUB_CATEGORY_CACHE_KEY = "SUB_CATEGORY";
+    private static final String TOP_CATEGORY_CACHE_KEY = "TOP_CATEGORY";
 
     @Resource
     private CarouselService carouselService;
@@ -55,8 +57,17 @@ public class IndexController {
     @ApiOperation(value = "获取首页大分类", notes = "获取首页大分类", httpMethod = "GET")
     @GetMapping("cats")
     public JsonResult rootCats() {
-        List<Category> categories = categoryService.queryAllRootCategory();
-        return JsonResult.ok(categories);
+        String topCategoryCache = redisOperator.get(TOP_CATEGORY_CACHE_KEY);
+
+        if (StringUtils.isBlank(topCategoryCache)) {
+            List<Category> categories = categoryService.queryAllRootCategory();
+
+            redisOperator.set(TOP_CATEGORY_CACHE_KEY, JsonUtils.objectToJson(categories));
+
+            return JsonResult.ok(categories);
+        }
+
+        return JsonResult.ok(JsonUtils.jsonToList(topCategoryCache, Category.class));
     }
 
     @ApiOperation(value = "获取大分类的子分类", notes = "获取大分类的子分类", httpMethod = "GET")
@@ -69,9 +80,18 @@ public class IndexController {
             return JsonResult.errorMsg("分类id不能为空");
         }
 
-        List<SubCategoryVO> subCategories = categoryService.querySubCategoryByRootId(rootCatId);
+        String cacheKey = String.format("%s:%d", SUB_CATEGORY_CACHE_KEY, rootCatId);
 
-        return JsonResult.ok(subCategories);
+        String subCategoryCache = redisOperator.get(cacheKey);
+
+        if (StringUtils.isBlank(subCategoryCache)) {
+            List<SubCategoryVO> subCategories = categoryService.querySubCategoryByRootId(rootCatId);
+            redisOperator.set(cacheKey, JsonUtils.objectToJson(subCategories));
+
+            return JsonResult.ok(subCategories);
+        }
+
+        return JsonResult.ok(JsonUtils.jsonToList(subCategoryCache, SubCategoryVO.class));
     }
 
     @ApiOperation(value = "查询每个一级分类下最新的推荐商品", notes = "查询每个一级分类下最新的推荐商品", httpMethod = "GET")
