@@ -7,6 +7,7 @@ import com.chloe.common.utils.DateUtil;
 import com.chloe.mapper.OrderItemsMapper;
 import com.chloe.mapper.OrderStatusMapper;
 import com.chloe.mapper.OrdersMapper;
+import com.chloe.model.bo.CartBO;
 import com.chloe.model.bo.SubmitOrderBO;
 import com.chloe.model.pojo.*;
 import com.chloe.model.vo.CreateOrderVO;
@@ -19,15 +20,12 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class OrderServiceImpl implements OrderService {
     private static final Integer DEFAULT_POST_AMOUNT = 0;
-    private static final Integer DEFAULT_BUY_COUNT = 1;
     private static final String CALLBACK_URL = "http://www.chloebang.com/orders/notifyMerchantOrderPaid";
     private static final Integer TEST_AMOUNT = 1;
 
@@ -46,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public CreateOrderVO createOrder(SubmitOrderBO submitOrderBO) {
+    public CreateOrderVO createOrder(SubmitOrderBO submitOrderBO, List<CartBO> cartBOS) {
         Orders newOrder = buildNewOrder(submitOrderBO);
 
         List<String> specIds = Arrays.asList(submitOrderBO.getItemSpecIds().split(","));
@@ -54,16 +52,25 @@ public class OrderServiceImpl implements OrderService {
         AtomicInteger normalAmount = new AtomicInteger(0);
         AtomicInteger realPayAmount = new AtomicInteger(0);
 
+        List<CartBO> needRemoveBOS = new ArrayList<>();
+
         specIds.forEach(specId -> {
             ItemsSpec itemsSpec = itemService.queryItemSpecBySpecId(specId);
 
-            OrderItems orderItems = buildSubOrder(itemsSpec, newOrder.getId());
-            orderItemsMapper.insert(orderItems);
+            cartBOS.stream().filter(bo -> bo.getSpecId()
+                    .equals(specId))
+                    .findFirst()
+                    .ifPresent(bo -> {
+                        needRemoveBOS.add(bo);
 
-            itemService.decreaseItemSpecStock(specId, DEFAULT_BUY_COUNT);
+                        OrderItems orderItems = buildSubOrder(itemsSpec, newOrder.getId(), bo.getBuyCounts());
+                        orderItemsMapper.insert(orderItems);
 
-            normalAmount.addAndGet(itemsSpec.getPriceNormal() * DEFAULT_BUY_COUNT);
-            realPayAmount.addAndGet(itemsSpec.getPriceDiscount() * DEFAULT_BUY_COUNT);
+                        itemService.decreaseItemSpecStock(specId, bo.getBuyCounts());
+
+                        normalAmount.addAndGet(itemsSpec.getPriceNormal() * bo.getBuyCounts());
+                        realPayAmount.addAndGet(itemsSpec.getPriceDiscount() * bo.getBuyCounts());
+                    });
         });
 
         newOrder.setTotalAmount(normalAmount.get());
@@ -74,7 +81,7 @@ public class OrderServiceImpl implements OrderService {
         OrderStatus waitPayOrderStatus = buildOrderStatus(newOrder.getId());
         orderStatusMapper.insert(waitPayOrderStatus);
 
-        return buildCreateOrderVO(newOrder);
+        return buildCreateOrderVO(newOrder, needRemoveBOS);
     }
 
     @Override
@@ -122,12 +129,13 @@ public class OrderServiceImpl implements OrderService {
         orderStatusMapper.updateByPrimaryKeySelective(orderStatus);
     }
 
-    private CreateOrderVO buildCreateOrderVO(Orders newOrder) {
+    private CreateOrderVO buildCreateOrderVO(Orders newOrder, List<CartBO> cartBOS) {
         MerchantOrdersVO merchantOrdersVO = buildMerchantOrdersVO(newOrder);
 
         CreateOrderVO createOrderVO = new CreateOrderVO();
         createOrderVO.setOrderId(newOrder.getId());
         createOrderVO.setMerchantOrdersVO(merchantOrdersVO);
+        createOrderVO.setNeedRemoveBOS(cartBOS);
 
         return createOrderVO;
     }
@@ -155,7 +163,7 @@ public class OrderServiceImpl implements OrderService {
         return orderStatus;
     }
 
-    private OrderItems buildSubOrder(ItemsSpec itemsSpec, String orderId) {
+    private OrderItems buildSubOrder(ItemsSpec itemsSpec, String orderId, Integer buyCounts) {
         Items item = itemService.queryItemById(itemsSpec.getItemId());
 
         OrderItems orderItems = new OrderItems();
@@ -165,7 +173,7 @@ public class OrderServiceImpl implements OrderService {
         orderItems.setItemImg(itemService.queryItemMainImgByItemId(itemsSpec.getItemId()));
         orderItems.setItemName(item.getItemName());
         orderItems.setItemSpecName(itemsSpec.getName());
-        orderItems.setBuyCounts(DEFAULT_BUY_COUNT);
+        orderItems.setBuyCounts(buyCounts);
         orderItems.setItemSpecId(itemsSpec.getId());
         orderItems.setOrderId(orderId);
         orderItems.setPrice(itemsSpec.getPriceDiscount());
