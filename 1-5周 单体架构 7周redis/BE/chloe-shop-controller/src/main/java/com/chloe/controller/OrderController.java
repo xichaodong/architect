@@ -68,7 +68,8 @@ public class OrderController {
 
         cartBOS.removeAll(createOrderVO.getNeedRemoveBOS());
 
-        CookieUtils.setCookie(request, response, SHOP_CART_NAME, JsonUtils.objectToJson(createOrderVO));
+        redisOperator.set(shopCacheKey, JsonUtils.objectToJson(cartBOS));
+        CookieUtils.setCookie(request, response, SHOP_CART_NAME, JsonUtils.objectToJson(cartBOS), true);
 
         JsonResult result = sendRequest2PayCenter(createOrderVO.getMerchantOrdersVO());
 

@@ -3,6 +3,7 @@ package com.chloe.controller;
 import com.chloe.common.utils.CookieUtils;
 import com.chloe.common.utils.JsonResult;
 import com.chloe.common.utils.JsonUtils;
+import com.chloe.common.utils.RedisOperator;
 import com.chloe.model.bo.UserBo;
 import com.chloe.model.pojo.Users;
 import com.chloe.service.UserService;
@@ -20,9 +21,13 @@ import java.util.Objects;
 @RestController
 @RequestMapping("passport")
 public class PassportController {
+    private static final String SHOP_CART_CACHE_KEY = "SHOP_CART_CACHE_KEY";
+    private static final String SHOP_CART_NAME = "shopcart";
 
     @Resource
     private UserService userService;
+    @Resource
+    private RedisOperator redisOperator;
 
     @GetMapping("usernameIsExist")
     @ApiOperation(value = "用户名是否存在", notes = "用户名是否存在", httpMethod = "GET")
@@ -104,5 +109,13 @@ public class PassportController {
         origin.setEmail(null);
 
         return origin;
+    }
+
+    private void syncShopCartData(HttpServletRequest request, HttpServletResponse response, String userId) {
+        String shopCacheKey = String.format("%s:%s", SHOP_CART_CACHE_KEY, userId);
+        String shopCartCache = redisOperator.get(shopCacheKey);
+
+        String shopCartCookie = CookieUtils.getCookieValue(request, SHOP_CART_NAME);
+
     }
 }
