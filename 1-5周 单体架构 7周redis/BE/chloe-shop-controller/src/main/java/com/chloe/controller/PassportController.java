@@ -4,6 +4,7 @@ import com.chloe.common.utils.CookieUtils;
 import com.chloe.common.utils.JsonResult;
 import com.chloe.common.utils.JsonUtils;
 import com.chloe.common.utils.RedisOperator;
+import com.chloe.model.bo.CartBO;
 import com.chloe.model.bo.UserBo;
 import com.chloe.model.pojo.Users;
 import com.chloe.service.UserService;
@@ -15,7 +16,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Api(value = "注册登录", tags = {"用于注册登录的接口"})
 @RestController
@@ -90,6 +96,8 @@ public class PassportController {
 
         CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(maskUser), true);
 
+        syncShopCartData(request, response, users.getId());
+
         return JsonResult.ok(doMask(maskUser));
     }
 
@@ -115,7 +123,37 @@ public class PassportController {
         String shopCacheKey = String.format("%s:%s", SHOP_CART_CACHE_KEY, userId);
         String shopCartCache = redisOperator.get(shopCacheKey);
 
-        String shopCartCookie = CookieUtils.getCookieValue(request, SHOP_CART_NAME);
+        String shopCartCookie = CookieUtils.getCookieValue(request, SHOP_CART_NAME, true);
 
+        if (StringUtils.isBlank(shopCartCache)) {
+            if (StringUtils.isNotBlank(shopCartCookie)) {
+                redisOperator.set(shopCacheKey, shopCartCookie);
+            }
+        } else {
+            if (StringUtils.isNotBlank(shopCartCookie)) {
+                List<CartBO> cacheBOS = JsonUtils.jsonToList(shopCartCache, CartBO.class);
+                List<CartBO> cookieBOS = JsonUtils.jsonToList(shopCartCookie, CartBO.class);
+
+                Map<String, CartBO> cookieBuyCountMapping = cookieBOS.stream()
+                        .collect(Collectors.toMap(CartBO::getSpecId, Function.identity()));
+
+
+                List<CartBO> needDeleteBOS = new ArrayList<>();
+
+                cacheBOS.stream().filter(bo -> Objects.nonNull(cookieBuyCountMapping.get(bo.getSpecId())))
+                        .forEach(bo -> {
+                            bo.setBuyCounts(cookieBuyCountMapping.get(bo.getSpecId()).getBuyCounts());
+                            needDeleteBOS.add(cookieBuyCountMapping.get(bo.getSpecId()));
+                        });
+
+                cookieBOS.removeAll(needDeleteBOS);
+                cacheBOS.addAll(cookieBOS);
+
+                CookieUtils.setCookie(request, response, SHOP_CART_NAME, JsonUtils.objectToJson(cookieBOS), true);
+                redisOperator.set(SHOP_CART_CACHE_KEY, JsonUtils.objectToJson(cacheBOS));
+            } else {
+                CookieUtils.setCookie(request, response, SHOP_CART_NAME, shopCartCache, true);
+            }
+        }
     }
 }

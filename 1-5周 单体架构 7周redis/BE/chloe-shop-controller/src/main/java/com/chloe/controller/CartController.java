@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Api(value = "购物车相关操作", tags = {"购物车相关接口"})
@@ -90,7 +89,11 @@ public class CartController {
                         .filter(bo -> bo.getSpecId().equals(itemSpecId))
                         .findFirst().ifPresent(oldCartBOS::remove);
             }
-            redisOperator.set(cacheKey, JsonUtils.objectToJson(oldCartBOS));
+            if (CollectionUtils.isEmpty(oldCartBOS)) {
+                redisOperator.del(cacheKey);
+            } else {
+                redisOperator.set(cacheKey, JsonUtils.objectToJson(oldCartBOS));
+            }
         }
 
         return JsonResult.ok();
