@@ -11,6 +11,7 @@ import com.chloe.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -134,23 +135,25 @@ public class PassportController {
                 List<CartBO> cacheBOS = JsonUtils.jsonToList(shopCartCache, CartBO.class);
                 List<CartBO> cookieBOS = JsonUtils.jsonToList(shopCartCookie, CartBO.class);
 
-                Map<String, CartBO> cookieBuyCountMapping = cookieBOS.stream()
-                        .collect(Collectors.toMap(CartBO::getSpecId, Function.identity()));
+                if (!CollectionUtils.isEmpty(cookieBOS) && !CollectionUtils.isEmpty(cacheBOS)) {
+                    Map<String, CartBO> cookieBuyCountMapping = cookieBOS.stream()
+                            .collect(Collectors.toMap(CartBO::getSpecId, Function.identity()));
 
 
-                List<CartBO> needDeleteBOS = new ArrayList<>();
+                    List<CartBO> needDeleteBOS = new ArrayList<>();
 
-                cacheBOS.stream().filter(bo -> Objects.nonNull(cookieBuyCountMapping.get(bo.getSpecId())))
-                        .forEach(bo -> {
-                            bo.setBuyCounts(cookieBuyCountMapping.get(bo.getSpecId()).getBuyCounts());
-                            needDeleteBOS.add(cookieBuyCountMapping.get(bo.getSpecId()));
-                        });
+                    cacheBOS.stream().filter(bo -> Objects.nonNull(cookieBuyCountMapping.get(bo.getSpecId())))
+                            .forEach(bo -> {
+                                bo.setBuyCounts(cookieBuyCountMapping.get(bo.getSpecId()).getBuyCounts());
+                                needDeleteBOS.add(cookieBuyCountMapping.get(bo.getSpecId()));
+                            });
 
-                cookieBOS.removeAll(needDeleteBOS);
-                cacheBOS.addAll(cookieBOS);
+                    cookieBOS.removeAll(needDeleteBOS);
+                    cacheBOS.addAll(cookieBOS);
 
-                CookieUtils.setCookie(request, response, SHOP_CART_NAME, JsonUtils.objectToJson(cookieBOS), true);
-                redisOperator.set(SHOP_CART_CACHE_KEY, JsonUtils.objectToJson(cacheBOS));
+                    CookieUtils.setCookie(request, response, SHOP_CART_NAME, JsonUtils.objectToJson(cacheBOS), true);
+                    redisOperator.set(shopCacheKey, JsonUtils.objectToJson(cacheBOS));
+                }
             } else {
                 CookieUtils.setCookie(request, response, SHOP_CART_NAME, shopCartCache, true);
             }
