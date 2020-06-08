@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -30,6 +27,7 @@ import java.util.stream.Collectors;
 public class PassportController {
     private static final String SHOP_CART_CACHE_KEY = "SHOP_CART_CACHE_KEY";
     private static final String SHOP_CART_NAME = "shopcart";
+    private static final String REDIS_USER_TOKEN = "REDIS_USER_TOKEN";
 
     @Resource
     private UserService userService;
@@ -73,6 +71,9 @@ public class PassportController {
         Users user = userService.createUser(userBo);
 
         Users maskUser = doMask(user);
+
+        String token = UUID.randomUUID().toString();
+        redisOperator.set(String.format("%s:%s", REDIS_USER_TOKEN, user.getId()), token);
 
         CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(maskUser), true);
 
