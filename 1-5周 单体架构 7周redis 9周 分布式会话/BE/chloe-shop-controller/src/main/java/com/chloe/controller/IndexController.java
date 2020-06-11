@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Objects;
 
@@ -38,6 +40,16 @@ public class IndexController {
     private CategoryService categoryService;
     @Resource
     private RedisOperator redisOperator;
+
+    @GetMapping("session")
+    public String setSession(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.setAttribute("userInfo", "new User");
+        session.setMaxInactiveInterval(3600);
+        session.getAttribute("userInfo");
+
+        return "ok";
+    }
 
     @ApiOperation(value = "获取首页轮播图列表", notes = "获取首页轮播图列表", httpMethod = "GET")
     @GetMapping("carousel")
