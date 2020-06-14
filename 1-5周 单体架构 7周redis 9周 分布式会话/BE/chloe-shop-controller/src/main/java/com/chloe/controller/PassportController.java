@@ -5,13 +5,12 @@ import com.chloe.common.utils.JsonResult;
 import com.chloe.common.utils.JsonUtils;
 import com.chloe.common.utils.RedisOperator;
 import com.chloe.model.bo.CartBO;
-import com.chloe.model.bo.UserBo;
+import com.chloe.model.bo.UserBO;
 import com.chloe.model.pojo.Users;
 import com.chloe.model.vo.UserVO;
 import com.chloe.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.catalina.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
@@ -52,7 +51,7 @@ public class PassportController {
 
     @PostMapping("register")
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")
-    public JsonResult register(@RequestBody UserBo userBo, HttpServletRequest request, HttpServletResponse response) {
+    public JsonResult register(@RequestBody UserBO userBo, HttpServletRequest request, HttpServletResponse response) {
         if (StringUtils.isBlank(userBo.getUsername()) || StringUtils.isBlank(userBo.getPassword())
                 || StringUtils.isBlank(userBo.getConfirmPassword())) {
             return JsonResult.errorMsg("用户名或密码不能为空");
@@ -83,7 +82,7 @@ public class PassportController {
 
     @PostMapping("login")
     @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
-    public JsonResult login(@RequestBody UserBo userBo, HttpServletRequest request,
+    public JsonResult login(@RequestBody UserBO userBo, HttpServletRequest request,
                             HttpServletResponse response) {
         if (StringUtils.isBlank(userBo.getUsername()) || StringUtils.isBlank(userBo.getPassword())) {
             return JsonResult.errorMsg("用户名或密码不能为空");

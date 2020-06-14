@@ -1,6 +1,6 @@
 package com.chloe.service;
 
-import com.chloe.model.bo.UserBo;
+import com.chloe.model.bo.UserBO;
 import com.chloe.model.pojo.Users;
 
 public interface UserService {
@@ -12,16 +12,16 @@ public interface UserService {
     /**
      * 创建用户
      *
-     * @param userBo {@link UserBo}
+     * @param userBo {@link UserBO}
      * @return {@link Users}
      */
-    Users createUser(UserBo userBo);
+    Users createUser(UserBO userBo);
 
     /**
      * 登录
      *
-     * @param userBo {@link UserBo}
+     * @param userBo {@link UserBO}
      * @return {@link Users}
      */
-    Users queryUserForLogin(UserBo userBo);
+    Users queryUserForLogin(UserBO userBo);
 }

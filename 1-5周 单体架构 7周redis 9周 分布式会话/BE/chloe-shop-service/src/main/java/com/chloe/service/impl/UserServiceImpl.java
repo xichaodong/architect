@@ -5,7 +5,7 @@ import com.chloe.common.org.n3r.idworker.Sid;
 import com.chloe.common.utils.DateUtil;
 import com.chloe.common.utils.MD5Utils;
 import com.chloe.mapper.UsersMapper;
-import com.chloe.model.bo.UserBo;
+import com.chloe.model.bo.UserBO;
 import com.chloe.model.pojo.Users;
 import com.chloe.service.UserService;
 import org.slf4j.Logger;
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Users createUser(UserBo userBo) {
+    public Users createUser(UserBO userBo) {
         Users users = new Users();
 
         users.setId(sid.nextShort());
@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public Users queryUserForLogin(UserBo userBo) {
+    public Users queryUserForLogin(UserBO userBo) {
         Example userExample = new Example(Users.class);
         Example.Criteria criteria = userExample.createCriteria();
 

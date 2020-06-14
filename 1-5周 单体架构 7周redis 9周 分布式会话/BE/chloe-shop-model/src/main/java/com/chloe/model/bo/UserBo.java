@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "用户分类BO", description = "从客户端传过来的用户注册信息")
-public class UserBo {
+public class UserBO {
     /**
      * 用户名
      */
