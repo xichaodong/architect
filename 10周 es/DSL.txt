@@ -1,0 +1,354 @@
+#集群健康
+GET     /_cluster/health
+
+#创建索引
+PUT     /index_str
+{
+    "settings": {
+        "index": {
+            "number_of_shards": "2",
+            "number_of_replicas": "0"
+        }
+    }
+}
+
+#查看索引
+GET     _cat/indices?v
+
+#删除索引
+DELETE      /index_test
+
+#创建索引的同时创建mappings
+PUT     /index_test
+{
+    "settings": {
+        "index": {
+            "number_of_shards": "2",
+            "number_of_replicas": "0"
+        }
+    },
+    "mappings": {
+        "properties": {
+            "realname": {
+                "type": "text",
+                "index": true
+            },
+            "username": {
+                "type": "keyword",
+                "index": false
+            }
+        }
+    }
+}
+
+#查看分词效果
+GET         /index_mapping/_analyze
+{
+    "field": "realname",
+    "text": "chloe is good"
+}
+
+#修改索引 （会报错，一旦建立后就无法修改，只能新增）
+POST        /index_str/_mapping
+{
+    "properties": {
+        "name": {
+               "type": "double"
+        }
+    }
+}
+
+# 新增mappings
+POST        /index_str/_mapping
+{
+    "properties": {
+        "id": {
+            "type": "long"
+        },
+        "age": {
+            "type": "integer"
+        },
+        "nickname": {
+            "type": "keyword"
+        },
+        "money1": {
+            "type": "float"
+        },
+        "money2": {
+            "type": "double"
+        },
+        "sex": {
+            "type": "byte"
+        },
+        "score": {
+            "type": "short"
+        },
+        "is_teenager": {
+            "type": "boolean"
+        },
+        "birthday": {
+            "type": "date"
+        },
+        "relationship": {
+            "type": "object"
+        }
+    }
+}
+
+#添加doc
+POST /my_doc/_doc/1
+{
+    "id": 1001,
+    "name": "imooc-1",
+    "desc": "imooc is very good, 慕课网非常牛！",
+    "create_date": "2019-12-24"
+}
+
+#局部更新
+POST /my_doc/_doc/1/_update
+{
+    "doc": {
+        "name": "慕课"
+    }
+}
+
+#全量替换更新
+PUT /my_doc/_doc/1
+{
+     "id": 1001,
+    "name": "imooc-1",
+    "desc": "imooc is very good, 慕课网非常牛！",
+    "create_date": "2019-12-24"
+}
+
+#删除
+DELETE /my_doc/_doc/1
+
+#按id查询
+GET /my_doc/_doc/1
+
+#全量查询
+GET /my_doc/_doc/_search
+
+#乐观锁
+POST    /my_doc/_doc/1/_update?if_seq_no=1&if_primary_term=1
+{
+    "doc": {
+        "name": "慕课2"
+    }
+}
+
+#分词器
+#standard：默认分词，单词会被拆分，大小会转换为小写。
+#simple：按照非字母分词。大写转为小写。
+#whitespace：按照空格分词。忽略大小写。
+#stop：去除无意义单词，比如the/a/an/is…
+#keyword：不做分词。把整个文本作为一个单独的关键词。
+POST /_analyze
+{
+    "analyzer": "standard",
+    "text": "text文本"
+}
+
+#IK分词器 ik_max_word细粒度分词 ik_smart粗粒度分词
+POST /_analyze
+{
+    "analyzer": "ik_max_word",
+    "text": "上下班车流量很大"
+}
+
+#使用QueryString查询
+GET     /shop/_doc/_search?q=nickname:慕&q=age:25
+
+#match查询
+GET     /shop/_doc/_search
+{
+    "query": {
+        "match": {
+            "desc": "慕课网"
+        }
+    }
+}
+
+#判断某个字段是否存在
+GET     /shop/_doc/_search
+{
+    "query": {
+        "exists": {
+            "field": "desc"
+        }
+    }
+}
+
+#查询所有文档
+GET     /shop/_doc/_search
+{
+    "query": {
+        "match_all": {}
+    },
+    "_source": ["id", "nickname", "age"]
+}
+
+GET     /shop/_doc/_search
+
+#分页查询
+GET     /shop/_doc/_search
+{
+    "query": {
+        "match_all": {}
+    },
+    "from": 0,
+    "size": 2
+}
+
+#term精确搜索
+GET     /shop/_doc/_search
+{
+    "query": {
+        "term": {
+            "desc": "慕课网"
+        }
+    }
+}
+
+#多词语精确搜索
+GET     /shop/_doc/_search
+{
+    "query": {
+        "terms": {
+            "desc": ["慕课网", "学习", "骚年"]
+        }
+    }
+}
+
+#多词语精确搜索，允许中间有间隔词
+GET     /shop/_doc/_search
+{
+    "query": {
+        "match_phrase": {
+            "desc": {
+                "query": "大学 毕业 研究生",
+                "slop": 2
+            }
+        }
+    }
+}
+
+#或操作查询
+GET     /shop/_doc/_search
+{
+    "query": {
+        "match": {
+            "desc": {
+                "query": "xbox游戏机",
+                "operator": "or"
+            }
+        }
+    }
+}
+
+#与操作查询
+GET     /shop/_doc/_search
+{
+    "query": {
+        "match": {
+            "desc": {
+                "query": "xbox游戏机",
+                "operator": "and"
+            }
+        }
+    }
+}
+
+# 匹配度查询
+GET /shop/_doc/_search
+{
+    "query": {
+        "match": {
+            "desc": {
+                "query": "女友生日送我好玩的xbox游戏机",
+                "minimum_should_match": "60%"
+            }
+        }
+    }
+}
+
+#根据id查询
+GET /shop/_doc/_search
+{
+    "query": {
+        "ids": {
+            "type": "_doc",
+            "values": ["1001", "1010", "1008"]
+        }
+    }
+}
+
+#布尔查询
+GET /shop/_doc/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "multi_match": {"query":"慕课网","fields":["desc","nickname"]}
+        }
+      ],
+      "must": [
+        {
+           "term":{"birthday": "1996-01-14"}
+        }
+      ],
+      "must_not":[
+        {
+           "term":{"sex":0}
+        }
+      ]
+    }
+  }
+}
+
+#过滤
+GET /shop/_doc/_search
+{
+  "query":{
+    "match":{"desc":"慕课网游戏"}
+  },
+  "post_filter":{
+    "range":{
+      "money":{
+        "gte":66.8,
+        "lte":66.8
+      }
+    }
+  }
+}
+
+#排序
+GET /shop/_doc/_search
+{
+  "query":{
+    "match":{"desc":"慕课网游戏"}
+  },
+  "sort":[{"age":"asc"},{"money":"asc"}]
+}
+
+#高亮
+GET /shop/_doc/_search
+{
+  "query":{
+    "match":{
+      "desc":"慕课网游戏"
+    }
+  },
+  "highlight":{
+    "pre_tags":["<span>"],
+    "post_tags":["</span>"],
+    "fields":{"desc":{}}
+  }
+}
+
+
+
+
+
