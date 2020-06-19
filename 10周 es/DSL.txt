@@ -30,12 +30,12 @@ PUT     /index_test
     "mappings": {
         "properties": {
             "realname": {
-                "type": "text",
-                "index": true
+            	"type": "text",
+            	"index": true
             },
             "username": {
-                "type": "keyword",
-                "index": false
+            	"type": "keyword",
+            	"index": false
             }
         }
     }
@@ -44,8 +44,8 @@ PUT     /index_test
 #查看分词效果
 GET         /index_mapping/_analyze
 {
-    "field": "realname",
-    "text": "chloe is good"
+	"field": "realname",
+	"text": "chloe is good"
 }
 
 #修改索引 （会报错，一旦建立后就无法修改，只能新增）
@@ -53,7 +53,7 @@ POST        /index_str/_mapping
 {
     "properties": {
         "name": {
-               "type": "double"
+        	   "type": "double"
         }
     }
 }
@@ -63,10 +63,10 @@ POST        /index_str/_mapping
 {
     "properties": {
         "id": {
-            "type": "long"
+        	"type": "long"
         },
         "age": {
-            "type": "integer"
+        	"type": "integer"
         },
         "nickname": {
             "type": "keyword"
@@ -175,8 +175,8 @@ GET     /shop/_doc/_search
 {
     "query": {
         "exists": {
-            "field": "desc"
-        }
+	        "field": "desc"
+	    }
     }
 }
 
@@ -197,7 +197,7 @@ GET     /shop/_doc/_search
     "query": {
         "match_all": {}
     },
-    "from": 0,
+    "from": 10000,
     "size": 2
 }
 
@@ -227,8 +227,8 @@ GET     /shop/_doc/_search
     "query": {
         "match_phrase": {
             "desc": {
-                "query": "大学 毕业 研究生",
-                "slop": 2
+            	"query": "大学 毕业 研究生",
+            	"slop": 2
             }
         }
     }
@@ -347,6 +347,85 @@ GET /shop/_doc/_search
     "fields":{"desc":{}}
   }
 }
+
+#前缀搜索
+GET /shop/_doc/_search
+{
+    "query": {
+        "prefix": {
+            "desc": "imo"
+        }
+    }
+}
+
+#模糊搜索
+GET /shop/_doc/_search
+{
+  "query":{
+    "fuzzy":{
+      "desc":"imoov.coom"
+    }
+  }
+}
+
+#占位符搜索
+GET   /shop/_doc/_search
+{
+  "query": {
+    "wildcard": {
+      "desc": "*ooc"
+    }
+  }
+}
+
+#修改索引配置
+PUT     /shop/_settings
+{ 
+    "index.max_result_window": "20000"
+}
+
+#滚动查询
+GET /shop/_doc/_search?scroll=1m
+{
+  "query":{
+    "match_all":{}
+  },
+  "sort":["_doc"],
+  "size":5
+}
+
+GET /_search/scroll
+{
+  "scroll":"1m",
+  "scroll_id":"FGluY2x1ZGVfY29udGV4dF91dWlkDnF1ZXJ5VGhlbkZldGNoAxR4N25teFhJQm5nc1NUekRlUWEtMgAAAAAAACwuFlhpVHQtd2lmU2F1VEdjVzFYSVZ6c1EUeWJubXhYSUJuZ3NTVHpEZVFhLTIAAAAAAAAsMBZYaVR0LXdpZlNhdVRHY1cxWElWenNRFHlMbm14WElCbmdzU1R6RGVRYS0yAAAAAAAALC8WWGlUdC13aWZTYXVUR2NXMVhJVnpzUQ=="
+}
+
+#批量查询
+GET /shop/_doc/_mget
+{
+  "ids":[1003,1004,1005]
+}
+
+#批量操作（create：只能新增，index：新增或修改）
+PUT /shop/_doc/_bulk
+{"index":{"_index":"shop","_id":2001}}
+{"id":"2001","nickname":"chloe"}
+{"index":{"_index":"shop","_id":2002}}
+{"id":"2002","nickname":"chloe"}
+
+#批量更新
+PUT /shop/_doc/_bulk
+{"update":{"_index":"shop","_id":2001}}
+{"doc":{"id":"2041"}}
+{"update":{"_index":"shop","_id":2002}}
+{"doc":{"id":"2041","nickname":"chloe"}}
+
+#批量删除
+PUT /shop/_doc/_bulk
+{"delete":{"_id":"2002"}}
+{"delete":{"_id":"2001"}}
+
+
 
 
 
