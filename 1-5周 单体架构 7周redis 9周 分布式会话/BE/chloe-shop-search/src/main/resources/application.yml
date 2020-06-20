@@ -1,0 +1,8 @@
+spring:
+  datasource:                                           # 数据源的相关配置
+    url: jdbc:mysql://localhost:3306/chloe?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: 123abcABC
+  elasticsearch:
+    rest:
+      uris: 172.16.16.31:9200,172.16.16.32:9200,172.16.16.33:9200
