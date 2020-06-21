@@ -16,6 +16,27 @@ public class Student {
     @Field(type = FieldType.Integer)
     private Integer age;
 
+    @Field(type = FieldType.Keyword)
+    private String desc;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     public Long getId() {
         return id;
     }
