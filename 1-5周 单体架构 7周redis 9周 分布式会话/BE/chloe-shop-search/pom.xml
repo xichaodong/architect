@@ -21,6 +21,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <artifactId>chloe-shop-common</artifactId>
+            <groupId>org.tristeza</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 

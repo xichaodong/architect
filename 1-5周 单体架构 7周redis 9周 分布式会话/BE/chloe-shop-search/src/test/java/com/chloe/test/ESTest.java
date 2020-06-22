@@ -2,15 +2,8 @@ package com.chloe.test;
 
 import com.chloe.Application;
 import com.chloe.test.model.Student;
-import org.elasticsearch.action.update.UpdateAction;
-import org.elasticsearch.action.update.UpdateRequestBuilder;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.reindex.UpdateByQueryRequest;
-import org.elasticsearch.index.reindex.UpdateByQueryRequestBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
-import org.elasticsearch.search.sort.SortBuilder;
-import org.elasticsearch.search.sort.SortBuilders;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,17 +12,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.data.elasticsearch.core.document.Document;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.*;
-import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringRunner.class)
@@ -47,7 +37,7 @@ public class ESTest {
         template.putMapping(Student.class);
     }
 
-    @Test
+//    @Test
     public void deleteStuIndex() {
         template.deleteIndex(Student.class);
     }
@@ -62,7 +52,7 @@ public class ESTest {
         template.save(student);
     }
 
-    @Test
+//    @Test
     public void update() {
         Map<String, Object> params = new HashMap<>();
         params.put("age", 23);
@@ -70,13 +60,13 @@ public class ESTest {
         template.update(UpdateQuery.builder("1002").withDocument(Document.from(params)).build(), IndexCoordinates.of("index_stu"));
     }
 
-    @Test
+//    @Test
     public void get() {
         Student student = template.get("1003", Student.class);
         System.out.println(student.toString());
     }
 
-    @Test
+//    @Test
     public void search() {
         Criteria criteria = new Criteria();
         PageRequest pageRequest = PageRequest.of(0, 1, Sort.by("id"));
@@ -106,7 +96,7 @@ public class ESTest {
 
     }
 
-    @Test
+//    @Test
     public void delete() {
         template.delete("1002", IndexCoordinates.of("index_stu"));
     }
