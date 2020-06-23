@@ -26,14 +26,21 @@ public class ItemEsSearchServiceImpl implements ItemEsSearchService {
 
     @Override
     public PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
-        String preTag = "<font color='red'>";
-        String postTag = "</font>";
+        Sort pageSort;
 
-        Pageable pageRequest = PageRequest.of(page, pageSize, Sort.by("id").ascending());
+        if (sort.equals("c")) {
+            pageSort = Sort.by("sellCounts").descending();
+        } else if (sort.equals("p")) {
+            pageSort = Sort.by("price").ascending();
+        } else {
+            pageSort = Sort.by("itemName.keyword").ascending();
+        }
+
+        Pageable pageRequest = PageRequest.of(page, pageSize, pageSort);
 
         NativeSearchQuery nativeSearchQuery = new NativeSearchQueryBuilder()
                 .withQuery(QueryBuilders.matchQuery("itemName", keywords))
-                .withHighlightFields(new HighlightBuilder.Field("itemName").preTags(preTag).postTags(postTag))
+                .withHighlightFields(new HighlightBuilder.Field("itemName"))
                 .withPageable(pageRequest).build();
 
         SearchHits<Items> search = template.search(nativeSearchQuery, Items.class, IndexCoordinates.of("chloe"));
@@ -50,7 +57,8 @@ public class ItemEsSearchServiceImpl implements ItemEsSearchService {
         result.setRows(items);
         result.setRecords(search.getTotalHits());
         result.setPage(page + 1);
+        result.setTotal(search.getTotalHits() % pageSize == 0 ? (int) (search.getTotalHits() / pageSize) : (int) (search.getTotalHits() / pageSize + 1));
 
-        return null;
+        return result;
     }
 }

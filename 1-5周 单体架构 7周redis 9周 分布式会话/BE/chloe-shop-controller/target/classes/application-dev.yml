@@ -22,5 +22,5 @@ spring:
     password: 123456
     cluster:
       nodes: 172.16.16.14:6379,172.16.16.15:6379,172.16.16.16:6379,172.16.16.17:6379,172.16.16.18:6379,172.16.16.19:6379
-  session:
-    store-type: redis
+#  session:
+#    store-type: redis
