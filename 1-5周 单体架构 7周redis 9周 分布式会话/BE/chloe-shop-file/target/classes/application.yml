@@ -1,0 +1,12 @@
+spring:
+  datasource:  # 数据源的相关配置
+    url: jdbc:mysql://localhost:3306/chloe?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: 123abcABC
+server:
+  port: 8066
+
+fdfs:
+  connect-timeout: 30
+  so-timeout: 30
+  tracker-list: 172.16.16.36:22122
