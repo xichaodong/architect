@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/chloe-shop-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chloe-shop-controller/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chloe-shop-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chloe-shop-mapper/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chloe-shop-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chloe-shop-search/src/main/java" charset="UTF-8" />
