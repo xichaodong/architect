@@ -58,7 +58,7 @@ public class FileController {
                     CookieUtils.setCookie(request, response, USER_COOKIE_NAME, JsonUtils.objectToJson(userVO), true);
                 } catch (Exception e) {
                     LOGGER.error("文件上传失败", e);
-                    return JsonResult.errorMsg("文件上传失败");
+                    return JsonResult.errorMsg("文件上传失败，请刷新或重新上传");
                 }
             }
         } else {
