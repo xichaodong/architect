@@ -50,7 +50,7 @@ public class FileController {
                 String suffix = nameArrays[nameArrays.length - 1];
 
                 if (!ADMIT_IMAGE_SUFFIX.contains(suffix)) {
-                    return JsonResult.errorMsg("图片格式不正确");
+                    return JsonResult.errorMsg("图片格式不正确，请重新上传");
                 }
 
                 try {
