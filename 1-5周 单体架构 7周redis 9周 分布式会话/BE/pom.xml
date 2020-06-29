@@ -23,6 +23,7 @@
         <module>chloe-shop-sso</module>
         <module>chloe-shop-search</module>
         <module>chloe-shop-file</module>
+        <module>chloe-shop-mq</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -1,0 +1,7 @@
+spring:
+  datasource:  # 数据源的相关配置
+    url: jdbc:mysql://localhost:3306/chloe?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: 123abcABC
+server:
+  port: 8099

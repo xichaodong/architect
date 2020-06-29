@@ -13,6 +13,7 @@
         <module name="chloe-shop-search" />
         <module name="chloe-shop-file" />
         <module name="chloe-shop-service" />
+        <module name="chloe-shop-mq" />
         <module name="chloe-shop-controller" />
         <module name="chloe-shop-model" />
       </profile>
@@ -29,6 +30,7 @@
       <module name="chloe-shop-file" options="-parameters" />
       <module name="chloe-shop-mapper" options="-parameters" />
       <module name="chloe-shop-model" options="-parameters" />
+      <module name="chloe-shop-mq" options="-parameters" />
       <module name="chloe-shop-search" options="-parameters" />
       <module name="chloe-shop-service" options="-parameters" />
       <module name="chloe-shop-sso" options="-parameters" />
