@@ -1,9 +1,6 @@
 package com.chloe.mq;
 
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.*;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -11,17 +8,17 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.IntStream;
 
-public class Sender {
+public class Receiver {
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("172.16.16.40");
         factory.setPort(5672);
         factory.setVirtualHost("/");
+        factory.setAutomaticRecoveryEnabled(true);
+        factory.setNetworkRecoveryInterval(3000);
 
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
-
-        channel.queueDeclare("test-1", false, false, false, null);
 
         Map<String, Object> header = new HashMap<>();
         AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
@@ -30,12 +27,14 @@ public class Sender {
                 .headers(header)
                 .build();
 
-        IntStream.range(0, 10).forEach(i -> {
-            try {
-                channel.basicPublish("", "test-1", properties, String.format("Hello Rabbit MQ %d", i).getBytes());
-            } catch (IOException e) {
-                e.printStackTrace();
+
+        Consumer consumer = new DefaultConsumer(channel) {
+            @Override
+            public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+                System.out.println("接收消息 :   " + new String(body));
             }
-        });
+        };
+
+        channel.basicConsume("test-1", true, consumer);
     }
 }
