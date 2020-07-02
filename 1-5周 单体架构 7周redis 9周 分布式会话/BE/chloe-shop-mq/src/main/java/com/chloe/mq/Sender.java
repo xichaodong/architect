@@ -1,41 +1,43 @@
 package com.chloe.mq;
 
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessagePostProcessor;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate.*;
+import org.springframework.messaging.MessageHeaders;
+import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.util.HashMap;
+import javax.annotation.Resource;
 import java.util.Map;
-import java.util.concurrent.TimeoutException;
-import java.util.stream.IntStream;
+import java.util.UUID;
 
+@Component
 public class Sender {
-    public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("172.16.16.40");
-        factory.setPort(5672);
-        factory.setVirtualHost("/");
+    @Resource
+    private RabbitTemplate rabbitTemplate;
 
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+    final ConfirmCallback confirmCallback = new ConfirmCallback() {
+        @Override
+        public void confirm(CorrelationData correlationData, boolean ack, String cause) {
 
-        channel.queueDeclare("test-1", false, false, false, null);
+        }
+    };
 
-        Map<String, Object> header = new HashMap<>();
-        AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
-                .deliveryMode(2)
-                .contentEncoding("UTF-8")
-                .headers(header)
-                .build();
+    public void send(Object payload, Map<String, Object> properties) {
+        MessageHeaders headers = new MessageHeaders(properties);
+        org.springframework.messaging.Message<?> msg = MessageBuilder.createMessage(payload, headers);
 
-        IntStream.range(0, 10).forEach(i -> {
-            try {
-                channel.basicPublish("", "test-1", properties, String.format("Hello Rabbit MQ %d", i).getBytes());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
+
+        MessagePostProcessor messagePostProcessor = message -> {
+            System.out.println("post message: " + message.toString());
+            return message;
+        };
+
+        rabbitTemplate.setConfirmCallback(confirmCallback);
+        rabbitTemplate.convertAndSend("mirror-ex", "mirror", msg, messagePostProcessor, correlationData);
     }
 }

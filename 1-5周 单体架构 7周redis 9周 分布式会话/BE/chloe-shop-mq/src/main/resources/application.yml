@@ -3,5 +3,21 @@ spring:
     url: jdbc:mysql://localhost:3306/chloe?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     username: root
     password: 123abcABC
+  rabbitmq:
+    addresses: 172.16.16.40:5672,172.16.16.41:5672,172.16.16.42:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+    connection-timeout: 15000
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 5
+        prefetch: 1
+        max-concurrency: 10
 server:
   port: 8099
