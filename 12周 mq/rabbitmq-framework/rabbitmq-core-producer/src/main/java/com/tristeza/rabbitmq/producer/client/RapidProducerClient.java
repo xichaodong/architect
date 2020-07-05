@@ -45,6 +45,6 @@ public class RapidProducerClient implements MessageProducer {
 
     @Override
     public void send(List<Message> messages, SendCallback callback) throws MessageRunTimeException {
-        
+
     }
 }

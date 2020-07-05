@@ -23,7 +23,7 @@ public class AsyncQueue {
         Thread thread = new Thread(r);
         thread.setName("rabbitmq_client_async_sender");
         return thread;
-    }, (r, executor) -> LOGGER.error("async sender reject, runnable={}, executor={}", r, executor));
+    }, (r, executor) -> LOGGER.error("async sender was reject, runnable={}, executor={}", r, executor));
 
     public static void submit(Runnable runnable) {
         senderAsync.submit(runnable);
