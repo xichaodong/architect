@@ -43,13 +43,13 @@ public class Message implements Serializable {
     /**
      * 消息类型
      */
-    private Integer messageType = MessageType.CONFIRM;
+    private int messageType = MessageType.CONFIRM;
 
     public Message() {
     }
 
     public Message(String messageId, String topic, String routingKey,
-                   Map<String, Object> attributes, int delayMills, Integer messageType) {
+                   Map<String, Object> attributes, int delayMills, int messageType) {
         this.messageId = messageId;
         this.topic = topic;
         this.routingKey = routingKey;
@@ -98,11 +98,11 @@ public class Message implements Serializable {
         this.delayMills = delayMills;
     }
 
-    public Integer getMessageType() {
+    public int getMessageType() {
         return messageType;
     }
 
-    public void setMessageType(Integer messageType) {
+    public void setMessageType(int messageType) {
         this.messageType = messageType;
     }
 }
