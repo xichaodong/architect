@@ -1,40 +1,27 @@
 package com.chloe.mq;
 
-import com.rabbitmq.client.*;
+import com.rabbitmq.client.Channel;
+import org.springframework.amqp.rabbit.annotation.*;
+import org.springframework.amqp.support.AmqpHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeoutException;
-import java.util.stream.IntStream;
-
+@Component
 public class Receiver {
-    public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("172.16.16.40");
-        factory.setPort(5672);
-        factory.setVirtualHost("/");
-        factory.setAutomaticRecoveryEnabled(true);
-        factory.setNetworkRecoveryInterval(3000);
 
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue(value = "mirror-queue", durable = "true"),
+            exchange = @Exchange(name = "mirror-ex", durable = "true",
+                    type = "topic", ignoreDeclarationExceptions = "true"),
+            key = "mirror.*"
+    )
+    )
+    @RabbitHandler
+    public void onMessage(Message<?> message, Channel channel) throws Exception {
+        System.out.println("---------------");
+        System.out.println("消费消息: " + message.getPayload());
 
-        Map<String, Object> header = new HashMap<>();
-        AMQP.BasicProperties properties = new AMQP.BasicProperties().builder()
-                .deliveryMode(2)
-                .contentEncoding("UTF-8")
-                .headers(header)
-                .build();
-
-
-        Consumer consumer = new DefaultConsumer(channel) {
-            @Override
-            public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
-                System.out.println("接收消息 :   " + new String(body));
-            }
-        };
-
-        channel.basicConsume("test-1", true, consumer);
+        long deliveryTag = (long) message.getHeaders().get(AmqpHeaders.DELIVERY_TAG);
+//        channel.basicAck(deliveryTag, false);
     }
 }

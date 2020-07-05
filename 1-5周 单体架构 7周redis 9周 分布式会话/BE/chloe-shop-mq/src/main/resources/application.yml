@@ -9,9 +9,9 @@ spring:
     password: guest
     virtual-host: /
     publisher-confirm-type: correlated
-    publisher-returns: true
-    template:
-      mandatory: true
+#    publisher-returns: true
+#    template:
+#      mandatory: true
     connection-timeout: 15000
     listener:
       simple:

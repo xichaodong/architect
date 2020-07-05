@@ -1,11 +1,9 @@
 package com.chloe.mq;
 
-import org.springframework.amqp.AmqpException;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.core.RabbitTemplate.*;
+import org.springframework.amqp.rabbit.core.RabbitTemplate.ConfirmCallback;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
@@ -19,12 +17,8 @@ public class Sender {
     @Resource
     private RabbitTemplate rabbitTemplate;
 
-    final ConfirmCallback confirmCallback = new ConfirmCallback() {
-        @Override
-        public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-
-        }
-    };
+    final ConfirmCallback confirmCallback = (correlationData, ack, cause) ->
+            System.out.println("Ack结果：" + ack + " id:" + correlationData.getId());
 
     public void send(Object payload, Map<String, Object> properties) {
         MessageHeaders headers = new MessageHeaders(properties);
@@ -38,6 +32,6 @@ public class Sender {
         };
 
         rabbitTemplate.setConfirmCallback(confirmCallback);
-        rabbitTemplate.convertAndSend("mirror-ex", "mirror", msg, messagePostProcessor, correlationData);
+        rabbitTemplate.convertAndSend("mirror-ex", "mirror.123", msg, messagePostProcessor, correlationData);
     }
 }
