@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rabbitmq-api" />
         <module name="rabbitmq-task" />
         <module name="rabbitmq-common" />
+        <module name="rabbitmq-api" />
         <module name="rabbitmq-core-producer" />
       </profile>
     </annotationProcessing>

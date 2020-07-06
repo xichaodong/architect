@@ -1,8 +1,15 @@
 package com.tristeza.rabbitmq.producer.pool;
 
+import com.google.common.base.Splitter;
 import com.tristeza.rabbit.api.enums.MessageType;
 import com.tristeza.rabbit.api.exception.MessageRunTimeException;
 import com.tristeza.rabbit.api.model.Message;
+import com.tristeza.rabbit.common.convert.GenericMessageConverter;
+import com.tristeza.rabbit.common.convert.RabbitMessageConverter;
+import com.tristeza.rabbit.common.serialize.factory.SerializerFactory;
+import com.tristeza.rabbit.common.serialize.factory.impl.JacksonSerializerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -10,6 +17,7 @@ import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,7 +28,11 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Component
 public class RabbitMQTemplatePool implements RabbitTemplate.ConfirmCallback {
+    private static Logger LOGGER = LoggerFactory.getLogger(RabbitTemplate.class);
+    private static Splitter SPLITTER = Splitter.on("#");
+
     private Map<String, RabbitTemplate> pool = new ConcurrentHashMap<>();
+    private SerializerFactory serializerFactory = JacksonSerializerFactory.INSTANCE;
 
     @Resource
     private ConnectionFactory connectionFactory;
@@ -40,7 +52,9 @@ public class RabbitMQTemplatePool implements RabbitTemplate.ConfirmCallback {
         newTemplate.setExchange(message.getTopic());
         newTemplate.setRetryTemplate(new RetryTemplate());
         newTemplate.setRoutingKey(message.getRoutingKey());
-//        newTemplate.setMessageConverter();
+
+        GenericMessageConverter genericMessageConverter = new GenericMessageConverter(serializerFactory.create());
+        newTemplate.setMessageConverter(new RabbitMessageConverter(genericMessageConverter));
 
         int messageType = message.getMessageType();
 
@@ -55,6 +69,15 @@ public class RabbitMQTemplatePool implements RabbitTemplate.ConfirmCallback {
 
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
+        List<String> strings = SPLITTER.splitToList(Objects.requireNonNull(correlationData.getId()));
 
+        String messageId = strings.get(0);
+        Long sendTime = Long.parseLong(strings.get(1));
+
+        if (ack) {
+            LOGGER.info("send message is OK, confirm messageId:{}, sendTime:{}", messageId, sendTime);
+        } else {
+            LOGGER.error("send message is FAIL, confirm messageId:{}, sendTime:{}", messageId, sendTime);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.tristeza;
+package com.tristeza.rabbitmq.producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/7/5 12:08 下午
  */
 
-@SpringBootApplication(scanBasePackages = ("com.tristeza.rabbitmq.producer.*"))
+@SpringBootApplication
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
