@@ -7,8 +7,9 @@
     <modules>
         <module>rabbitmq-common</module>
         <module>rabbitmq-api</module>
-        <module>rabbitmq-core-producer</module>
+        <module>rabbitmq-core</module>
         <module>rabbitmq-task</module>
+        <module>rabbitmq-es-job</module>
     </modules>
 
     <parent>
@@ -22,10 +23,37 @@
     <artifactId>rabbitmq-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>8</java.version>
+        <fasterxml.uuid.version>3.1.4</fasterxml.uuid.version>
+        <org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+        <druid.version>1.0.24</druid.version>
+        <elastic-job.version>2.1.4</elastic-job.version>
+        <guava.version>20.0</guava.version>
+        <commons-lang3.version>3.3.1</commons-lang3.version>
+        <commons-io.version>2.4</commons-io.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <curator.version>2.11.0</curator.version>
+        <fastjson.version>1.1.26</fastjson.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.22</version>
         </dependency>
 
         <dependency>
@@ -34,9 +62,48 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
+            <version>18.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>

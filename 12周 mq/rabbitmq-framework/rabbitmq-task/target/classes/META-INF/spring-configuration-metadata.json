@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "elastic.job.zk",
+      "type": "com.tristeza.rabbitmq.task.model.JobZookeeperProperties",
+      "sourceType": "com.tristeza.rabbitmq.task.model.JobZookeeperProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

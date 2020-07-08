@@ -1,0 +1,8 @@
+com/tristeza/rabbit/common/serialize/factory/impl/JacksonSerializerFactory.class
+com/tristeza/rabbit/common/convert/GenericMessageConverter.class
+com/tristeza/rabbit/common/serialize/serializer/Serializer.class
+com/tristeza/rabbit/common/serialize/factory/SerializerFactory.class
+com/tristeza/rabbit/common/handler/MessageJsonTypeHandler.class
+com/tristeza/rabbit/common/convert/RabbitMessageConverter.class
+com/tristeza/rabbit/common/util/FastJsonConvertUtil.class
+com/tristeza/rabbit/common/serialize/serializer/impl/JacksonSerializer.class

@@ -1,0 +1,8 @@
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/serialize/serializer/impl/JacksonSerializer.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/convert/GenericMessageConverter.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/serialize/factory/SerializerFactory.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/serialize/factory/impl/JacksonSerializerFactory.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/handler/MessageJsonTypeHandler.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/util/FastJsonConvertUtil.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/serialize/serializer/Serializer.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-common/src/main/java/com/tristeza/rabbit/common/convert/RabbitMessageConverter.java

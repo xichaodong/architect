@@ -1,0 +1,14 @@
+com/tristeza/rabbitmq/es/config/RegistryCenterConfig.class
+com/tristeza/rabbitmq/es/listener/SimpleJobListener.class
+com/tristeza/rabbitmq/es/config/TraceJobConfiguration.class
+com/tristeza/rabbitmq/es/service/api/IndexController.class
+com/tristeza/rabbitmq/es/annotation/JobTraceInterceptor.class
+com/tristeza/rabbitmq/es/entity/Foo.class
+com/tristeza/rabbitmq/es/config/DataflowJobConfig.class
+com/tristeza/rabbitmq/es/config/JobEventConfig.class
+com/tristeza/rabbitmq/es/task/SpringDataflowJob.class
+com/tristeza/rabbitmq/es/service/IndexService.class
+com/tristeza/rabbitmq/es/task/MySimpleJob.class
+com/tristeza/rabbitmq/es/config/MySimpleJobConfig.class
+com/tristeza/rabbitmq/es/annotation/JobTrace.class
+com/tristeza/rabbitmq/es/Application.class

@@ -1,0 +1,4 @@
+com/tristeza/rabbitmq/task/model/JobZookeeperProperties.class
+META-INF/spring-configuration-metadata.json
+com/tristeza/rabbitmq/task/autoconfigure/JobParserAutoConfiguration.class
+com/tristeza/rabbitmq/task/Application.class
