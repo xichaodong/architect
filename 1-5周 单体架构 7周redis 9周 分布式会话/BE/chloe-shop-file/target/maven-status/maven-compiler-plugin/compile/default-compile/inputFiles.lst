@@ -1,0 +1,6 @@
+/Users/tristeza/BE/architect/1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-file/src/main/java/com/chloe/Application.java
+/Users/tristeza/BE/architect/1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-file/src/main/java/com/chloe/controller/FileController.java
+/Users/tristeza/BE/architect/1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-file/src/main/java/com/chloe/config/CorsConfig.java
+/Users/tristeza/BE/architect/1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-file/src/main/java/com/chloe/model/FileResource.java
+/Users/tristeza/BE/architect/1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-file/src/main/java/com/chloe/service/FileService.java
+/Users/tristeza/BE/architect/1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-file/src/main/java/com/chloe/service/impl/FileServiceImpl.java

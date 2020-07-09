@@ -28,11 +28,10 @@ public interface MessageProducer {
     void send(Message message, SendCallback callback) throws MessageRunTimeException;
 
     /**
-     * 批量消息发送，有回调
+     * 批量消息发送，无回调
      *
      * @param messages 消息
-     * @param callback 回调
      * @throws MessageRunTimeException 异常
      */
-    void send(List<Message> messages, SendCallback callback) throws MessageRunTimeException;
+    void send(List<Message> messages) throws MessageRunTimeException;
 }

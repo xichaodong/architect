@@ -10,6 +10,7 @@
         <module>rabbitmq-core</module>
         <module>rabbitmq-task</module>
         <module>rabbitmq-es-job</module>
+        <module>rabbitmq-test</module>
     </modules>
 
     <parent>

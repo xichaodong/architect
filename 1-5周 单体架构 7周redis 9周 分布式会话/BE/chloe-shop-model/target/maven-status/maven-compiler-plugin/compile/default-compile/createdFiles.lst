@@ -1,7 +1,6 @@
 com/chloe/model/pojo/OrderStatus.class
 com/chloe/model/vo/SubCategoryVO.class
 com/chloe/model/vo/center/CenterOrderVO.class
-com/chloe/model/bo/UserBo.class
 com/chloe/model/pojo/Orders.class
 com/chloe/model/vo/MerchantOrdersVO.class
 com/chloe/model/pojo/ItemsImg.class
@@ -24,6 +23,8 @@ com/chloe/model/pojo/ItemsComments.class
 com/chloe/model/vo/center/CenterOrderItemVO.class
 com/chloe/model/pojo/ItemsParam.class
 com/chloe/model/vo/CommentCountsVO.class
+com/chloe/model/bo/UserBO.class
+com/chloe/model/vo/UserVO.class
 com/chloe/model/vo/ItemCommentVO.class
 com/chloe/model/pojo/OrderItems.class
 com/chloe/model/vo/SuggestItemVO.class

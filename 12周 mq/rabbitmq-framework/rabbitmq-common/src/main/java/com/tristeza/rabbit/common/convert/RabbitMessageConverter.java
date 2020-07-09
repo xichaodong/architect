@@ -10,8 +10,6 @@ import org.springframework.amqp.support.converter.MessageConverter;
  * @date 2020/7/6 8:18 下午
  */
 public class RabbitMessageConverter implements MessageConverter {
-    private final String defaultExpire = String.valueOf(24 * 60 * 60 * 1000);
-
     private GenericMessageConverter converter;
 
     public RabbitMessageConverter(GenericMessageConverter converter) {
@@ -20,7 +18,8 @@ public class RabbitMessageConverter implements MessageConverter {
 
     @Override
     public Message toMessage(Object object, MessageProperties messageProperties) throws MessageConversionException {
-        messageProperties.setExpiration(defaultExpire);
+        com.tristeza.rabbit.api.model.Message message = (com.tristeza.rabbit.api.model.Message) object;
+        messageProperties.setExpiration(String.valueOf(message.getDelayMills()));
         return this.converter.toMessage(object, messageProperties);
     }
 

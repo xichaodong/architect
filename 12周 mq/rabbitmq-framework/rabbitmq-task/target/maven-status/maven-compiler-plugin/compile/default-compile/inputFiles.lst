@@ -1,0 +1,7 @@
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/enums/ElasticJobType.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/annotation/ElasticJobConfig.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/parser/ElasticJobConfigParser.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/model/JobZookeeperProperties.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/Application.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/autoconfigure/JobParserAutoConfiguration.java
+/Users/tristeza/BE/architect/12周 mq/rabbitmq-framework/rabbitmq-task/src/main/java/com/tristeza/rabbitmq/task/annotation/EnableElasticJob.java

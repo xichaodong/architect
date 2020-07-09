@@ -2,6 +2,7 @@ com/chloe/controller/center/CenterUserController.class
 com/chloe/task/OrderTimeoutTask.class
 com/chloe/controller/center/CenterController.class
 com/chloe/config/Swagger2Config.class
+com/chloe/interceptor/UserTokenInterceptor.class
 com/chloe/controller/CartController.class
 com/chloe/resource/FileUpload.class
 com/chloe/config/WebMvcConfig.class

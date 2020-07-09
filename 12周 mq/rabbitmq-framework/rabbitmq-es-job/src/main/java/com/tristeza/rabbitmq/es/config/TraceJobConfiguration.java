@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.tristeza.rabbitmq.es.annotation.JobTraceInterceptor;
 
-@Configuration
+//@Configuration
 public class TraceJobConfiguration {
 
 	@Bean

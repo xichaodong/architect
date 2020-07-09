@@ -1,6 +1,5 @@
 package com.tristeza.rabbitmq.producer.async;
 
-import com.tristeza.rabbitmq.producer.client.RapidProducerClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

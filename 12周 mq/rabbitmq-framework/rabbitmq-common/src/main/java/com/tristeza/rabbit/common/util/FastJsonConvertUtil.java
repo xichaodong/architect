@@ -7,11 +7,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
-/**
- * 	$FastJsonConvertUtil java对象与json进行转换的通用工具类
- * @author Alienware
- *
- */
 public class FastJsonConvertUtil {
 
 	private static final SerializerFeature[] featuresWithNullValue = { SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNullBooleanAsFalse,

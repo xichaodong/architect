@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author chaodong.xi
@@ -31,5 +32,20 @@ public class MessageStoreServiceImpl implements MessageStoreService {
     @Override
     public void failure(String messageId) {
         brokerMessageMapper.changeBrokerMessageStatus(messageId, BrokerMessageStatus.SEND_FAIL.getCode(), new Date());
+    }
+
+    @Override
+    public List<BrokerMessage> fetchTimeOutMessage4Retry(BrokerMessageStatus brokerMessageStatus) {
+        return brokerMessageMapper.queryBrokerMessageStatus4Timeout(brokerMessageStatus.getCode());
+    }
+
+    @Override
+    public int updateTryCount(String brokerMessageId) {
+        return brokerMessageMapper.update4TryCount(brokerMessageId, new Date());
+    }
+
+    @Override
+    public BrokerMessage selectByMessageId(String messageId) {
+        return brokerMessageMapper.selectByPrimaryKey(messageId);
     }
 }

@@ -10,6 +10,7 @@
         <module name="rabbitmq-task" />
         <module name="rabbitmq-es-job" />
         <module name="rabbitmq-esjob" />
+        <module name="rabbitmq-test" />
         <module name="rabbitmq-core" />
         <module name="rabbitmq-api" />
       </profile>
@@ -27,6 +28,7 @@
       <module name="rabbitmq-esjob" options="-parameters" />
       <module name="rabbitmq-framework" options="-parameters" />
       <module name="rabbitmq-task" options="-parameters" />
+      <module name="rabbitmq-test" options="-parameters" />
     </option>
   </component>
 </project>

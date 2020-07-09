@@ -8,6 +8,7 @@ import com.tristeza.rabbitmq.producer.constant.BrokerMessageConst;
 import com.tristeza.rabbitmq.producer.db.entity.BrokerMessage;
 import com.tristeza.rabbitmq.producer.db.service.MessageStoreService;
 import com.tristeza.rabbitmq.producer.enums.BrokerMessageStatus;
+import com.tristeza.rabbitmq.producer.holder.MessageHolder;
 import com.tristeza.rabbitmq.producer.pool.RabbitMQTemplatePool;
 import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
@@ -19,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * @author chaodong.xi
@@ -50,25 +53,36 @@ public class RabbitBrokerImpl implements RabbitBroker {
     public void reliantSend(Message message) {
         message.setMessageType(MessageType.RELIANT);
 
-        Date now = new Date();
-        BrokerMessage brokerMessage = new BrokerMessage();
+        BrokerMessage oldMessage = messageStoreService.selectByMessageId(message.getMessageId());
 
-        brokerMessage.setMessageId(message.getMessageId());
-        brokerMessage.setStatus(BrokerMessageStatus.SENDING.getCode());
-        brokerMessage.setNextRetry(DateUtils.addMinutes(now, BrokerMessageConst.TIMEOUT));
-        brokerMessage.setMessage(message);
-        brokerMessage.setCreateTime(now);
-        brokerMessage.setUpdateTime(now);
+        if (Objects.isNull(oldMessage)) {
+            Date now = new Date();
+            BrokerMessage brokerMessage = new BrokerMessage();
 
-        messageStoreService.insert(brokerMessage);
+            brokerMessage.setMessageId(message.getMessageId());
+            brokerMessage.setStatus(BrokerMessageStatus.SENDING.getCode());
+            brokerMessage.setNextRetry(DateUtils.addMinutes(now, BrokerMessageConst.TIMEOUT));
+            brokerMessage.setMessage(message);
+            brokerMessage.setCreateTime(now);
+            brokerMessage.setUpdateTime(now);
+
+            messageStoreService.insert(brokerMessage);
+        }
+        sendKernel(message);
+    }
+
+    @Override
+    public void sendMessages() {
+        List<Message> messages = MessageHolder.clear();
+        messages.forEach(this::sendKernel);
     }
 
     private void sendKernel(Message message) {
         AsyncQueue.submit(() -> {
                     rabbitMQTemplatePool.getTemplate(message)
                             .convertAndSend(message.getTopic(), message.getRoutingKey(),
-                                    message, new CorrelationData(String.format("%s#%s", message.getMessageId(),
-                                            System.currentTimeMillis())));
+                                    message, new CorrelationData(String.format("%s#%s#%d", message.getMessageId(),
+                                            System.currentTimeMillis(), message.getMessageType())));
                     LOGGER.info("send message to rabbitmq, messageId = {}", message.getMessageId());
                 }
         );

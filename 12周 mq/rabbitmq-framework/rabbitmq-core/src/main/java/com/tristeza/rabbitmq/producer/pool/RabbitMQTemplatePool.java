@@ -77,13 +77,16 @@ public class RabbitMQTemplatePool implements RabbitTemplate.ConfirmCallback {
 
         String messageId = strings.get(0);
         Long sendTime = Long.parseLong(strings.get(1));
+        String messageType = strings.get(2);
 
         if (ack) {
+            if (MessageType.RELIANT == Integer.parseInt(messageType)) {
+                messageStoreService.success(messageId);
+            }
             messageStoreService.success(messageId);
-            LOGGER.info("send message is OK, confirm messageId:{}, sendTime:{}", messageId, sendTime);
+            LOGGER.info("发送消息成功, messageId:{}, 发送时间:{}", messageId, sendTime);
         } else {
-            messageStoreService.failure(messageId);
-            LOGGER.error("send message is FAIL, confirm messageId:{}, sendTime:{}", messageId, sendTime);
+            LOGGER.error("发送消息失败, messageId:{}, 发送时间:{}", messageId, sendTime);
         }
     }
 }

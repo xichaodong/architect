@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import com.dangdang.ddframe.job.event.JobEventConfiguration;
 import com.dangdang.ddframe.job.event.rdb.JobEventRdbConfiguration;
 
-@Configuration
+//@Configuration
 public class JobEventConfig {
 
     @Autowired

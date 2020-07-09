@@ -34,36 +34,36 @@ import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
 
 //@Configuration
 public class DataflowJobConfig {
-    
-	@Autowired
+
+    @Autowired
     private ZookeeperRegistryCenter regCenter;
-    
+
     @Autowired
     private JobEventConfiguration jobEventConfiguration;
-    
+
     @Bean
     public DataflowJob dataflowJob() {
         return new SpringDataflowJob();
     }
-    
+
     @Bean(initMethod = "init")
     public JobScheduler dataflowJobScheduler(final DataflowJob dataflowJob, @Value("${dataflowJob.cron}") final String cron,
                                              @Value("${dataflowJob.shardingTotalCount}") final int shardingTotalCount,
                                              @Value("${dataflowJob.shardingItemParameters}") final String shardingItemParameters) {
-       
-    	SpringJobScheduler springJobScheduler = new SpringJobScheduler(dataflowJob, regCenter, getLiteJobConfiguration(dataflowJob.getClass(), cron,
+
+        SpringJobScheduler springJobScheduler = new SpringJobScheduler(dataflowJob, regCenter, getLiteJobConfiguration(dataflowJob.getClass(), cron,
                 shardingTotalCount, shardingItemParameters), jobEventConfiguration);
 //    	springJobScheduler.init();
-    	return springJobScheduler;
+        return springJobScheduler;
     }
-    
+
     private LiteJobConfiguration getLiteJobConfiguration(final Class<? extends DataflowJob> jobClass, final String cron, final int shardingTotalCount, final String shardingItemParameters) {
         return LiteJobConfiguration.newBuilder(
-        		new DataflowJobConfiguration(JobCoreConfiguration.newBuilder(jobClass.getName(), cron, shardingTotalCount)
-        		.shardingItemParameters(shardingItemParameters).build(), 
-        		jobClass.getCanonicalName(),
-        		false))	//streamingProcess
-        		.overwrite(false)
-        		.build();
+                new DataflowJobConfiguration(JobCoreConfiguration.newBuilder(jobClass.getName(), cron, shardingTotalCount)
+                        .shardingItemParameters(shardingItemParameters).build(),
+                        jobClass.getCanonicalName(),
+                        false))    //streamingProcess
+                .overwrite(true)
+                .build();
     }
 }
