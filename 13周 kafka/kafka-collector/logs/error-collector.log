@@ -1,0 +1,2 @@
+[2020-07-09T21:19:14.774+08:00] [WARN] [http-nio-9000-exec-1-130] [com.tristeza.kafka.collector.controller.IndexController] [bogon] [10.151.2.46] [kafka-log-collector] [IndexController.java,23,com.tristeza.kafka.collector.controller.IndexController,index] [warn1111] ## ''
+[2020-07-09T21:19:14.774+08:00] [ERROR] [http-nio-9000-exec-1-130] [com.tristeza.kafka.collector.controller.IndexController] [bogon] [10.151.2.46] [kafka-log-collector] [IndexController.java,24,com.tristeza.kafka.collector.controller.IndexController,index] [error1111] ## ''
