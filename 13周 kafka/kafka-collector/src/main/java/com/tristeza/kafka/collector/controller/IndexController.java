@@ -19,9 +19,9 @@ public class IndexController {
     public String index() {
         InputMDC.putMDC();
 
-        LOGGER.info("info1111");
-        LOGGER.warn("warn1111");
-        LOGGER.error("error1111");
+        LOGGER.info("info log");
+        LOGGER.warn("warn log");
+        LOGGER.error("error log");
 
         return "success";
     }
