@@ -1,5 +1,7 @@
 /Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/util/FastJsonConvertUtil.java
 /Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/util/NetUtil.java
+/Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/controller/MonitorController.java
 /Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/Application.java
 /Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/controller/IndexController.java
 /Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/util/InputMDC.java
+/Users/tristeza/BE/architect/13周 kafka/kafka-collector/src/main/java/com/tristeza/kafka/collector/model/AccurateWatcherMessage.java

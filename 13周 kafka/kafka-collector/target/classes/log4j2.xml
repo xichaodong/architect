@@ -31,10 +31,10 @@
     </Appenders>
     <Loggers>
         <!-- 业务相关 异步logger -->
-        <AsyncLogger name="com.bfxy.*" level="info" includeLocation="true">
+        <AsyncLogger name="com.tristeza.*" level="info" includeLocation="true">
           <AppenderRef ref="appAppender"/>
         </AsyncLogger>
-        <AsyncLogger name="com.bfxy.*" level="info" includeLocation="true">
+        <AsyncLogger name="com.tristeza.*" level="info" includeLocation="true">
           <AppenderRef ref="errorAppender"/>
         </AsyncLogger>       
         <Root level="info">
