@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tristeza.distributedlocks.mysql.mapper.DistributeLockMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.distributedlocks.mysql.model.DistributeLock">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="business_code" property="businessCode" jdbcType="VARCHAR"/>
+        <result column="business_name" property="businessName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="loadAllDistributeLocks" parameterType="string" resultMap="BaseResultMap">
+        SELECT *
+        FROM DISTRIBUTE_LOCK
+            FOR
+        UPDATE
+    </select>
+</mapper>
