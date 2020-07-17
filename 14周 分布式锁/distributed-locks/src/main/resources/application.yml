@@ -40,13 +40,3 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml      # mapper映射文件
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-############################################################
-#
-# mybatis mapper 配置
-#
-############################################################
-# 通用 Mapper 配置
-mapper:
-  mappers: my.mapper.MyMapper
-  not-empty: false
-  identity: MYSQL

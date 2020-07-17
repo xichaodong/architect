@@ -19,14 +19,14 @@ import java.util.concurrent.TimeUnit;
  * @date 2020/7/15 8:50 下午
  */
 @RestController
-public class DistributeLockController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DistributeLock.class);
+public class MysqlLockController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MysqlLockController.class);
 
     @Resource
     private DistributeLockMapper distributeLockMapper;
 
     @Transactional(propagation = Propagation.REQUIRED)
-    @GetMapping("lock")
+    @GetMapping("mysql/lock")
     public String singleLock() {
         LOGGER.info("我进入了方法");
 
