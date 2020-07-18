@@ -73,7 +73,7 @@ public class ZKLock implements AutoCloseable, Watcher {
         zooKeeper.delete(zkNode, -1);
         zooKeeper.close();
 
-        LOGGER.info("锁已经释放");
+        LOGGER.info("锁已经释放!");
     }
 
     @Override
