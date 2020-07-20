@@ -15,6 +15,8 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import io.swagger.models.auth.In;
 import org.apache.commons.lang3.StringUtils;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +26,7 @@ import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -37,6 +40,8 @@ public class ItemServiceImpl implements ItemService {
     private ItemsParamMapper itemsParamMapper;
     @Resource
     private ItemsCommentsMapper itemsCommentsMapper;
+    @Resource
+    private RedissonClient redissonClient;
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
@@ -154,10 +159,16 @@ public class ItemServiceImpl implements ItemService {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void decreaseItemSpecStock(String specId, Integer buyCounts) {
-        boolean isSuccess = itemsMapper.decreaseItemSpecStock(specId, buyCounts) > 0;
+        RLock lock = redissonClient.getLock(String.format("item_lock_%s", specId));
+        lock.lock(5, TimeUnit.SECONDS);
 
-        if (!isSuccess) {
-            throw new RuntimeException("订单创建失败,原因：库存不足!");
+        try {
+            boolean isSuccess = itemsMapper.decreaseItemSpecStock(specId, buyCounts) > 0;
+            if (!isSuccess) {
+                throw new RuntimeException("订单创建失败,原因：库存不足!");
+            }
+        } finally {
+            lock.unlock();
         }
     }
 
