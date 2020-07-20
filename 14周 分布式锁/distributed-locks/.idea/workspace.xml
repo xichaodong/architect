@@ -2,7 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/zk/utils/ZKLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/zk/utils/ZKLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_27_0_1_jre.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_50_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_50_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava2_rxjava_2_2_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_cache_cache_api_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_client_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_framework_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_curator_curator_recipes_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_marshalling_jboss_marshalling_2_0_9_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_marshalling_jboss_marshalling_river_2_0_9_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_bean_5_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_core_5_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_redisson_redisson_3_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_redisson_redisson_spring_boot_starter_3_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_redisson_redisson_spring_data_23_3_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/zk/config/CuratorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tristeza.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tristeza.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distributed-locks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/distributed-locks.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/redis/task/RedisDistributeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/redis/task/RedisDistributeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/zk/task/ZookeeperDistributeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tristeza/distributedlocks/zk/task/ZookeeperDistributeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tristeza/distributedlocks/redis/task/RedisDistributeTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tristeza/distributedlocks/redis/task/RedisDistributeTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tristeza/distributedlocks/zk/task/ZookeeperDistributeTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tristeza/distributedlocks/zk/task/ZookeeperDistributeTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tristeza/distributedlocks/zk/utils/ZKLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tristeza/distributedlocks/zk/utils/ZKLock.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +115,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DistributedLocksApplication">
+  <component name="RunManager" selected="Spring Boot.DistributedLocksApplication8081">
     <configuration name="DistributedLocksApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="distributed-locks" />
       <extension name="coverage">
@@ -132,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594807123981</updated>
       <workItem from="1594807128859" duration="21857000" />
-      <workItem from="1594903190379" duration="1861000" />
+      <workItem from="1594903190379" duration="7664000" />
     </task>
     <servers />
   </component>
@@ -152,46 +190,46 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="634" y="314" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1594807155724" />
-    <state width="1750" height="388" key="GridCell.Tab.0.bottom" timestamp="1595085485418">
+    <state width="1750" height="380" key="GridCell.Tab.0.bottom" timestamp="1595171949142">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485417" />
-    <state width="1750" height="405" key="GridCell.Tab.0.bottom/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489514" />
-    <state width="1750" height="388" key="GridCell.Tab.0.center" timestamp="1595085485415">
+    <state width="1750" height="380" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949142" />
+    <state width="1750" height="234" key="GridCell.Tab.0.bottom/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243624" />
+    <state width="1750" height="380" key="GridCell.Tab.0.center" timestamp="1595171949141">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485415" />
-    <state width="1750" height="405" key="GridCell.Tab.0.center/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489513" />
-    <state width="1750" height="388" key="GridCell.Tab.0.left" timestamp="1595085485413">
+    <state width="1750" height="380" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949141" />
+    <state width="1750" height="234" key="GridCell.Tab.0.center/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243623" />
+    <state width="1750" height="380" key="GridCell.Tab.0.left" timestamp="1595171949141">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485413" />
-    <state width="1750" height="405" key="GridCell.Tab.0.left/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489512" />
-    <state width="1750" height="388" key="GridCell.Tab.0.right" timestamp="1595085485416">
+    <state width="1750" height="380" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949141" />
+    <state width="1750" height="234" key="GridCell.Tab.0.left/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243620" />
+    <state width="1750" height="380" key="GridCell.Tab.0.right" timestamp="1595171949142">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485416" />
-    <state width="1750" height="405" key="GridCell.Tab.0.right/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489514" />
-    <state width="1750" height="388" key="GridCell.Tab.1.bottom" timestamp="1595085485420">
+    <state width="1750" height="380" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949142" />
+    <state width="1750" height="234" key="GridCell.Tab.0.right/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243624" />
+    <state width="1750" height="380" key="GridCell.Tab.1.bottom" timestamp="1595171949144">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485420" />
-    <state width="1750" height="405" key="GridCell.Tab.1.bottom/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489516" />
-    <state width="1750" height="388" key="GridCell.Tab.1.center" timestamp="1595085485419">
+    <state width="1750" height="380" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949144" />
+    <state width="1750" height="234" key="GridCell.Tab.1.bottom/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243626" />
+    <state width="1750" height="380" key="GridCell.Tab.1.center" timestamp="1595171949143">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485419" />
-    <state width="1750" height="405" key="GridCell.Tab.1.center/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489515" />
-    <state width="1750" height="388" key="GridCell.Tab.1.left" timestamp="1595085485418">
+    <state width="1750" height="380" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949143" />
+    <state width="1750" height="234" key="GridCell.Tab.1.center/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243625" />
+    <state width="1750" height="380" key="GridCell.Tab.1.left" timestamp="1595171949143">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485418" />
-    <state width="1750" height="405" key="GridCell.Tab.1.left/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489515" />
-    <state width="1750" height="388" key="GridCell.Tab.1.right" timestamp="1595085485419">
+    <state width="1750" height="380" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949143" />
+    <state width="1750" height="234" key="GridCell.Tab.1.left/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243625" />
+    <state width="1750" height="380" key="GridCell.Tab.1.right" timestamp="1595171949144">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1750" height="388" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1595085485419" />
-    <state width="1750" height="405" key="GridCell.Tab.1.right/0.23.1792.1063@0.23.1792.1063" timestamp="1594904489516" />
+    <state width="1750" height="380" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1595171949144" />
+    <state width="1750" height="234" key="GridCell.Tab.1.right/0.23.1792.1063@0.23.1792.1063" timestamp="1595152243625" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,7 +239,32 @@
           <line>30</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/redisson/redisson/3.13.2/redisson-3.13.2-sources.jar!/org/redisson/RedissonLock.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/redisson/redisson/3.13.2/redisson-3.13.2-sources.jar!/org/redisson/RedissonLock.java</url>
+          <line>342</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/redisson/redisson/3.13.2/redisson-3.13.2-sources.jar!/org/redisson/command/CommandBatchService.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/redisson/redisson/3.13.2/redisson-3.13.2-sources.jar!/org/redisson/command/CommandBatchService.java</url>
+          <line>216</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="getName()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

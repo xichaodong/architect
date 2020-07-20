@@ -2,6 +2,7 @@
   <dictionary name="tristeza">
     <words>
       <w>distributedlocks</w>
+      <w>redisson</w>
       <w>tristeza</w>
     </words>
   </dictionary>
