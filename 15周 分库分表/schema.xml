@@ -4,7 +4,7 @@
 
 	<schema name="user" checkSQLschema="true" sqlMaxLimit="100">
 		<!-- auto sharding by id (long) -->
-		<table name="user" dataNode="dn70,dn71" rule="sharding-by-intfile" />
+		<table name="user" dataNode="dn70,dn71" rule="mod-long" />
 
 		<!-- <table name="oc_call" primaryKey="ID" dataNode="dn1$0-743" rule="latest-month-calldate"
 			/> -->
