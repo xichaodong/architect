@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,6 +135,8 @@
       <workItem from="1594903190379" duration="7664000" />
       <workItem from="1595243154680" duration="49000" />
       <workItem from="1595243217330" duration="49000" />
+      <workItem from="1595300323569" duration="341000" />
+      <workItem from="1595341106163" duration="555000" />
     </task>
     <servers />
   </component>
