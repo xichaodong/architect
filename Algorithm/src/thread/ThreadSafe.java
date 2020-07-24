@@ -22,7 +22,7 @@ public class ThreadSafe implements Runnable {
 
         thread1.join();
         thread2.join();
-        System.out.println("表面上的结果是: " + threadSafe.index);
+        System.out.println("表面上的结果: " + threadSafe.index);
         System.out.println("总数是: " + realIndex.get() + " 错误数是: " + wrongCount.get());
     }
 
