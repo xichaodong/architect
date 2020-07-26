@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tristeza.shardingjdbc.mapper.ShardingOrderMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.shardingjdbc.model.ShardingOrder">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="order_amount" property="orderAmount" jdbcType="DECIMAL"/>
+        <result column="order_status" property="orderStatus" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="loadAllSharingOrder"  resultMap="BaseResultMap">
+        SELECT *
+        FROM t_order_1
+    </select>
+</mapper>
