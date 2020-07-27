@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/controller/MysqlLockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/mapper/ShardingOrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/model/ShardingOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/resources/mapper/DistributeLockMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/ShardingJdbcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/ShardingJdbcApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/controller/MysqlLockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/controller/ShardingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/mapper/ShardingOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/java/com/tristeza/shardingjdbc/mapper/ShardingOrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/resources/mapper/DistributeLockMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../15周 分库分表/sharding-jdbc/src/main/resources/mapper/DistributeLockMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +144,8 @@
       <workItem from="1595300323569" duration="341000" />
       <workItem from="1595341106163" duration="555000" />
       <workItem from="1595424364256" duration="331000" />
-      <workItem from="1595732650001" duration="1101000" />
+      <workItem from="1595732650001" duration="1752000" />
+      <workItem from="1595838286064" duration="603000" />
     </task>
     <servers />
   </component>

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ShardingOrderMapper {
     List<ShardingOrder> loadAllSharingOrder();
+
+    Long insertShardingOrder(ShardingOrder order);
 }
