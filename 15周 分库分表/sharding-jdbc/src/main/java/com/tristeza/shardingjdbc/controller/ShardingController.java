@@ -35,10 +35,10 @@ public class ShardingController {
     @Transactional(propagation = Propagation.REQUIRED)
     @GetMapping("sharding/add")
     public Long shardingOrderAdd(@RequestParam("userId") Integer userId,
-                                 @RequestParam("orderId") Integer orderId) {
+                                 @RequestParam("orderId") String orderId) {
         ShardingOrder order = new ShardingOrder();
 
-        order.setId(orderId);
+//        order.setId(orderId);
         order.setUserId(userId);
         order.setOrderAmount(BigDecimal.valueOf(10.0));
         order.setOrderStatus(1);

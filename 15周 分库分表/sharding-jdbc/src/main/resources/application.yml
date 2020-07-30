@@ -28,9 +28,12 @@ spring:
               sharding-column: user_id
               algorithm-expression: ds$->{user_id % 2}
           table-strategy:
-            inline:
+            standard:
               sharding-column: id
-              algorithm-expression: t_order_$->{id % 2 + 1}
+              precise-algorithm-class-name: com.tristeza.shardingjdbc.sharding.UUIDSharding
+          key-generator:
+            column: id
+            type: UUID
       broadcast-tables: area
 ############################################################
 #

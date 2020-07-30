@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @date 2020/7/15 8:27 下午
  */
 public class ShardingOrder {
-    private Integer id;
+    private String id;
 
     private BigDecimal orderAmount;
 
@@ -15,11 +15,11 @@ public class ShardingOrder {
 
     private Integer userId;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

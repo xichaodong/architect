@@ -5,14 +5,14 @@
         <!--
           WARNING - @mbg.generated
         -->
-        <id column="id" property="id" jdbcType="INTEGER"/>
+        <id column="id" property="id" jdbcType="VARCHAR"/>
         <result column="order_amount" property="orderAmount" jdbcType="DECIMAL"/>
         <result column="order_status" property="orderStatus" jdbcType="INTEGER"/>
         <result column="user_id" property="userId" jdbcType="INTEGER"/>
     </resultMap>
     <insert id="insertShardingOrder" parameterType="com.tristeza.shardingjdbc.model.ShardingOrder">
-        INSERT INTO t_order (id, order_amount, order_status, user_id)
-        VALUES (#{id}, #{orderAmount}, #{orderStatus}, #{userId});
+        INSERT INTO t_order (order_amount, order_status, user_id)
+        VALUES (#{orderAmount}, #{orderStatus}, #{userId});
     </insert>
 
     <select id="loadAllSharingOrder" resultMap="BaseResultMap">
