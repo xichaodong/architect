@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tristeza.distributiontransaction.xa.mapper.db71.XA71TestMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.distributiontransaction.xa.model.XATest">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="insertXATest" parameterType="com.tristeza.distributiontransaction.xa.model.XATest">
+        INSERT INTO xa_71 (id, name)
+        VALUES (#{id}, #{name});
+    </insert>
+
+    <select id="loadAllXATest" resultMap="BaseResultMap">
+        SELECT *
+        FROM xa_71
+    </select>
+</mapper>

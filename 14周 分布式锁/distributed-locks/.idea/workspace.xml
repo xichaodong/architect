@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="" />
+    <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/config/DB70DataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/config/DB71DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +142,8 @@
       <workItem from="1595424364256" duration="331000" />
       <workItem from="1595732650001" duration="1752000" />
       <workItem from="1595838286064" duration="603000" />
-      <workItem from="1595950682179" duration="676000" />
+      <workItem from="1595950682179" duration="1171000" />
+      <workItem from="1596280464410" duration="24000" />
     </task>
     <servers />
   </component>
