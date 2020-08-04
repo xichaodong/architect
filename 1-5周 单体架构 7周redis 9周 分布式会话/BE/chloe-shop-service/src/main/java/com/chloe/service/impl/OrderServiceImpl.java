@@ -92,7 +92,9 @@ public class OrderServiceImpl implements OrderService {
         newStatus.setOrderStatus(orderStatus);
         newStatus.setPayTime(new Date());
 
+        System.out.println(System.currentTimeMillis());
         orderStatusMapper.updateByPrimaryKeySelective(newStatus);
+        System.out.println(System.currentTimeMillis());
     }
 
     @Override

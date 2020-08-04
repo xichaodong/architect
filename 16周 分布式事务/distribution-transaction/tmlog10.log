@@ -1,0 +1,2 @@
+{"id":"127.0.0.1.tm159633557219900001","wasCommitted":true,"participants":[{"uri":"127.0.0.1.tm1","state":"COMMITTING","expires":1596335582159,"resourceName":"db70"}]}
+{"id":"127.0.0.1.tm159633557219900001","wasCommitted":true,"participants":[{"uri":"127.0.0.1.tm1","state":"TERMINATED","expires":1596335582164,"resourceName":"db70"}]}

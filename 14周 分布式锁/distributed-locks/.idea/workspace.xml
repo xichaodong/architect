@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/config/DB70DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/config/DB71DataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/src/test/java/DistributionTransactionApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/src/main/java/com/chloe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/src/main/java/com/chloe/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/ItemServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/OrderServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/service/impl/XATestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/service/impl/XATestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/tmlog7.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +148,7 @@
       <workItem from="1595838286064" duration="603000" />
       <workItem from="1595950682179" duration="1171000" />
       <workItem from="1596280464410" duration="24000" />
+      <workItem from="1596335607015" duration="626000" />
     </task>
     <servers />
   </component>

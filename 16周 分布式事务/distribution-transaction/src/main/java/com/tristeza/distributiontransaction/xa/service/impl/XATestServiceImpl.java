@@ -23,10 +23,11 @@ public class XATestServiceImpl implements XATestService {
     @Transactional(transactionManager = "xaTransaction")
     public void saveXATest() {
         XATest xaTest = new XATest();
-        xaTest.setId(1);
+        xaTest.setId(2);
         xaTest.setName("tristeza");
-
+        System.out.println(System.currentTimeMillis());
         xa70TestMapper.insertXATest(xaTest);
-        xa71TestMapper.insertXATest(xaTest);
+//        xa71TestMapper.insertXATest(xaTest);
+        System.out.println(System.currentTimeMillis());
     }
 }
