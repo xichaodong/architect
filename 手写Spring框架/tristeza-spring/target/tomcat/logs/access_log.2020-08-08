@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:21:26:42 +0800] "GET /tristeza-spring HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:21:26:42 +0800] "GET /tristeza-spring/ HTTP/1.1" 404 983 http-bio-8080-exec-3 10
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:21:26:42 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:21:26:46 +0800] "GET /tristeza-spring/hello HTTP/1.1" 200 117 http-bio-8080-exec-5 381
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:21:57:31 +0800] "GET /tristeza-spring/hello HTTP/1.1" 200 117 http-bio-8080-exec-1 94
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:23:13:40 +0800] "GET /tristeza-spring/hello HTTP/1.1" 200 117 http-bio-8080-exec-1 86
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:23:14:11 +0800] "GET /tristeza-spring/hello HTTP/1.1" 200 - http-bio-8080-exec-1 22
+0:0:0:0:0:0:0:1 - - [08/Aug/2020:23:14:13 +0800] "GET /tristeza-spring/hello HTTP/1.1" 200 - http-bio-8080-exec-3 1
