@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/src/test/java/DistributionTransactionApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/src/main/java/com/chloe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/src/main/java/com/chloe/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-service/target/classes/com/chloe/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-search/chloe-shop-search.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/service/impl/XATestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/src/main/java/com/tristeza/distributiontransaction/xa/service/impl/XATestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../16周 分布式事务/distribution-transaction/tmlog7.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../17周  分布式限流/distributed-limiter/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/java/com/tristeza/limiter/controller/LimiterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/java/com/tristeza/limiter/controller/LimiterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring-framework" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring-framework" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +46,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1eiayml6dqQqP06cUZvaAhcsspS" />
@@ -53,7 +58,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -67,6 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -127,6 +132,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -149,11 +155,12 @@
       <workItem from="1595950682179" duration="1171000" />
       <workItem from="1596280464410" duration="24000" />
       <workItem from="1596335607015" duration="626000" />
+      <workItem from="1596949084223" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="496" y="225" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594818007394">

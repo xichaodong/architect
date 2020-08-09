@@ -39,4 +39,18 @@ public class LimiterController {
             return "failed";
         }
     }
+
+    @GetMapping("acquire")
+    public String acquire(@RequestParam Integer count) {
+        rateLimiter.acquire(count);
+        LOGGER.info("请求成功，限速={}", rateLimiter.getRate());
+        return "success";
+    }
+
+    @GetMapping("nginx")
+    public String nginx() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(1);
+        LOGGER.info("请求成功，限速={}", rateLimiter.getRate());
+        return "success";
+    }
 }
