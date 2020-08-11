@@ -1,4 +1,4 @@
-package com.tristeza.limiter;
+package com.tristeza;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

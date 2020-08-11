@@ -1,6 +1,7 @@
-package com.tristeza.limiter.controller;
+package com.tristeza.controller;
 
 import com.google.common.util.concurrent.RateLimiter;
+import com.tristeza.annotation.AccessLimiter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,10 +48,16 @@ public class LimiterController {
         return "success";
     }
 
+    @AccessLimiter(limit = 1)
     @GetMapping("nginx")
     public String nginx() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(1);
-        LOGGER.info("请求成功，限速={}", rateLimiter.getRate());
         return "success";
+    }
+
+    public static void main(String[] args) throws NoSuchMethodException {
+        /* 设置此系统属性,让JVM生成的Proxy类写入文件.保存路径为：com/sun/proxy(如果不存在请手工创建) */
+        System.setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+        AccessLimiter annotation = LimiterController.class.getMethod("nginx").getAnnotation(AccessLimiter.class);//获取TestMain类上的注解对象
+        System.out.println(annotation.limit());//调用注解对象的say方法，并打印到控制台
     }
 }

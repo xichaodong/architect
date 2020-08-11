@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../1-5周 单体架构 7周redis 9周 分布式会话/BE/chloe-shop-search/chloe-shop-search.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/HelloWorld.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/RateLimiter.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/lua.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../17周  分布式限流/distributed-limiter/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/java/com/tristeza/limiter/controller/LimiterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/java/com/tristeza/limiter/controller/LimiterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../17周 分布式限流/distributed-limiter/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring-framework" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring-framework" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,6 +156,8 @@
       <workItem from="1596280464410" duration="24000" />
       <workItem from="1596335607015" duration="626000" />
       <workItem from="1596949084223" duration="599000" />
+      <workItem from="1596970250514" duration="102000" />
+      <workItem from="1596970374569" duration="596000" />
     </task>
     <servers />
   </component>
