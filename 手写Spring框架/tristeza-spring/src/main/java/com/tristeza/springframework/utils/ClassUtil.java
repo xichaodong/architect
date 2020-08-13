@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Constructor;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
@@ -43,6 +44,17 @@ public class ClassUtil {
             }
         }
         return classSet;
+    }
+
+    public static <T> T newInstance(Class<T> clazz, boolean accessible) {
+        try {
+            Constructor<T> constructor = clazz.getDeclaredConstructor();
+            constructor.setAccessible(accessible);
+
+            return constructor.newInstance();
+        } catch (Exception e) {
+            LOGGER.error("new instance error", e);
+        }
     }
 
     private static void extractClassFile(Set<Class<?>> classSet, File fileSource, String packageName) {
