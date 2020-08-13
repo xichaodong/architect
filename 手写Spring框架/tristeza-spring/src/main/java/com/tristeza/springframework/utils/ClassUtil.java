@@ -6,7 +6,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
@@ -20,6 +23,7 @@ public class ClassUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClassUtil.class);
     private static final String CLASS_SUFFIX = ".class";
     private static final String CLASS_SEPARATOR = ".";
+    private static final String CHARSET = "utf-8";
 
     public static Set<Class<?>> extractPackageClass(String packageName) {
         ClassLoader classLoader = getClassLoader();
@@ -31,8 +35,12 @@ public class ClassUtil {
         Set<Class<?>> classSet = new HashSet<>();
         ;
         if (url.getProtocol().equalsIgnoreCase(ProtocolType.FILE.getCode())) {
-            File packageDirectory = new File(url.getPath());
-            extractClassFile(classSet, packageDirectory, packageName);
+            try {
+                File packageDirectory = new File(URLDecoder.decode(url.getPath(), CHARSET));
+                extractClassFile(classSet, packageDirectory, packageName);
+            } catch (UnsupportedEncodingException e) {
+                LOGGER.error("not support utf-8 charset");
+            }
         }
         return classSet;
     }

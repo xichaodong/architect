@@ -14,6 +14,6 @@ public class FrameworkTest {
     @DisplayName("提取目标类方法:extractPackageClass")
     @Test
     public void extractPackageClass() {
-        System.out.println(ClassUtil.extractPackageClass("com.tristeza"));
+        System.out.println(ClassUtil.extractPackageClass("com.tristeza.controller"));
     }
 }
