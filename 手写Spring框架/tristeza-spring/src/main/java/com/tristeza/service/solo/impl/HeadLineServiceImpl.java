@@ -3,12 +3,14 @@ package com.tristeza.service.solo.impl;
 import com.tristeza.model.dto.Result;
 import com.tristeza.model.bo.HeadLine;
 import com.tristeza.service.solo.HeadLineService;
+import com.tristeza.springframework.core.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class HeadLineServiceImpl implements HeadLineService {
     private static final Logger LOGGER = LoggerFactory.getLogger(HeadLineServiceImpl.class);
 

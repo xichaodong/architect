@@ -7,9 +7,11 @@ import com.tristeza.model.dto.Result;
 import com.tristeza.service.combine.HeadLineShopCategoryCombineService;
 import com.tristeza.service.solo.HeadLineService;
 import com.tristeza.service.solo.ShopCategoryService;
+import com.tristeza.springframework.core.annotation.Service;
 
 import java.util.List;
 
+@Service
 public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
     private HeadLineService headLineService;
     private ShopCategoryService shopCategoryService;

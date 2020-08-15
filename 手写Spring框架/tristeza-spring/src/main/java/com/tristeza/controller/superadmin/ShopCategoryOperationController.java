@@ -3,11 +3,13 @@ package com.tristeza.controller.superadmin;
 import com.tristeza.model.bo.ShopCategory;
 import com.tristeza.model.dto.Result;
 import com.tristeza.service.solo.ShopCategoryService;
+import com.tristeza.springframework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
+@Controller
 public class ShopCategoryOperationController {
     private ShopCategoryService shopCategoryService;
 

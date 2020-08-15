@@ -8,9 +8,9 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
@@ -55,6 +55,21 @@ public class ClassUtil {
         } catch (Exception e) {
             LOGGER.error("new instance error", e);
         }
+        return null;
+    }
+
+    public static void setFields(Field field, Object object, Object value, boolean accessible) {
+        field.setAccessible(accessible);
+        try {
+            field.set(object, value);
+        } catch (IllegalAccessException e) {
+            LOGGER.error("set field error", e);
+            throw new RuntimeException("set field error", e);
+        }
+    }
+
+    public static Object getFieldInstance(Class<?> fieldClass) {
+        return newInstance(fieldClass, true);
     }
 
     private static void extractClassFile(Set<Class<?>> classSet, File fileSource, String packageName) {

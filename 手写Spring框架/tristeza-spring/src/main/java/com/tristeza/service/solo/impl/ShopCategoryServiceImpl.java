@@ -3,9 +3,11 @@ package com.tristeza.service.solo.impl;
 import com.tristeza.service.solo.ShopCategoryService;
 import com.tristeza.model.dto.Result;
 import com.tristeza.model.bo.ShopCategory;
+import com.tristeza.springframework.core.annotation.Service;
 
 import java.util.List;
 
+@Service
 public class ShopCategoryServiceImpl implements ShopCategoryService {
     @Override
     public Result<Boolean> addShopCategory(ShopCategory shopCategory) {
