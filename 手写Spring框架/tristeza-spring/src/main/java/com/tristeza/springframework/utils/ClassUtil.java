@@ -68,10 +68,6 @@ public class ClassUtil {
         }
     }
 
-    public static Object getFieldInstance(Class<?> fieldClass) {
-        return newInstance(fieldClass, true);
-    }
-
     private static void extractClassFile(Set<Class<?>> classSet, File fileSource, String packageName) {
         if (!fileSource.isDirectory()) {
             return;

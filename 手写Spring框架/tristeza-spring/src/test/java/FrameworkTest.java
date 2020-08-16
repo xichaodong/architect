@@ -1,9 +1,8 @@
-package com.tristeza.test;
-
 import com.tristeza.controller.frontend.MainPageController;
 import com.tristeza.service.solo.HeadLineService;
 import com.tristeza.springframework.core.BeanContainer;
 import com.tristeza.springframework.core.annotation.Controller;
+import com.tristeza.springframework.inject.DependencyInjector;
 import com.tristeza.springframework.utils.ClassUtil;
 import org.junit.jupiter.api.*;
 
@@ -32,15 +31,16 @@ public class FrameworkTest {
     @Order(1)
     @Test
     public void loadBeanTest() {
-        beanContainer.loadBeans("com.tristeza.controller");
+        beanContainer.loadBeans("com.tristeza.service");
     }
 
     @DisplayName("获取bean:getBeanTest")
     @Order(2)
     @Test
     public void getBeanTest() {
-        beanContainer.loadBeans("com.tristeza.service");
-        Set<Class<?>> classesByAnnotation = beanContainer.getClassesBySuper(HeadLineService.class);
-        Assertions.assertNotNull(classesByAnnotation);
+        beanContainer.loadBeans("com.tristeza");
+        new DependencyInjector().doIoc();
+        beanContainer.getBeans();
+//        Assertions.assertNotNull(classesByAnnotation);
     }
 }

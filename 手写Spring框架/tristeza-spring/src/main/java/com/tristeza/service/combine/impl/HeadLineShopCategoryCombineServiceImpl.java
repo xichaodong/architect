@@ -8,12 +8,15 @@ import com.tristeza.service.combine.HeadLineShopCategoryCombineService;
 import com.tristeza.service.solo.HeadLineService;
 import com.tristeza.service.solo.ShopCategoryService;
 import com.tristeza.springframework.core.annotation.Service;
+import com.tristeza.springframework.inject.annotation.Autowired;
 
 import java.util.List;
 
 @Service
 public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
+    @Autowired
     private HeadLineService headLineService;
+    @Autowired
     private ShopCategoryService shopCategoryService;
     @Override
     public Result<MainPageInfoDTO> getMainPageInfo() {
