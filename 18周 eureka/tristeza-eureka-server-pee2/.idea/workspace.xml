@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8bc133a0-f5a9-45c1-ad22-6b2a7af6082d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/tristeza-eureka-server-peer1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/target/classes/com/tristeza/EurekaServerPeer1Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tristeza-eureka-server-peer1/tristeza-eureka-server-peer1.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gATji4p4q5gv0svITrAO2HMmxp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="jdk.selected.LUA_MODULE" value="Lua 5.3.5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tristeza" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerPeer2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="tristeza-eureka-server-peer2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tristeza.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tristeza.EurekaServerPeer2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.EurekaServerPeer2Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bc133a0-f5a9-45c1-ad22-6b2a7af6082d" name="Default Changelist" comment="" />
+      <created>1597556535254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597556535254</updated>
+      <workItem from="1597556536653" duration="264000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1750" height="259" key="GridCell.Tab.0.bottom" timestamp="1597556800759">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800759" />
+    <state width="1750" height="259" key="GridCell.Tab.0.center" timestamp="1597556800758">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800758" />
+    <state width="1750" height="259" key="GridCell.Tab.0.left" timestamp="1597556800758">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800758" />
+    <state width="1750" height="259" key="GridCell.Tab.0.right" timestamp="1597556800759">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800759" />
+    <state width="1750" height="259" key="GridCell.Tab.1.bottom" timestamp="1597556800763">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800763" />
+    <state width="1750" height="259" key="GridCell.Tab.1.center" timestamp="1597556800761">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800761" />
+    <state width="1750" height="259" key="GridCell.Tab.1.left" timestamp="1597556800760">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800760" />
+    <state width="1750" height="259" key="GridCell.Tab.1.right" timestamp="1597556800762">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1750" height="259" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1597556800762" />
+  </component>
+</project>

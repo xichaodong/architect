@@ -1,0 +1,5 @@
+com/tristeza/config/WebMvcConfig.class
+com/tristeza/aspect/ServiceLogAspect.class
+com/tristeza/config/CorsConfig.class
+com/tristeza/config/Swagger2Config.class
+com/tristeza/interceptor/UserTokenInterceptor.class

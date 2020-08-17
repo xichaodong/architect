@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tristeza.mapper.ItemsMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.item.pojo.Items">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="item_name" property="itemName" jdbcType="VARCHAR"/>
+        <result column="cat_id" property="catId" jdbcType="INTEGER"/>
+        <result column="root_cat_id" property="rootCatId" jdbcType="INTEGER"/>
+        <result column="sell_counts" property="sellCounts" jdbcType="INTEGER"/>
+        <result column="on_off_status" property="onOffStatus" jdbcType="INTEGER"/>
+        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
+        <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+    </resultMap>
+
+    <update id="decreaseItemSpecStock">
+        UPDATE items_spec
+        SET stock = stock - #{pendingCounts}
+        WHERE id = #{specId}
+          AND stock >= #{pendingCounts}
+    </update>
+
+    <select id="queryItemsBySpecIds" resultType="com.tristeza.item.vo.CartVO">
+        SELECT
+        i.id AS itemId,
+        i.item_name AS itemName,
+        ii.url AS itemImgUrl,
+        it_s.id AS specId,
+        it_s.name AS specName,
+        it_s.price_discount AS priceDiscount,
+        it_s.price_normal AS priceNormal
+        FROM items_spec it_s
+        LEFT JOIN items i ON it_s.item_id = i.id
+        LEFT JOIN items_img ii ON i.id = ii.item_id
+        WHERE ii.is_main = 1
+        AND it_s.id IN
+        <foreach collection="specIds" index="index" item="specId" open="(" close=")" separator=",">
+            #{specId}
+        </foreach>
+    </select>
+</mapper>

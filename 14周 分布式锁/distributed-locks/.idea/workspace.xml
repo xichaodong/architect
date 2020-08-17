@@ -5,15 +5,132 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e903c4be-5f38-449d-9fc0-58e02824d820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/HelloWorld.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/RateLimiter.lua" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../17周 分布式限流/lua/lua.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/my/mapper/MyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/CookieUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/DesensitizationUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/JsonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/MD5Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/MobileEmailUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/src/main/java/com/tristeza/utils/RedisOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/my/mapper/MyMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/utils/CookieUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/utils/DateUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/utils/DesensitizationUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/utils/JsonUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/utils/MD5Utils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/classes/com/tristeza/utils/MobileEmailUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/enums/BooleanEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/enums/CategoryLevelEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/enums/CommentLevelEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/enums/OrderStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/enums/PayMethodEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/enums/SexEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/pojo/JsonResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/src/main/java/com/tristeza/pojo/PagedGridResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/enums/BooleanEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/enums/CategoryLevelEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/enums/CommentLevelEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/enums/OrderStatusEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/enums/PayMethodEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/enums/SexEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/pojo/JsonResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/classes/com/tristeza/pojo/PagedGridResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-shared-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/aspect/ServiceLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/config/Swagger2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/interceptor/UserTokenInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/classes/com/tristeza/aspect/ServiceLogAspect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/classes/com/tristeza/config/CorsConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/classes/com/tristeza/config/Swagger2Config.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/classes/com/tristeza/config/WebMvcConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/classes/com/tristeza/interceptor/UserTokenInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/java/com/tristeza/mapper/ItemsCommentsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/java/com/tristeza/mapper/ItemsImgMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/java/com/tristeza/mapper/ItemsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/java/com/tristeza/mapper/ItemsParamMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/java/com/tristeza/mapper/ItemsSpecMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/resources/mapper/ItemsCommentsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/resources/mapper/ItemsImgMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/resources/mapper/ItemsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/resources/mapper/ItemsParamMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/src/main/resources/mapper/ItemsSpecMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/com/tristeza/mapper/ItemsCommentsMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/com/tristeza/mapper/ItemsImgMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/com/tristeza/mapper/ItemsMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/com/tristeza/mapper/ItemsParamMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/com/tristeza/mapper/ItemsSpecMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/mapper/ItemsCommentsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/mapper/ItemsImgMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/mapper/ItemsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/mapper/ItemsParamMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/classes/mapper/ItemsSpecMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-mapper/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/bo/CenterCommentBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/pojo/Items.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/pojo/ItemsComments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/pojo/ItemsImg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/pojo/ItemsParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/pojo/ItemsSpec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/vo/CartVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/vo/CenterCommentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/vo/CommentCountsVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/vo/ItemCommentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/src/main/java/com/tristeza/item/vo/ItemDetailVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/bo/CenterCommentBO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/pojo/Items.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/pojo/ItemsComments.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/pojo/ItemsImg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/pojo/ItemsParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/pojo/ItemsSpec.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/vo/CartVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/vo/CenterCommentVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/vo/CommentCountsVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/vo/ItemCommentVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/classes/com/tristeza/item/vo/ItemDetailVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/domain/item/tristeza-item-pojo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/src/main/java/com/tristeza/EurekaServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/target/classes/com/tristeza/EurekaServerApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-cloud/platform/registry-center/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-pee2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/tristeza-eureka-server-peer1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/target/classes/com/tristeza/EurekaServerPeer1Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer1/tristeza-eureka-server-peer1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-server-peer2/tristeza-eureka-server-peer2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring-framework" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring-framework" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-client/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-client/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../18周 eureka/tristeza-eureka-client/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +275,8 @@
       <workItem from="1596949084223" duration="599000" />
       <workItem from="1596970250514" duration="102000" />
       <workItem from="1596970374569" duration="596000" />
+      <workItem from="1597567227311" duration="603000" />
+      <workItem from="1597568280357" duration="21000" />
     </task>
     <servers />
   </component>

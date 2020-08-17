@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tristeza-cloud-web-components" />
+        <module name="tristeza-item-mapper" />
+        <module name="registry-center" />
+        <module name="tristeza-item-api" />
+        <module name="tristeza-cloud-shared-pojo" />
+        <module name="tristeza-cloud-common" />
+        <module name="tristeza-item-pojo" />
+        <module name="tristeza-item-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

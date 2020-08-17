@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tristeza.mapper.ItemsCommentsMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.item.pojo.ItemsComments">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="item_id" property="itemId" jdbcType="VARCHAR"/>
+        <result column="item_name" property="itemName" jdbcType="VARCHAR"/>
+        <result column="item_spec_id" property="itemSpecId" jdbcType="VARCHAR"/>
+        <result column="spec_name" property="specName" jdbcType="VARCHAR"/>
+        <result column="comment_level" property="commentLevel" jdbcType="INTEGER"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="ItemCommentsResultMap" type="com.tristeza.item.vo.ItemCommentVO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="commentLevel" property="commentLevel" jdbcType="INTEGER"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="specName" property="specName" jdbcType="VARCHAR"/>
+        <result column="userFace" property="userFace" jdbcType="VARCHAR"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="createdTime" property="createdTime"/>
+    </resultMap>
+
+    <resultMap id="CommentsResultMap" type="com.tristeza.item.vo.CenterCommentVO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="commentId" property="commentId" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="specName" property="specName" jdbcType="VARCHAR"/>
+        <result column="itemId" property="itemId" jdbcType="VARCHAR"/>
+        <result column="itemName" property="itemName" jdbcType="VARCHAR"/>
+        <result column="itemImg" property="itemImg" jdbcType="VARCHAR"/>
+        <result column="createdTime" property="createdTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <insert id="saveComment">
+        INSERT INTO items_comments(id, user_id, item_id, item_name,
+        item_spec_id, spec_name, comment_level, content,
+        created_time, updated_time)
+        VALUES
+        <foreach collection="comments" item="item" index="index" separator=",">
+            (
+            #{item.commentId},
+            #{userId},
+            #{item.itemId},
+            #{item.itemName},
+            #{item.itemSpecId},
+            #{item.itemSpecName},
+            #{item.commentLevel},
+            #{item.content},
+            now(),
+            now())
+        </foreach>
+    </insert>
+
+    <select id="queryItemComments" resultMap="ItemCommentsResultMap">
+        SELECT ic.comment_level AS commentLevel,
+        ic.content AS content,
+        ic.spec_name AS specName,
+        u.face AS userFace,
+        u.nickname AS nickname,
+        ic.created_time AS createdTime
+        FROM items_comments ic
+        LEFT JOIN users u
+        ON ic.user_id = u.id
+        WHERE ic.item_id = #{itemId}
+        <if test="commentLevel != null and commentLevel != ''">
+            AND ic.comment_level = #{commentLevel}
+        </if>
+    </select>
+
+    <select id="queryUserComments" resultMap="CommentsResultMap">
+        SELECT ic.id           AS commentId,
+               ic.content      AS content,
+               ic.created_time AS createdTime,
+               ic.item_id      AS itemId,
+               ic.item_name    AS itemName,
+               ic.spec_name    AS specName,
+               ii.url          AS itemImg
+        FROM items_comments ic
+                 LEFT JOIN items_img ii on ic.item_id = ii.item_id
+        WHERE ic.user_id = #{userId}
+          AND ii.is_main = 1
+        ORDER BY ic.created_time
+            DESC
+    </select>
+</mapper>
