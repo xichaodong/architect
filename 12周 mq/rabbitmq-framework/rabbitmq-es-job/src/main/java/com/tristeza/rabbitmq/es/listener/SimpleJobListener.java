@@ -9,16 +9,16 @@ import com.dangdang.ddframe.job.lite.api.listener.ElasticJobListener;
 
 public class SimpleJobListener implements ElasticJobListener {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(SimpleJobListener.class);
-	
-	@Override
-	public void beforeJobExecuted(ShardingContexts shardingContexts) {
-		LOGGER.info("-----------------执行任务之前：{}", JSON.toJSONString(shardingContexts));
-	}
+    private static Logger LOGGER = LoggerFactory.getLogger(SimpleJobListener.class);
 
-	@Override
-	public void afterJobExecuted(ShardingContexts shardingContexts) {
-		LOGGER.info("-----------------执行任务之后：{}", JSON.toJSONString(shardingContexts));		
-	}
-	
+    @Override
+    public void beforeJobExecuted(ShardingContexts shardingContexts) {
+        LOGGER.info("-----------------执行任务之前：{}", JSON.toJSONString(shardingContexts));
+    }
+
+    @Override
+    public void afterJobExecuted(ShardingContexts shardingContexts) {
+        LOGGER.info("-----------------执行任务之后：{}", JSON.toJSONString(shardingContexts));
+    }
+
 }

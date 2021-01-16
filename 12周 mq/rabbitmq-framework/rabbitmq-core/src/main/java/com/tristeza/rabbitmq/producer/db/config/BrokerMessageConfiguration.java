@@ -16,13 +16,13 @@ public class BrokerMessageConfiguration {
 
     @Autowired
     private DataSource rabbitProducerDataSource;
-    
+
     @Value("classpath:rabbit-producer-message-schema.sql")
     private Resource schemaScript;
-    
+
     @Bean
     public DataSourceInitializer initDataSourceInitializer() {
-    	System.err.println("--------------rabbitProducerDataSource-----------:" + rabbitProducerDataSource);
+        System.err.println("--------------rabbitProducerDataSource-----------:" + rabbitProducerDataSource);
         final DataSourceInitializer initializer = new DataSourceInitializer();
         initializer.setDataSource(rabbitProducerDataSource);
         initializer.setDatabasePopulator(databasePopulator());

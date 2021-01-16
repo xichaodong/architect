@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @AutoConfigureAfter(RabbitProducerDataSourceConfiguration.class)
 public class RabbitProducerMybatisMapperScannerConfig {
-	
-	@Bean(name="rabbitProducerMapperScannerConfigurer")
+
+    @Bean(name = "rabbitProducerMapperScannerConfigurer")
     public MapperScannerConfigurer rabbitProducerMapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("rabbitProducerSqlSessionFactory");

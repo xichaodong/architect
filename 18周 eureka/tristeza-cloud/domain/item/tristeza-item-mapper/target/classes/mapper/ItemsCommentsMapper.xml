@@ -79,18 +79,18 @@
     </select>
 
     <select id="queryUserComments" resultMap="CommentsResultMap">
-        SELECT ic.id           AS commentId,
-               ic.content      AS content,
-               ic.created_time AS createdTime,
-               ic.item_id      AS itemId,
-               ic.item_name    AS itemName,
-               ic.spec_name    AS specName,
-               ii.url          AS itemImg
+        SELECT ic.id AS commentId,
+        ic.content AS content,
+        ic.created_time AS createdTime,
+        ic.item_id AS itemId,
+        ic.item_name AS itemName,
+        ic.spec_name AS specName,
+        ii.url AS itemImg
         FROM items_comments ic
-                 LEFT JOIN items_img ii on ic.item_id = ii.item_id
+        LEFT JOIN items_img ii on ic.item_id = ii.item_id
         WHERE ic.user_id = #{userId}
-          AND ii.is_main = 1
+        AND ii.is_main = 1
         ORDER BY ic.created_time
-            DESC
+        DESC
     </select>
 </mapper>

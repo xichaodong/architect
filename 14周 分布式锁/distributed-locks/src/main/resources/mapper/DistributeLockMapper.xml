@@ -13,7 +13,7 @@
     <select id="loadAllDistributeLocks" parameterType="string" resultMap="BaseResultMap">
         SELECT *
         FROM DISTRIBUTE_LOCK
-            FOR
+        FOR
         UPDATE
     </select>
 </mapper>

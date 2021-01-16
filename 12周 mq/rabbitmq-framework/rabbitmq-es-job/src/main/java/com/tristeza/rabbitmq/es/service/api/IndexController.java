@@ -9,13 +9,13 @@ import com.tristeza.rabbitmq.es.service.IndexService;
 @RestController
 public class IndexController {
 
-	@Autowired
-	private IndexService indexService;
-	
-	@RequestMapping("/index")
-	public String index() {
-		indexService.tester("123");
-		return "index";
-	}
-	
+    @Autowired
+    private IndexService indexService;
+
+    @RequestMapping("/index")
+    public String index() {
+        indexService.tester("123");
+        return "index";
+    }
+
 }

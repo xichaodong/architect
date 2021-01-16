@@ -20,7 +20,7 @@
         UPDATE items_spec
         SET stock = stock - #{pendingCounts}
         WHERE id = #{specId}
-          AND stock >= #{pendingCounts}
+        AND stock >= #{pendingCounts}
     </update>
 
     <select id="queryItemsBySpecIds" resultType="com.tristeza.item.vo.CartVO">

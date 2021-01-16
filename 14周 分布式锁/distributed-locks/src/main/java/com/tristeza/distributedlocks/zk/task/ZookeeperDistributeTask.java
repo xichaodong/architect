@@ -39,7 +39,7 @@ public class ZookeeperDistributeTask {
         }
     }
 
-//    @Scheduled(cron = "0/5 * * * * ?")
+    //    @Scheduled(cron = "0/5 * * * * ?")
     public void curatorTask() throws Exception {
         LOGGER.info("进入方法");
         InterProcessMutex lock = new InterProcessMutex(curatorFramework, "/order2");

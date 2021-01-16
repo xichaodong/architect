@@ -25,7 +25,7 @@ public class GenericMessageConverter implements MessageConverter {
     }
 
     @Override
-    public Message toMessage( Object object, MessageProperties messageProperties) throws MessageConversionException {
+    public Message toMessage(Object object, MessageProperties messageProperties) throws MessageConversionException {
         return new Message(this.serializer.serializer2Byte(object), messageProperties);
     }
 

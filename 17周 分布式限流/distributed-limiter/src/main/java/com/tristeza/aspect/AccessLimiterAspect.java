@@ -39,7 +39,7 @@ public class AccessLimiterAspect {
         if (Objects.isNull(annotation)) {
             return;
         }
-        
+
         String key = annotation.methodKey();
         Integer limit = annotation.limit();
 

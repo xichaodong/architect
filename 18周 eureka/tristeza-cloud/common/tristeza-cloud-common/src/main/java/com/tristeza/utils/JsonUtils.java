@@ -7,14 +7,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 
 /**
- * 
+ * @author imooc
  * @Title: JsonUtils.java
  * @Package com.imooc.utils
  * @Description: json转换类
  * Copyright: Copyright (c)
  * Company: www.imooc.com
- * 
- * @author imooc
  */
 public class JsonUtils {
 
@@ -23,22 +21,23 @@ public class JsonUtils {
 
     /**
      * 将对象转换成json字符串。
+     *
      * @param data
      * @return
      */
     public static String objectToJson(Object data) {
-    	try {
-			String string = MAPPER.writeValueAsString(data);
-			return string;
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-    	return null;
+        try {
+            String string = MAPPER.writeValueAsString(data);
+            return string;
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
-    
+
     /**
      * 将json结果集转化为对象
-     * 
+     *
      * @param jsonData json数据
      * @param beanType 对象中的object类型
      * @return
@@ -48,27 +47,28 @@ public class JsonUtils {
             T t = MAPPER.readValue(jsonData, beanType);
             return t;
         } catch (Exception e) {
-        	e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
-    
+
     /**
      * 将json数据转换成pojo对象list
+     *
      * @param jsonData
      * @param beanType
      * @return
      */
-    public static <T>List<T> jsonToList(String jsonData, Class<T> beanType) {
-    	JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
-    	try {
-    		List<T> list = MAPPER.readValue(jsonData, javaType);
-    		return list;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    	
-    	return null;
+    public static <T> List<T> jsonToList(String jsonData, Class<T> beanType) {
+        JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
+        try {
+            List<T> list = MAPPER.readValue(jsonData, javaType);
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
-    
+
 }

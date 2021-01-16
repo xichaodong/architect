@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>tristeza-cloud-shared-pojo</artifactId>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.github.pagehelper</groupId>

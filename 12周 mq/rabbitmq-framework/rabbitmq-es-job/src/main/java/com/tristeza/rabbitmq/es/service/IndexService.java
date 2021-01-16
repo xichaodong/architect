@@ -7,8 +7,8 @@ import com.tristeza.rabbitmq.es.annotation.JobTrace;
 @Service
 public class IndexService {
 
-	@JobTrace
-	public void tester(String name) {
-		System.err.println("name: " + name);
-	}
+    @JobTrace
+    public void tester(String name) {
+        System.err.println("name: " + name);
+    }
 }
