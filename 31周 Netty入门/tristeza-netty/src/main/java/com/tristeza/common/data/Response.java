@@ -1,9 +1,8 @@
-package com.tristeza.netty.common;
+package com.tristeza.common.data;
 
 import java.io.Serializable;
 
 public class Response implements Serializable {
-
     private static final long serialVersionUID = -6231852018644360658L;
 
     private String id;

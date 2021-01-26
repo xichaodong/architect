@@ -1,6 +1,5 @@
 package com.tristeza.netty.client;
 
-import com.tristeza.netty.common.Response;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -30,13 +29,8 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
         // 固定模式的 try .. finally
         // 在try代码片段处理逻辑, finally进行释放缓存资源, 也就是 Object msg (buffer)
         try {
-            ByteBuf buf = (ByteBuf) msg;
-            //创建目标大小的数组
-            byte[] bytes = new byte[buf.readableBytes()];
-            //把数据从buf转移到byte[]
-            buf.getBytes(0, bytes);
 
-            System.out.println(new String(bytes));
+            System.out.println(msg);
             System.out.flush();
         } finally {
             ReferenceCountUtil.release(msg);
