@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
  * @author chaodong.xi
  * @date 2021/1/27 下午6:20
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Module {
-    String module();
+public @interface Cmd {
+    String cmd();
 }
