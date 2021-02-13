@@ -27,7 +27,7 @@ public class RpcServerConfig {
     public void exporter() {
         if (Objects.isNull(rpcServer)) {
             try {
-                rpcServer = new RpcServer(String.format("%s:%s", host, port));
+                rpcServer = new RpcServer(String.format("%s:%s", HOST, port));
             } catch (Exception e) {
                 e.printStackTrace();
             }

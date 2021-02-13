@@ -52,7 +52,6 @@ public class RpcConnectManager {
     public void connect(String serverAddress) {
         List<String> allServerAddress = Arrays.asList(serverAddress.split(","));
         updateConnectedServer(allServerAddress);
-
     }
 
     public void updateConnectedServer(List<String> allServerAddress) {
@@ -124,7 +123,7 @@ public class RpcConnectManager {
     }
 
     private void addHandler(RpcClientHandler handler) {
-        connectedHandlerMap.put(handler.getRemotePeer(), handler);
+        connectedHandlerMap.put(handler.getChannel().remoteAddress(), handler);
         connectedHandlerList.add(handler);
         signalAvailableHandler();
     }

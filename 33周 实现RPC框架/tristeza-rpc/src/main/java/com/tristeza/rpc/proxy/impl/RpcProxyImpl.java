@@ -27,29 +27,30 @@ public class RpcProxyImpl<T> implements InvocationHandler, RpcAsyncProxy {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         RpcClientHandler handler = RpcConnectManager.getInstance().chooseHandler();
-        RpcRequest request = buildSyncRpcRequest(method);
+        RpcRequest request = buildSyncRpcRequest(method, args);
         RpcFuture rpcFuture = handler.sendRequest(request);
 
         return rpcFuture.get(timeout, TimeUnit.SECONDS);
     }
 
-    private RpcRequest buildSyncRpcRequest(Method method) {
+    private RpcRequest buildSyncRpcRequest(Method method, Object[] args) {
         RpcRequest request = new RpcRequest();
 
         request.setRequestId(UUID.randomUUID().toString());
         request.setClassName(method.getDeclaringClass().getName());
         request.setMethodName(method.getName());
         request.setParameterTypes(method.getParameterTypes());
-        request.setParameters(method.getParameters());
+        request.setParameters(args);
 
         return request;
     }
 
-    private RpcRequest buildAsyncRpcRequest(String methodName, Object[] params) {
+    private RpcRequest buildAsyncRpcRequest(String methodName, Object... params) {
         RpcRequest request = new RpcRequest();
 
         request.setRequestId(UUID.randomUUID().toString());
-        request.setClassName(methodName);
+        request.setClassName(clazz.getName());
+        request.setMethodName(methodName);
         request.setParameterTypes(buildParamsTypesByParam(params));
         request.setParameters(params);
 
@@ -60,14 +61,38 @@ public class RpcProxyImpl<T> implements InvocationHandler, RpcAsyncProxy {
         Class<?>[] paramsType = new Class<?>[params.length];
 
         for (int i = 0; i < params.length; i++) {
-            paramsType[i] = params.getClass();
+            paramsType[i] = getClassType(params[i]);
         }
 
         return paramsType;
     }
 
+    private Class<?> getClassType(Object obj) {
+        Class<?> classType = obj.getClass();
+        String typeName = classType.getName();
+        switch (typeName) {
+            case "java.lang.Integer":
+                return Integer.TYPE;
+            case "java.lang.Long":
+                return Long.TYPE;
+            case "java.lang.Float":
+                return Float.TYPE;
+            case "java.lang.Double":
+                return Double.TYPE;
+            case "java.lang.Character":
+                return Character.TYPE;
+            case "java.lang.Boolean":
+                return Boolean.TYPE;
+            case "java.lang.Short":
+                return Short.TYPE;
+            case "java.lang.Byte":
+                return Byte.TYPE;
+        }
+        return classType;
+    }
+
     @Override
-    public RpcFuture call(String methodName, Object[] params) {
+    public RpcFuture call(String methodName, Object... params) {
         RpcClientHandler handler = RpcConnectManager.getInstance().chooseHandler();
         RpcRequest request = buildAsyncRpcRequest(methodName, params);
 

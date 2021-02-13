@@ -7,5 +7,5 @@ import com.tristeza.rpc.async.RpcFuture;
  * @date 2021/2/11 12:22 上午
  */
 public interface RpcAsyncProxy {
-    RpcFuture call(String methodName, Object[] params);
+    RpcFuture call(String methodName, Object... params);
 }

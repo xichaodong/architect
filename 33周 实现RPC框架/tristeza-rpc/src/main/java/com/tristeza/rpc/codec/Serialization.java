@@ -3,9 +3,9 @@ package com.tristeza.rpc.codec;
 import io.protostuff.LinkedBuffer;
 import io.protostuff.ProtostuffIOUtil;
 import io.protostuff.Schema;
-import io.protostuff.runtime.RuntimeSchema;
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
+import io.protostuff.runtime.RuntimeSchema;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -35,7 +35,7 @@ public class Serialization {
     }
 
     /**
-     * 序列化：对象->字节数组
+     * 	序列化：对象->字节数组
      */
     public static <T> byte[] serialize(T obj) {
         @SuppressWarnings("unchecked")
@@ -52,7 +52,7 @@ public class Serialization {
     }
 
     /**
-     * 反序列化（字节数组->对象）
+     * 	反序列化（字节数组->对象）
      */
     public static <T> T deserialize(byte[] data, Class<T> cls) {
         try {

@@ -5,6 +5,7 @@ import com.tristeza.rpc.proxy.RpcAsyncProxy;
 import com.tristeza.rpc.proxy.impl.RpcProxyImpl;
 
 import java.lang.reflect.Proxy;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,18 +14,15 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 2021/2/9 5:32 下午
  */
 public class RpcClient {
-    private final Map<Class<?>, Object> syncProxyInstanceMap = new ConcurrentHashMap<>();
-    private final Map<Class<?>, RpcAsyncProxy> asyncProxyInstanceMap = new ConcurrentHashMap<>();
+    private final Map<Class<?>, Object> syncProxyInstanceMap = new HashMap<>();
+    private final Map<Class<?>, RpcAsyncProxy> asyncProxyInstanceMap = new HashMap<>();
     private String serverAddress;
     private long timeout;
-
-    private RpcClient() {
-
-    }
 
     public void initRpcClient(String serverAddress, long timeout) {
         this.serverAddress = serverAddress;
         this.timeout = timeout;
+        connect();
     }
 
     private void connect() {
@@ -41,11 +39,12 @@ public class RpcClient {
             return (T) syncProxyInstanceMap.get(interfaceClass);
         }
 
-        T proxyInstance = (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass},
+        Object proxyInstance = Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass},
                 new RpcProxyImpl<>(interfaceClass, timeout));
+
         syncProxyInstanceMap.put(interfaceClass, proxyInstance);
 
-        return proxyInstance;
+        return (T) proxyInstance;
     }
 
     public <T> RpcAsyncProxy invokeAsync(Class<T> interfaceClass) {

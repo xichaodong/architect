@@ -25,8 +25,8 @@ public class RpcServerInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
-        ch.pipeline().addLast(new RpcEncoder(RpcRequest.class));
-        ch.pipeline().addLast(new RpcDecoder(RpcResponse.class));
+        ch.pipeline().addLast(new RpcEncoder(RpcResponse.class));
+        ch.pipeline().addLast(new RpcDecoder(RpcRequest.class));
         ch.pipeline().addLast(new RpcServerHandler(handlerMap));
         ch.pipeline().addLast(new LengthFieldBasedFrameDecoder(65535, 0, 4, 0, 0));
     }

@@ -2,6 +2,8 @@ package com.tristeza.rpc.server;
 
 import com.tristeza.rpc.config.node.impl.ProviderConfig;
 import com.tristeza.rpc.handler.RpcServerHandler;
+import com.tristeza.rpc.initializer.RpcClientInitializer;
+import com.tristeza.rpc.initializer.RpcServerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -9,6 +11,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.logging.LoggingHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +30,7 @@ public class RpcServer {
     private final EventLoopGroup bossGroup = new NioEventLoopGroup();
     private final EventLoopGroup workerGroup = new NioEventLoopGroup();
 
-    private volatile Map<String, Object> handlerMap = new HashMap<>();
+    private final Map<String, Object> handlerMap = new HashMap<>();
 
     public RpcServer(String serverAddress) throws InterruptedException {
         this.serverAddress = serverAddress;
@@ -36,11 +39,11 @@ public class RpcServer {
 
     private void start() throws InterruptedException {
         ServerBootstrap bootstrap = new ServerBootstrap();
-        bootstrap.group(bossGroup)
-                .group(workerGroup)
+        bootstrap.group(bossGroup, workerGroup)
                 .channel(NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 1024)
-                .childHandler(new RpcServerHandler(handlerMap));
+                .handler(new LoggingHandler())
+                .childHandler(new RpcServerInitializer(handlerMap));
 
         String[] address = serverAddress.split(":");
 

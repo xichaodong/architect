@@ -96,7 +96,7 @@ public class RpcFuture implements Future<Object> {
 
     @Override
     public Object get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-        boolean success = sync.tryAcquireNanos(-1, unit.toNanos(timeout));
+        boolean success = sync.tryAcquireNanos(1, unit.toNanos(timeout));
         if (success) {
             if (Objects.nonNull(this.rpcResponse)) {
                 return this.rpcResponse.getResult();
