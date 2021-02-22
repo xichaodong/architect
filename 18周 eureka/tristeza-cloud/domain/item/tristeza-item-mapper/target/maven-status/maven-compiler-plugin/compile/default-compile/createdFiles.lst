@@ -1,5 +1,5 @@
-com/tristeza/mapper/ItemsMapper.class
-com/tristeza/mapper/ItemsParamMapper.class
-com/tristeza/mapper/ItemsImgMapper.class
-com/tristeza/mapper/ItemsCommentsMapper.class
-com/tristeza/mapper/ItemsSpecMapper.class
+com/tristeza/item/mapper/ItemsParamMapper.class
+com/tristeza/item/mapper/ItemsImgMapper.class
+com/tristeza/item/mapper/ItemsSpecMapper.class
+com/tristeza/item/mapper/ItemsMapper.class
+com/tristeza/item/mapper/ItemsCommentsMapper.class

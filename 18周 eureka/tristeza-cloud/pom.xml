@@ -12,13 +12,28 @@
 
     <modules>
         <module>common/tristeza-cloud-common</module>
-        <module>common/tristeza-cloud-shared-pojo</module>
+        <module>common/tristeza-cloud-shared-model</module>
         <module>common/tristeza-cloud-web-components</module>
         <module>platform/registry-center</module>
-        <module>domain/item/tristeza-item-pojo</module>
+        <module>domain/item/tristeza-item-model</module>
         <module>domain/item/tristeza-item-mapper</module>
         <module>domain/item/tristeza-item-api</module>
         <module>domain/item/tristeza-item-service</module>
+        <module>domain/item/tristeza-item-web</module>
+        <module>domain/user/tristeza-user-model</module>
+        <module>domain/user/tristeza-user-mapper</module>
+        <module>domain/user/tristeza-user-api</module>
+        <module>domain/user/tristeza-user-service</module>
+        <module>domain/user/tristeza-user-web</module>
+        <module>domain/cart/tristeza-cart-api</module>
+        <module>domain/cart/tristeza-cart-model</module>
+        <module>domain/cart/tristeza-cart-service</module>
+        <module>domain/cart/tristeza-cart-web</module>
+        <module>domain/order/tristeza-order-model</module>
+        <module>domain/order/tristeza-order-mapper</module>
+        <module>domain/order/tristeza-order-api</module>
+        <module>domain/order/tristeza-order-service</module>
+        <module>domain/order/tristeza-order-web</module>
     </modules>
 
     <dependencyManagement>

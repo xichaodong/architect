@@ -23,9 +23,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.tristeza</groupId>
-            <artifactId>tristeza-cloud-shared-pojo</artifactId>
+            <artifactId>tristeza-cloud-shared-model</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

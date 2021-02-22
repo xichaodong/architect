@@ -6,6 +6,7 @@ server:
 eureka:
   instance:
     hostname: peer2
+    prefer-ip-address: false
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 10000

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tristeza.mapper.ItemsMapper">
-    <resultMap id="BaseResultMap" type="com.tristeza.item.pojo.Items">
+<mapper namespace="com.tristeza.item.mapper.ItemsMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.item.model.pojo.Items">
         <!--
           WARNING - @mbg.generated
         -->
@@ -23,7 +23,7 @@
         AND stock >= #{pendingCounts}
     </update>
 
-    <select id="queryItemsBySpecIds" resultType="com.tristeza.item.vo.CartVO">
+    <select id="queryItemsBySpecIds" resultType="com.tristeza.item.model.vo.CartVO">
         SELECT
         i.id AS itemId,
         i.item_name AS itemName,

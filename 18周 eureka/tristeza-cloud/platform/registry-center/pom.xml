@@ -25,7 +25,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.tristeza.EurekaServerApplication</mainClass>
+                    <mainClass>com.tristeza.registry.center.EurekaServerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

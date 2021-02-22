@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tristeza.mapper.ItemsCommentsMapper">
-    <resultMap id="BaseResultMap" type="com.tristeza.item.pojo.ItemsComments">
+<mapper namespace="com.tristeza.item.mapper.ItemsCommentsMapper">
+    <resultMap id="BaseResultMap" type="com.tristeza.item.model.pojo.ItemsComments">
         <!--
           WARNING - @mbg.generated
         -->
@@ -17,7 +17,7 @@
         <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <resultMap id="ItemCommentsResultMap" type="com.tristeza.item.vo.ItemCommentVO">
+    <resultMap id="ItemCommentsResultMap" type="com.tristeza.item.model.vo.ItemCommentVO">
         <!--
           WARNING - @mbg.generated
         -->
@@ -29,7 +29,7 @@
         <result column="createdTime" property="createdTime"/>
     </resultMap>
 
-    <resultMap id="CommentsResultMap" type="com.tristeza.item.vo.CenterCommentVO">
+    <resultMap id="CommentsResultMap" type="com.tristeza.item.model.vo.CenterCommentVO">
         <!--
           WARNING - @mbg.generated
         -->
