@@ -4,7 +4,6 @@ import com.tristeza.model.Friend;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -23,18 +22,9 @@ public class TestController {
     @Resource
     private RestTemplate restTemplate;
 
-    @GetMapping("/hello")
+    @GetMapping("/sayHi")
     public String hello() {
-        ServiceInstance instance = loadBalancerClient.choose("eureka-client");
-
-        if (Objects.isNull(instance)) {
-            return "no available instances";
-        }
-
-        String target = String.format("http://%s:%s/sayHi", instance.getHost(), instance.getPort());
-        System.out.println("url is:" + target);
-
-        return restTemplate.getForObject(target, String.class);
+        return restTemplate.getForObject("http://eureka-client/sayHi", String.class);
     }
 
     @PostMapping("/hello")

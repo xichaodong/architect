@@ -2,7 +2,7 @@ spring:
   application:
     name: eureka-client
 server:
-  port: 8889
+  port: 18080
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
