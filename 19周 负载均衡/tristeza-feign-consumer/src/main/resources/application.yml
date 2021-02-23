@@ -1,0 +1,23 @@
+server:
+  port: 18182
+
+spring:
+  application:
+    name: feign-consumer
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+
+  client:
+    service-url:
+      defaultZone: http://peer1:8891/eureka
+
+eureka-client:
+  ribbon:
+    MaxAutoRetries: 2
+    MaxAutoRetriesNextServer: 2
+    ConnectTimeout: 1
+    ReadTimeout: 1
+    OkToRetryOnAllOperations: true
