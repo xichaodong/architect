@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.annotation.Resource;
 import java.io.File;
 
-//@Configuration
+@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
     private static final String FACE_RESOURCE_LOCATION = String.format("file:..%sface/", File.separator);
     private static final String SWAGGER_RESOURCE_LOCATION = String.format("classpath:%sMETA-INF%sresources%s", File.separator, File.separator, File.separator);

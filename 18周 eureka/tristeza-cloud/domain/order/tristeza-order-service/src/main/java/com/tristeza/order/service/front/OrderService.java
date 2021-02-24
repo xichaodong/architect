@@ -1,6 +1,6 @@
 package com.tristeza.order.service.front;
 
-import com.tristeza.order.model.bo.front.PlaceOrderBO;
+import com.tristeza.order.model.bo.PlaceOrderBO;
 import com.tristeza.order.model.pojo.OrderStatus;
 import com.tristeza.order.model.vo.front.CreateOrderVO;
 

@@ -2,10 +2,12 @@ package com.tristeza.user.api.center;
 
 import com.tristeza.user.model.bo.center.CenterUserBO;
 import com.tristeza.user.model.pojo.Users;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RequestMapping("center-user-api")
+@FeignClient(value = "center-user-api")
 public interface CenterUserApi {
     /**
      * 根据id查询用户信息

@@ -1,4 +1,4 @@
-package com.tristeza.order.model.bo.front;
+package com.tristeza.order.model.bo;
 
 /**
  * 订单提交BO

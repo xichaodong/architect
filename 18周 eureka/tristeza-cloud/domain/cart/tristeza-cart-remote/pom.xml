@@ -10,20 +10,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tristeza-order-model</artifactId>
+    <artifactId>tristeza-cart-remote</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>javax.persistence-api</artifactId>
-            <version>2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>tristeza-cart-api</artifactId>
@@ -32,7 +21,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>tristeza-item-api</artifactId>
+            <artifactId>tristeza-cart-service</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

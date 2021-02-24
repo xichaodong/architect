@@ -34,6 +34,9 @@
         <module>domain/order/tristeza-order-api</module>
         <module>domain/order/tristeza-order-service</module>
         <module>domain/order/tristeza-order-web</module>
+        <module>domain/cart/tristeza-cart-remote</module>
+        <module>domain/item/tristeza-item-remote</module>
+        <module>domain/user/tristeza-user-remote</module>
     </modules>
 
     <dependencyManagement>

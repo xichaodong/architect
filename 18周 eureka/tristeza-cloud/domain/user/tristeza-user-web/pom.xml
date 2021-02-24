@@ -21,6 +21,12 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>tristeza-cart-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>tristeza-cloud-web-components</artifactId>
             <version>${project.version}</version>
         </dependency>

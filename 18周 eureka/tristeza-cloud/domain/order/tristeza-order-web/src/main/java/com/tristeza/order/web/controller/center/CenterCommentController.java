@@ -2,7 +2,7 @@ package com.tristeza.order.web.controller.center;
 
 import com.tristeza.cloud.model.enums.BooleanEnum;
 import com.tristeza.cloud.model.pojo.JsonResult;
-import com.tristeza.order.model.bo.center.CenterCommentBO;
+import com.tristeza.item.model.bo.CenterCommentBO;
 import com.tristeza.order.model.pojo.Orders;
 import com.tristeza.order.service.center.CenterCommentService;
 import com.tristeza.order.service.center.CenterOrderService;

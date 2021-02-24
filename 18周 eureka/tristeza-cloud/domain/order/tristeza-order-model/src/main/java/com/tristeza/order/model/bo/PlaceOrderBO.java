@@ -1,4 +1,4 @@
-package com.tristeza.order.model.bo.front;
+package com.tristeza.order.model.bo;
 
 import com.tristeza.cart.model.bo.CartBO;
 

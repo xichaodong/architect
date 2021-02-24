@@ -1,6 +1,6 @@
 package com.tristeza.order.service.center;
 
-import com.tristeza.order.model.bo.center.CenterCommentBO;
+import com.tristeza.item.model.bo.CenterCommentBO;
 import com.tristeza.order.model.pojo.OrderItems;
 
 import java.util.List;

@@ -1,15 +1,12 @@
 package com.tristeza.order.service.center.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.tristeza.cloud.common.idworker.Sid;
 import com.tristeza.cloud.model.enums.BooleanEnum;
-import com.tristeza.cloud.model.pojo.PagedGridResult;
-import com.tristeza.item.model.vo.CenterCommentVO;
+import com.tristeza.item.api.ItemCommentsApi;
+import com.tristeza.item.model.bo.CenterCommentBO;
 import com.tristeza.order.mapper.OrderItemsMapper;
 import com.tristeza.order.mapper.OrderStatusMapper;
 import com.tristeza.order.mapper.OrdersMapper;
-import com.tristeza.order.model.bo.center.CenterCommentBO;
 import com.tristeza.order.model.pojo.OrderItems;
 import com.tristeza.order.model.pojo.OrderStatus;
 import com.tristeza.order.model.pojo.Orders;
@@ -32,6 +29,8 @@ public class CenterCommentServiceImpl implements CenterCommentService {
     private OrderStatusMapper orderStatusMapper;
     @Resource
     private OrdersMapper ordersMapper;
+    @Resource
+    private ItemCommentsApi itemCommentsApi;
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
@@ -46,8 +45,8 @@ public class CenterCommentServiceImpl implements CenterCommentService {
     @Override
     public void saveComments(String userId, String orderId, List<CenterCommentBO> comments) {
         comments.forEach(comment -> comment.setCommentId(sid.nextShort()));
-        //TODO
-//        itemsCommentsMapper.saveComment(userId, comments);
+
+        itemCommentsApi.saveComments(userId, orderId, comments);
 
         changeOrderCommentStatus(orderId);
 

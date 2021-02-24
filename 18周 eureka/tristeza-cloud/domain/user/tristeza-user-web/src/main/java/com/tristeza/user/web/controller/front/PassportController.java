@@ -1,5 +1,6 @@
 package com.tristeza.user.web.controller.front;
 
+import com.tristeza.cart.api.CartApi;
 import com.tristeza.cloud.common.utils.CookieUtils;
 import com.tristeza.cloud.common.utils.JsonUtils;
 import com.tristeza.cloud.common.utils.RedisOperator;
@@ -30,6 +31,8 @@ public class PassportController {
 
     @Resource
     private UserService userService;
+    @Resource
+    private CartApi cartApi;
     @Resource
     private RedisOperator redisOperator;
 
@@ -94,8 +97,7 @@ public class PassportController {
 
         CookieUtils.setCookie(request, response, USER_INFO_COOKIE_NAME, JsonUtils.objectToJson(userVO), true);
 
-        //TODO
-//        syncShopCartData(request, response, users.getId());
+//        cartApi.syncShopCartData();
 
         return JsonResult.ok(userVO);
     }
