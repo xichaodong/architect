@@ -18,3 +18,12 @@ spring:
     password: 123456
     host: 127.0.0.1
     port: 6379
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,5 +1,7 @@
 package com.tristeza.user.web.controller.front;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.tristeza.cart.api.CartApi;
 import com.tristeza.cloud.common.utils.CookieUtils;
 import com.tristeza.cloud.common.utils.JsonUtils;
@@ -81,6 +83,20 @@ public class PassportController {
 
     @PostMapping("login")
     @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
+    @HystrixCommand(commandKey = "loginFail", groupKey = "passport", fallbackMethod = "loginFail",
+            ignoreExceptions = {IllegalArgumentException.class}, threadPoolKey = "loginThreadPool",
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "20"),
+                    //size > 0 -> LinkedBlockingQueue
+                    //size = -1(default) -> SynchronousQueue
+                    @HystrixProperty(name = "maxQueueSize", value = "40"),
+                    //maxQueueSize = -1时无效，使用该参数相当于可以动态设置队列的长度
+                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "15"),
+                    //线程池统计窗口持续时间
+                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1024"),
+                    //线程池统计窗口内被划分的数量
+                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "18")
+            })
     public JsonResult login(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest request,
                             HttpServletResponse response) {
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
@@ -123,5 +139,10 @@ public class PassportController {
         userVO.setUserUniqueToken(token);
 
         return userVO;
+    }
+
+    private JsonResult loginFail(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest request,
+                                 HttpServletResponse response, Throwable throwable) {
+        return JsonResult.errorMsg("验证码错误(模仿12306)");
     }
 }

@@ -3,6 +3,7 @@ package com.tristeza.user.web;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
@@ -15,6 +16,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan("com.tristeza.user.mapper")
 @ComponentScan(basePackages = {"com.tristeza", "com.tristeza.cloud.common.idworker"})
 @EnableDiscoveryClient
+@EnableHystrix
 @EnableFeignClients(basePackages = {"com.tristeza.cart.api"})
 public class UserApplication {
     public static void main(String[] args) {

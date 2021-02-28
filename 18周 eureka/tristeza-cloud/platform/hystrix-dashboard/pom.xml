@@ -10,12 +10,37 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>registry-center</artifactId>
+    <artifactId>hystrix-dashboard</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 
@@ -26,7 +51,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.9.RELEASE</version>
                 <configuration>
-                    <mainClass>com.tristeza.registry.center.EurekaServerApplication</mainClass>
+                    <mainClass>com.tristeza.hystrix.dashboard.HystrixDashboardApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

@@ -1,11 +1,9 @@
 package com.tristeza.item.api;
 
+import com.tristeza.cloud.model.pojo.PagedGridResult;
 import com.tristeza.item.model.bo.CenterCommentBO;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,4 +18,9 @@ public interface ItemCommentsApi {
     void saveComments(@RequestParam("userId") String userId,
                       @RequestParam("orderId") String orderId,
                       @RequestBody List<CenterCommentBO> comments);
+
+    @GetMapping("myComments")
+    PagedGridResult queryUserComment(@RequestParam("userId") String userId,
+                                     @RequestParam(value = "page", required = false) Integer page,
+                                     @RequestParam(value = "pageSize", required = false) Integer pageSize);
 }

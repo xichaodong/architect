@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@RequestMapping("item-api")
 public interface ItemService {
     /**
      * 根据商品id查询商品详情
@@ -22,7 +21,6 @@ public interface ItemService {
      * @param itemId 商品id
      * @return {@link Items}
      */
-    @GetMapping("item")
     Items queryItemById(@RequestParam("itemId") String itemId);
 
     /**
@@ -31,7 +29,6 @@ public interface ItemService {
      * @param itemId 商品id
      * @return {@link Items}
      */
-    @GetMapping("itemSpecs")
     List<ItemsSpec> queryItemSpecById(@RequestParam("itemId") String itemId);
 
     /**
@@ -40,7 +37,6 @@ public interface ItemService {
      * @param itemId 商品id
      * @return {@link Items}
      */
-    @GetMapping("itemImages")
     List<ItemsImg> queryItemImgById(@RequestParam("itemId") String itemId);
 
     /**
@@ -49,7 +45,6 @@ public interface ItemService {
      * @param itemId 商品id
      * @return {@link Items}
      */
-    @GetMapping("itemParam")
     ItemsParam queryItemParam(@RequestParam("itemId") String itemId);
 
     /**
@@ -58,7 +53,6 @@ public interface ItemService {
      * @param itemId 商品id
      * @return {@link CommentCountsVO}
      */
-    @GetMapping("countComments")
     CommentCountsVO queryCommentCounts(@RequestParam("itemId") String itemId);
 
     /**
@@ -68,21 +62,16 @@ public interface ItemService {
      * @param commentLevel 评价级别
      * @return {@link PagedGridResult}
      */
-    @GetMapping("pageComments")
     PagedGridResult queryPagedItemComment(@RequestParam("itemId") String itemId,
                                           @RequestParam(value = "commentLevel", required = false) Integer commentLevel,
                                           @RequestParam(value = "page", required = false) Integer page,
                                           @RequestParam(value = "pageSize", required = false) Integer pageSize);
 
-    @GetMapping("getCartBySpecIds")
     List<CartVO> queryItemBySpecIds(@RequestParam("spedIdStr") String spedIdStr);
 
-    @GetMapping("itemSpec")
     ItemsSpec queryItemSpecBySpecId(@RequestParam("specId") String specId);
 
-    @GetMapping("primaryImg")
     String queryItemMainImgByItemId(@RequestParam("itemId") String itemId);
 
-    @PostMapping("decreaseStock")
     void decreaseItemSpecStock(@RequestParam("specId") String specId, @RequestParam("buyCounts") Integer buyCounts);
 }

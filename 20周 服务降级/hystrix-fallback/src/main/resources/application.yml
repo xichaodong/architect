@@ -33,8 +33,6 @@ hystrix:
           thread:
             timeoutInMilliseconds: 400
 management:
-  security:
-    enable: false
   endpoint:
     health:
       show-details: always

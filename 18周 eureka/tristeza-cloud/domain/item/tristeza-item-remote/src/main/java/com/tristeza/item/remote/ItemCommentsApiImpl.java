@@ -1,5 +1,6 @@
 package com.tristeza.item.remote;
 
+import com.tristeza.cloud.model.pojo.PagedGridResult;
 import com.tristeza.item.api.ItemCommentsApi;
 import com.tristeza.item.model.bo.CenterCommentBO;
 import com.tristeza.service.ItemCommentsService;
@@ -20,5 +21,10 @@ public class ItemCommentsApiImpl implements ItemCommentsApi {
     @Override
     public void saveComments(String userId, String orderId, List<CenterCommentBO> comments) {
         itemCommentsService.saveComments(userId, orderId, comments);
+    }
+
+    @Override
+    public PagedGridResult queryUserComment(String userId, Integer page, Integer pageSize) {
+        return itemCommentsService.queryUserComment(userId, page, pageSize);
     }
 }

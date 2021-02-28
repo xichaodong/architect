@@ -22,3 +22,58 @@ spring:
     password: 123456
     host: 127.0.0.1
     port: 6379
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+hystrix:
+  command:
+    default:
+      fallback:
+        # 开启降级
+        enabled: true
+      circuitBreaker:
+        # 开启熔断
+        enabled: true
+        # 错误超过50%之后开启熔断
+        errorThresholdPercentage: 50
+        # 5个请求之后才开始统计
+        requestVolumeThreshold: 5
+        # 10秒之后进入half-open状态
+        sleepWindowInMilliseconds: 10000
+      execution:
+        # 开启超时配置
+        timeout:
+          enabled: true
+        # 隔离方式
+        isolation:
+          thread:
+            # 是否在超时的时候终止线程
+            interruptionOnTimeout: true
+            # 是否在取消的时候终止线程
+            interruptOnFutureCancel: true
+            # 超时时间
+            timeoutInMilliseconds: 10000
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 20000
+          numBuckets: 10
+        rollingPercentile:
+          timeInMilliseconds: 20000
+          numBuckets: 10
+          bucketSize: 300
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 5000

@@ -11,8 +11,10 @@
         <module name="tristeza-order-mapper" />
         <module name="tristeza-user-service" />
         <module name="tristeza-item-service" />
+        <module name="hystrix-turbine" />
         <module name="tristeza-order-model" />
         <module name="tristeza-user-mapper" />
+        <module name="hystrix-dashboard" />
         <module name="tristeza-user-web" />
         <module name="tristeza-cart-remote" />
         <module name="tristeza-order-service" />
