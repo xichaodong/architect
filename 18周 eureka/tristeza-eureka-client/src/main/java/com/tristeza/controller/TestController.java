@@ -14,10 +14,22 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 public class TestController {
-    @GetMapping("/sayHi")
+    @GetMapping("sayHi")
     public String hello(HttpServletRequest request) {
         System.out.println("say hi");
         return request.getLocalPort() + "";
+    }
+
+    @GetMapping("timeout")
+    public String timeout() throws InterruptedException {
+        Thread.sleep(500);
+        System.err.println("receive");
+        return "success";
+    }
+
+    @GetMapping("error")
+    public String error() {
+        throw new RuntimeException("error");
     }
 
     @PostMapping("/sayHi")

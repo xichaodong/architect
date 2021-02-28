@@ -1,0 +1,31 @@
+server:
+  port: 18904
+spring:
+  application:
+    name: hystrix-turbine
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+  client:
+    service-url:
+      defaultZone: http://peer1:8891/eureka
+turbine:
+  app-config: hystrix-consumer
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream
+  aggregator:
+    cluster-config: "default"
+
+management:
+  security:
+    enable: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

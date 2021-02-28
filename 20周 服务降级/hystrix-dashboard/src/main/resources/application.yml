@@ -1,13 +1,12 @@
+server:
+  port: 18914
 spring:
   application:
-    name: eureka-client
-server:
-  port: 18080
+    name: hystrix-dashboard
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 30
-
   client:
     service-url:
       defaultZone: http://peer1:8891/eureka

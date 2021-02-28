@@ -1,6 +1,6 @@
 package com.tristeza.order.api.center;
 
-import com.tristeza.order.model.bo.center.CenterCommentBO;
+import com.tristeza.item.model.bo.CenterCommentBO;
 import com.tristeza.order.model.pojo.OrderItems;
 import org.springframework.web.bind.annotation.*;
 

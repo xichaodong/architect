@@ -1,0 +1,47 @@
+server:
+  port: 18909
+spring:
+  application:
+    name: hystrix-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8891/eureka
+feign:
+  hystrix:
+    enabled: true
+eureka-client:
+  ribbon:
+    MaxAutoRetries: 2
+    MaxAutoRetriesNextServer: 2
+    ConnectTimeout: 6000
+    ReadTimeout: 6000
+    OkToRetryOnAllOperations: true
+
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 5
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 15000
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 20000
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 400
+management:
+  security:
+    enable: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
