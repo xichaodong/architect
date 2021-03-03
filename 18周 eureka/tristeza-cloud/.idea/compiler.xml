@@ -27,6 +27,7 @@
         <module name="tristeza-cart-service" />
         <module name="tristeza-order-api" />
         <module name="tristeza-order-web" />
+        <module name="config-server" />
         <module name="tristeza-item-api" />
         <module name="tristeza-cart-api" />
         <module name="tristeza-cart-web" />

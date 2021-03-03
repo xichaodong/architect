@@ -1,0 +1,20 @@
+server:
+  port: 18282
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xichaodong/config-repo.git
+          force-pull: true
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+
+  client:
+    service-url:
+      defaultZone: http://peer1:8891/eureka

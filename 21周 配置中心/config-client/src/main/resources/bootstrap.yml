@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:18282
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+
+  client:
+    service-url:
+      defaultZone: http://peer1:8891/eureka
+
+server:
+  port: 18382
+
+myWords: ${words}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

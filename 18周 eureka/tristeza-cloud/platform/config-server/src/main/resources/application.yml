@@ -1,0 +1,23 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xichaodong/config-repo.git
+          force-pull: true
+          search-paths: '{application}'
+        overrides:
+          test: mytest
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka
