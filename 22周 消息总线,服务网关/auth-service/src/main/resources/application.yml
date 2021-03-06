@@ -1,0 +1,28 @@
+server:
+  port: 18882
+
+spring:
+  application:
+    name: auth-server
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password: 123456
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+  client:
+    service-url:
+      defaultZone: http://localhost:8891/eureka

@@ -40,6 +40,12 @@
         <module>platform/hystrix-turbine</module>
         <module>platform/hystrix-dashboard</module>
         <module>platform/config-server</module>
+        <module>platform/gateway</module>
+        <module>domain/auth/tristeza-auth-api</module>
+        <module>domain/auth/tristeza-auth-service</module>
+        <module>domain/auth/tristeza-auth-remote</module>
+        <module>domain/auth/tristeza-auth-model</module>
+        <module>domain/auth/tristeza-auth-web</module>
     </modules>
 
     <dependencyManagement>

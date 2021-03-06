@@ -9,12 +9,15 @@
         <module name="tristeza-cart-model" />
         <module name="registry-center" />
         <module name="tristeza-order-mapper" />
+        <module name="tristeza-auth-service" />
+        <module name="tristeza-auth-api" />
         <module name="tristeza-user-service" />
         <module name="tristeza-item-service" />
         <module name="hystrix-turbine" />
         <module name="tristeza-order-model" />
-        <module name="tristeza-user-mapper" />
+        <module name="tristeza-auth-model" />
         <module name="hystrix-dashboard" />
+        <module name="tristeza-user-mapper" />
         <module name="tristeza-user-web" />
         <module name="tristeza-cart-remote" />
         <module name="tristeza-order-service" />
@@ -28,11 +31,14 @@
         <module name="tristeza-order-api" />
         <module name="tristeza-order-web" />
         <module name="config-server" />
+        <module name="tristeza-auth-remote" />
+        <module name="tristeza-auth-web" />
         <module name="tristeza-item-api" />
         <module name="tristeza-cart-api" />
         <module name="tristeza-cart-web" />
         <module name="tristeza-user-model" />
         <module name="tristeza-item-web" />
+        <module name="gateway" />
         <module name="tristeza-cloud-shared-model" />
         <module name="tristeza-item-remote" />
       </profile>

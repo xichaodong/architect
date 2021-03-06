@@ -1,0 +1,24 @@
+package com.tristeza.gateway.api;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author chaodong.xi
+ * @date 2021/3/5 6:05 下午
+ */
+@FeignClient("auth-api")
+@RestController
+public interface AuthApi {
+    @PostMapping("login")
+    String login(@RequestParam("username") String username, @RequestParam("password") String password);
+
+    @GetMapping("verify")
+    String verify(@RequestParam("username") String username, @RequestParam("token") String token);
+
+    @GetMapping("verify")
+    String refresh(@RequestParam("refreshToken") String refreshToken);
+}

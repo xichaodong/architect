@@ -1,5 +1,4 @@
 com/tristeza/cloud/web/component/config/Swagger2Config.class
 com/tristeza/cloud/web/component/config/WebMvcConfig.class
 com/tristeza/cloud/web/component/aspect/ServiceLogAspect.class
-com/tristeza/cloud/web/component/config/CorsConfig.class
 com/tristeza/cloud/web/component/interceptor/UserTokenInterceptor.class

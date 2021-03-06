@@ -1,5 +1,4 @@
 /Users/tristeza/BE/architect/18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/cloud/web/component/config/WebMvcConfig.java
-/Users/tristeza/BE/architect/18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/cloud/web/component/config/CorsConfig.java
 /Users/tristeza/BE/architect/18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/cloud/web/component/aspect/ServiceLogAspect.java
 /Users/tristeza/BE/architect/18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/cloud/web/component/config/Swagger2Config.java
 /Users/tristeza/BE/architect/18周 eureka/tristeza-cloud/common/tristeza-cloud-web-components/src/main/java/com/tristeza/cloud/web/component/interceptor/UserTokenInterceptor.java
