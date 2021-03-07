@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zipkin-server
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 18899
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

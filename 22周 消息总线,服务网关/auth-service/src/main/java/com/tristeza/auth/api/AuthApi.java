@@ -20,5 +20,3 @@ public interface AuthApi {
     @GetMapping("refresh")
     String refresh(@RequestParam("refreshToken") String refreshToken);
 }
-
-    Account{username='qw', token='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0cmlzdGV6YSIsImV4cCI6MTYxNDk0MjU1MCwiaWF0IjoxNjE0OTQyNDkwLCJ1c2VybmFtZSI6InF3In0.jknkRXDsJnfDmpJNCpfm1f4pOSMlDwujqMr3N6u2rXs', refreshToken='ae46976d-8d2e-452a-8544-0bb0c787807d'}
